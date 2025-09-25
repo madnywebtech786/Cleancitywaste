@@ -47,7 +47,7 @@ const Hero = () => {
                 with flexible pickup schedules and transparent pricing.
               </p>
               <div className="flex items-center mt-6 gap-4">
-                <Link href={"/Contact-us"}>
+                <Link href={"/contact"}>
                   <button className="cursor-pointer bg-primary text-white px-4 py-3 lg:px-6 lg:py-3 text-sm lg:text-base rounded-lg font-bold">
                     Request Free Quote
                   </button>
@@ -83,7 +83,7 @@ const Hero = () => {
                 responsible.
               </p>
               <div className="flex items-center mt-6 gap-4">
-                <Link href={"/Contact-us"}>
+                <Link href={"/contact"}>
                   <button className="cursor-pointer bg-primary text-white px-4 py-3 lg:px-6 lg:py-3 text-sm lg:text-base rounded-lg font-bold">
                     Request Free Quote
                   </button>
@@ -119,7 +119,7 @@ const Hero = () => {
                 landfills.
               </p>
               <div className="flex items-center mt-6 gap-4">
-                <Link href={"/Contact-us"}>
+                <Link href={"/contact"}>
                   <button className="cursor-pointer bg-primary text-white px-4 py-3 lg:px-6 lg:py-3 text-sm lg:text-base rounded-lg font-bold">
                     Request Free Quote
                   </button>
