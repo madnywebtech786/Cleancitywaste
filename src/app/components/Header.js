@@ -172,7 +172,7 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link href="tel:+11234567890" className="hidden lg:block ml-4">
+            <Link href="tel:+14034971731" className="hidden lg:block ml-4">
               <div className="rounded-2xl bg-primary text-white font-semibold text-base py-[14px] px-8 transition-all duration-300 hover:bg-dark-text">
                 Call Now
               </div>
