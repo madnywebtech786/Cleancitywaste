@@ -4,7 +4,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="py-16 px-4 sm:px-8 md:px-12 lg:px-20 flex items-center relative ">
+    <div className="py-16 px-4 sm:px-8 md:px-12 lg:px-20 flex flex-col lg:flex-row gap-10 lg:items-center relative bg-white dark:text-black">
       <Image
         src={"/images/dot1.png"}
         width={200}
@@ -12,30 +12,30 @@ export default function About() {
         className="absolute top-0 -left-20 bin z-0"
       />
 
-      <div className="w-1/2 relative z-10 ">
+      <div className="w-full lg:w-1/2 relative z-10 ">
         <div className="flex flex-col gap-4">
-          <h3 className="bg-gradient-to-r from-[#5b9d39] to-[#007994] bg-clip-text text-transparent text-2xl font-bold">About Us</h3>
-          <h4 className="text-6xl font-bold">
-            Experience in waste disposal management services
+          <h3 className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-2xl font-bold">
+            About Us
+          </h3>
+          <h4 className="text-4xl lg:text-6xl font-bold">
+            Experience in Calgary Waste Management Services
           </h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat a
-            vero quis, maxime blanditiis vel optio expedita modi corporis
-            aspernatur voluptates natus ipsam velit dolor iusto, libero sed, ut
-            quibusdam! Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Placeat a vero quis, maxime blanditiis vel optio expedita modi
-            corporis aspernatur voluptates natus ipsam velit dolor iusto, libero
-            sed, ut quibusdam!
+            Clean City Waste provides dependable residential, commercial, and
+            industrial waste management across Calgary and surrounding
+            communities. We offer bin rentals, scheduled pickups, recycling and
+            organic-cart services designed to reduce landfill impact and keep
+            homes and businesses clean.
           </p>
 
           <div className="flex gap-5">
             <div className="flex gap-2 items-center ">
               <CheckCircle size={16} className="text-primary" />
-              <p>Plants Filtration Systems</p>
+              <p>Flexible Bin Rentals</p>
             </div>
             <div className="flex gap-2 items-center ">
               <CheckCircle size={16} className="text-primary" />
-              <p>Seafood Import Export</p>
+              <p>Eco-Friendly Disposal</p>
             </div>
           </div>
           <button className="text-white bg-secondary p-3 px-6 rounded-xl w-max">
@@ -43,7 +43,7 @@ export default function About() {
           </button>
         </div>
       </div>
-      <div className="w-1/2 relative">
+      <div className="w-full lg:w-1/2 relative">
         <Image
           src={"/images/waste-about.png"}
           width={600}

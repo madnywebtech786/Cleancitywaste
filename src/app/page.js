@@ -7,10 +7,11 @@ import WhyChooseUs from "./sections/WhyChooseUs";
 import Stats from "./sections/Stats";
 import CTA from "./sections/CTA";
 import Testimonials from "./sections/Testimonials";
+import Contact from "./sections/Contact";
 
 export default function Home() {
   return (
-    <>
+    <div className="bg-white dark:bg-white">
     <Hero />
     <Perks />
     <About/>
@@ -19,6 +20,7 @@ export default function Home() {
     <Stats />
     <Testimonials />
     <CTA />
-    </>
+    <Contact />
+    </div>
   );
 }

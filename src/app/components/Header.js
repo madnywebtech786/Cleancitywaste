@@ -19,19 +19,11 @@ const navItems = [
     name: "Services",
     href: "#",
     dropdown: [
-      { name: "Home Renovation", href: "/services/home-renovation" },
-      { name: "Basement Renovation", href: "/services/basement-renovation" },
-      { name: "Framing", href: "/services/framing" },
-      { name: "Kitchen Remodeling", href: "/services/kitchen-remodeling" },
-      { name: "Bathroom Remodeling", href: "/services/bathroom-remodeling" },
-      { name: "Flooring", href: "/services/flooring" },
-      { name: "Interior and Exterior Painting", href: "/services/interior-and-exterior-painting" },
-      { name: "Garage Development", href: "/services/garage-development" },
+      { name: "Residential Waste", href: "/services/residential-services" },
+      { name: "Commercial Waste", href: "/services/commercial-services" },
+      { name: "Industrial Waste", href: "/services/industrial-services" },
     ],
   },
-
-  { name: "Projects", href: "/projects" },
-  { name: "FAQs", href: "/faqs" },
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -92,7 +84,7 @@ const Header = () => {
               src={"/images/logo.png"}
               width={120}
               height={120}
-              className="w-40 h-24"
+              className="w-32 lg:w-40 h-20 lg:h-24"
             />
           </Link>
 
@@ -102,7 +94,7 @@ const Header = () => {
                 <li key={item.name} className="relative group">
                   <Link
                     href={item.href}
-                    className={`flex items-center gap-1 text-sm font-medium uppercase transition-colors hover:text-primary-red ${
+                    className={`flex items-center gap-1 text-base font-medium uppercase transition-colors hover:text-primary-red ${
                       item.active ? "text-primary-red" : "text-dark-text"
                     }`}
                   >
@@ -125,7 +117,7 @@ const Header = () => {
                         <li key={subItem.name} className="relative sub-item ">
                           <Link
                             href={subItem.href}
-                            className="flex items-center justify-between px-5 py-2 text-sm text-gray-text hover:bg-light-background hover:text-primary-red"
+                            className="flex items-center justify-between px-5 py-2 text-base text-gray-text hover:bg-light-background hover:text-primary-red"
                             aria-haspopup={!!subItem.dropdown}
                             aria-expanded={
                               subItem.dropdown ? "false" : undefined
@@ -181,12 +173,12 @@ const Header = () => {
 
           <div className="flex items-center gap-2">
             <Link href="tel:+11234567890" className="hidden lg:block ml-4">
-              <div className="rounded-2xl bg-primary text-white font-semibold text-sm py-[14px] px-8 transition-all duration-300 hover:bg-dark-text">
+              <div className="rounded-2xl bg-primary text-white font-semibold text-base py-[14px] px-8 transition-all duration-300 hover:bg-dark-text">
                 Call Now
               </div>
             </Link>
             <Link href="/contact" className="hidden lg:block">
-              <div className="rounded-2xl border border-primary text-primary font-semibold text-sm py-[14px] px-8 transition-all duration-300 hover:bg-dark-text">
+              <div className="rounded-2xl border border-primary text-primary font-semibold text-base py-[14px] px-8 transition-all duration-300 hover:bg-dark-text">
                 Get Qoute
               </div>
             </Link>
@@ -247,7 +239,10 @@ const Header = () => {
           <nav className="overflow-y-auto h-[calc(100vh-64px)] p-6">
             <ul className="space-y-3">
               {navItems.map((item) => (
-                <li key={item.name} className="border-b border-gray-200 pb-2 dark:text-black">
+                <li
+                  key={item.name}
+                  className="border-b border-gray-200 pb-2 dark:text-black"
+                >
                   {item.dropdown ? (
                     <>
                       <button

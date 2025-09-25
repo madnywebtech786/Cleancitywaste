@@ -14,23 +14,22 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <Facebook size={16} />,
-      href: "https://www.facebook.com/profile.php?id=61580180045432",
+      href: "",
     },
     {
       icon: <Instagram size={16} />,
-      href: "https://www.instagram.com/restyle.renovationyyc/?hl=en",
+      href: "",
     },
   ];
 
   const quickLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
-    { name: "FAQs", href: "/faqs" },
+    { name: "About Us", href: "/about-us" },
     { name: "Contact Us", href: "/contact" },
   ];
 
   return (
-    <footer className="bg-gradient-to-r from-[#5b9d39] to-[#007994] text-gray-300 ">
+    <footer className="bg-gradient-to-r from-primary to-secondary text-gray-300 ">
       <div className="py-16 px-4 sm:px-8 md:px-12 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Column 1: About */}
@@ -43,14 +42,13 @@ const Footer = () => {
                 src={"/images/logo.png"}
                 width={150}
                 height={150}
-                className="w-4/5 mx-auto h-28"
+                className="w-full h-28 bg-white rounded-2xl"
               />
             </Link>
             <p className="text-white text-base leading-relaxed">
-              Full-service home renovations across Calgary and nearby
-              communities. We manage design, permits and licensed trades to
-              deliver durable, code-compliant results that increase comfort and
-              property value.
+              Clean City Waste provides dependable residential, commercial, and
+              industrial waste management across Calgary and surrounding
+              communities.
             </p>
           </div>
 
@@ -83,10 +81,10 @@ const Footer = () => {
                   className="text-primary-red mt-1 flex-shrink-0"
                 />
                 <a
-                  href="tel:+14034011636"
+                  href="tel:+14034971731"
                   className="hover:text-primary-red transition-colors"
                 >
-                  403-401-1636
+                  403-497-1731
                 </a>
               </li>
               <li className="flex items-start space-x-3">
@@ -95,10 +93,10 @@ const Footer = () => {
                   className="text-primary-red mt-1 flex-shrink-0"
                 />
                 <a
-                  href="mailto:info@restylerenovation.ca"
+                  href="mailto:info@cleancitywaste.ca"
                   className="hover:text-primary-red transition-colors"
                 >
-                  info@restylerenovation.ca
+                  info@cleancitywaste.ca
                 </a>
               </li>
               <li className="flex items-start space-x-3">
@@ -142,7 +140,7 @@ const Footer = () => {
         <div className="container py-6 text-sm">
           <div className="flex justify-center items-center space-y-4 sm:space-y-0">
             <p className=" text-white">
-              © Copyright 2025, Restyle Renovation . All Rights Reserved.
+              © Copyright 2025, Clean City Waste . All Rights Reserved.
             </p>
           </div>
         </div>

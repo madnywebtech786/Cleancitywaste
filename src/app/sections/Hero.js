@@ -20,7 +20,7 @@ const Hero = () => {
     if (swiperRef.current) swiperRef.current.slidePrev();
   };
   return (
-    <div className="relative w-full h-auto lg:py-0 lg:h-auto lg:min-h-screen heroBg lg:!pb-86">
+    <div className="relative w-full h-auto lg:py-0 lg:h-auto lg:min-h-screen heroBg pb-86 lg:!pb-86">
       <Swiper
         modules={[Navigation, Autoplay]}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -30,14 +30,14 @@ const Hero = () => {
       >
         <SwiperSlide>
           <div
-            className={`relative w-full h-full items-center flex flex-col lg:flex-row p-4 lg:p-20 !pb-0  bg-transparent`}
+            className={`relative w-full h-full items-center flex flex-col lg:flex-row gap-10 px-4 p-8 lg:p-20 !pb-0  bg-transparent`}
           >
             <div className="w-full lg:w-1/2 flex flex-col text-left justify-center gap-3 ">
               <p className="text-white text-sm lg:text-base font-semibold flex items-center gap-2">
                 PROFESSIONAL WASTE MANAGEMENT & RECYCLING SERVICES
               </p>
 
-              <h2 className="text-white text-2xl lg:text-6xl font-bold text-left">
+              <h2 className="text-white text-4xl lg:text-6xl font-bold text-left">
                 KEEP YOUR SITE CLEAN & COMPLIANT
               </h2>
               <p className="text-white mt-4 max-w-lg text-left">
@@ -59,21 +59,21 @@ const Hero = () => {
                 src={"/images/hero1.png"}
                 width={450}
                 height={450}
-                className="mx-auto relative z-20"
+                className="mx-auto relative z-20 w-4/5 md:w-2/3"
               />
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className={`relative w-full h-full items-center flex flex-col lg:flex-row p-4 lg:p-20 !pb-0  bg-transparent`}
+            className={`relative w-full h-full items-center flex flex-col lg:flex-row gap-10 px-4 p-8 lg:p-20 !pb-0  bg-transparent`}
           >
             <div className="w-full lg:w-1/2 flex flex-col text-left justify-center gap-3 ">
               <p className="text-white text-sm lg:text-base font-semibold flex items-center gap-2">
                 COMMERCIAL & INDUSTRIAL WASTE DISPOSAL EXPERTS
               </p>
 
-              <h2 className="text-white text-2xl lg:text-6xl font-bold text-left">
+              <h2 className="text-white text-4xl lg:text-6xl font-bold text-left">
                 REDUCE WASTE, BOOST RECYCLING RATES
               </h2>
               <p className="text-white mt-4 max-w-lg text-left">
@@ -95,21 +95,21 @@ const Hero = () => {
                 src={"/images/hero2.png"}
                 width={450}
                 height={450}
-                className="mx-auto relative z-20"
+                className="mx-auto relative z-20 w-4/5 md:w-2/3"
               />
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className={`relative w-full h-full items-center flex flex-col lg:flex-row p-4 lg:p-20 !pb-0  bg-transparent`}
+            className={`relative w-full h-full items-center flex flex-col lg:flex-row gap-10 px-4 p-8 lg:p-20 !pb-0  bg-transparent`}
           >
             <div className="w-full lg:w-1/2 flex flex-col text-left justify-center gap-3 ">
               <p className="text-white text-sm lg:text-base font-semibold flex items-center gap-2">
                 ECO-FRIENDLY WASTE MANAGEMENT SOLUTIONS
               </p>
 
-              <h2 className="text-white text-2xl lg:text-6xl font-bold text-left">
+              <h2 className="text-white text-4xl lg:text-6xl font-bold text-left">
                 SMART WASTE SOLUTIONS FOR BUSINESS
               </h2>
               <p className="text-white mt-4 max-w-lg text-left">
@@ -131,7 +131,7 @@ const Hero = () => {
                 src={"/images/hero3.png"}
                 width={450}
                 height={450}
-                className="mx-auto relative z-20"
+                className="mx-auto relative z-20 w-4/5 md:w-2/3"
               />
             </div>
           </div>

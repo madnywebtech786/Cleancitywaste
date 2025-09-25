@@ -3,9 +3,9 @@ import React from "react";
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-us" className="py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+    <section id="why-us" className="py-16 px-4 sm:px-8 md:px-12 lg:px-20 bg-white dark:text-black">
+      <div className="bg-white">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className=" relative">
             <div className="relative backdrop-blur-sm rounded-3xl p-1">
               <Image
@@ -19,32 +19,29 @@ export default function WhyChooseUs() {
           </div>
           <div>
             <div className="mb-8 flex flex-col gap-4">
-              <h3 className="bg-gradient-to-r from-[#5b9d39] to-[#007994] bg-clip-text text-transparent text-2xl font-bold">
-                Why Choose Us
+              <h3 className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-2xl font-bold">
+                Why Choose Clean City Waste
               </h3>
-              <h4 className="text-5xl font-bold">
-                Best waste disposal management services
+              <h4 className="text-4xl lg:text-6xl font-bold">
+                Reliable waste disposal and recycling in Calgary
               </h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur. Nam quis bibendum
-                lacinia eu id in. Quisque porttitor tortor blandit nunc sed ac
-                id. Mattis in nunc libero viverra. Consectetur leo nibh ac at
-                amet.
+                Clean City Waste offers dependable, eco-friendly waste solutions across Calgary and surrounding areas. We combine flexible bin rentals, scheduled pickups and recycling programs to keep properties clean, safe and compliant.
               </p>
             </div>
 
             <div className="space-y-6  w-full md:w-4/5">
               {[
                 {
-                  title: "Residential waste pickup",
+                  title: "Residential & Organic Pickup",
                   description:
-                    "Amet minim mollit no duis deserunt lamo sit enim aliqua dolor do amet sint velit",
+                    "Weekly curbside pickup with 64-gal organic carts and flexible scheduling for single-family homes, townhouses and multi-unit properties.",
                   icon: "truck",
                 },
                 {
-                  title: "Roll-off dumpsters",
+                  title: "Roll-off Dumpster Rentals",
                   description:
-                    "Amet minim mollit no duis deserunt lamo sit enim aliqua dolor do amet sint velit",
+                    "Durable roll-off dumpsters for construction, renovations and cleanups with timely pickups and responsible disposal and recycling.",
                   icon: "dumpster",
                 },
               ].map((item, index) => (
@@ -53,7 +50,7 @@ export default function WhyChooseUs() {
                     {item.icon === "truck" && (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-[#5b9d39]"
+                        className="h-6 w-6 text-primary"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -66,7 +63,7 @@ export default function WhyChooseUs() {
                     {item.icon === "dumpster" && (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-[#5b9d39]"
+                        className="h-6 w-6 text-primary"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"

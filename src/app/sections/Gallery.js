@@ -5,7 +5,7 @@ export default function Gallery() {
     <section id="gallery" className="py-20 px-6 bg-gray-900">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          <span className="bg-gradient-to-r from-[#5b9d39] to-[#007994] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Our Work in Action
           </span>
         </h2>
