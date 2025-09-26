@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function CTA() {
@@ -18,12 +19,11 @@ export default function CTA() {
           homes, businesses and construction sites.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="text-white bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform">
-            View Services
-          </button>
-          <button className="border border-gray-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/5 transition-colors">
-            Call Now
-          </button>
+          <Link href={"tel:+14034971731"}>
+            <button className="text-white cursor-pointer bg-gradient-to-r from-primary to-secondary px-12 py-4 rounded-full font-semibold text-xl hover:scale-105 transition-transform">
+              Call Now
+            </button>
+          </Link>
         </div>
       </div>
     </section>

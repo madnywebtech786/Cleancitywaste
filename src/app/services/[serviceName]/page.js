@@ -1,22 +1,22 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const servicesData = {
   "residential-services": {
     title: "Residential Waste Services",
     paragraphs: [
-      "At Clean City Waste, we provide reliable residential waste management in Calgary, helping homeowners keep their spaces clean, safe, and environmentally friendly. Our services include 64-gallon organic carts for yard and food waste along with 4-yard, 6-yard, and 8-yard bins for trash and recycling. Whether you live in a single-family home, townhouse, or multi-unit complex, we offer flexible pickup schedules designed to make waste disposal simple and convenient. With our eco-friendly practices, you can rest assured your waste is being handled responsibly while reducing the impact on landfills.",
+      "At Clean City Waste, we provide reliable residential waste management in Calgary, helping homeowners keep their spaces clean, safe, and environmentally friendly. Our services include 64-gallon organic carts for yard and food waste along with 4-yard, 6-yard, and 8-yard bins for trash and recycling. Whether you live in a townhouse, or multi-unit complex, we offer flexible pickup schedules designed to make waste disposal simple and convenient. With our eco-friendly practices, you can rest assured your waste is being handled responsibly while reducing the impact on landfills.",
       "As a locally owned Calgary waste company, we are committed to delivering dependable service with a personal touch. Our residential garbage pickup and recycling services are tailored to fit seamlessly into your daily routine, keeping your home and neighborhood cleaner and greener. From everyday household trash to large cleanup projects, Clean City Waste is your trusted partner for hassle-free waste management. Contact us today for affordable bin rentals and residential waste collection in Calgary.",
     ],
     areas: [
-      "Single-family homes",
       "Townhouses & duplexes",
       "Apartment complexes",
       "Condominiums",
       "Gated communities & residential",
     ],
-    image: "/images/residential.png",
+    image: "/images/residential.webp",
   },
   "commercial-services": {
     title: "Commercial Waste Services",
@@ -31,7 +31,7 @@ const servicesData = {
       "Educational institutions & schools",
       "Healthcare clinics & medical facilities",
     ],
-    image: "/images/commercial.png",
+    image: "/images/commercial.webp",
   },
   "industrial-services": {
     title: "Industrial Waste Services",
@@ -46,7 +46,7 @@ const servicesData = {
       "Logistics & transportation companies",
       "Large-scale development projects",
     ],
-    image: "/images/industrial.png",
+    image: "/images/industrial.webp",
   },
 };
 
@@ -92,10 +92,12 @@ export default function ServicePage({ params }) {
                 ))}
               </div>
 
-              <div className="mt-12 text-center">
-                <button className="bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform">
-                  Contact Us Now
+              <div className="mt-12">
+                <Link href={'/contact'} >
+                <button className=" cursor-pointer bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform">
+                  Contact Now
                 </button>
+                </Link>
               </div>
             </div>
 

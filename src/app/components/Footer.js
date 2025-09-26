@@ -122,14 +122,6 @@ const Footer = () => {
                   {link.icon}
                 </Link>
               ))}
-              <Link href={"https://www.tiktok.com/@restylerenovationyyc"}>
-                <Image
-                  src={"/images/icons/tiktok.png"}
-                  width={40}
-                  height={40}
-                  className="border-2 border-white rounded-full p-2"
-                />
-              </Link>
             </div>
           </div>
         </div>

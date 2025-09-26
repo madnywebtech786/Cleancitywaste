@@ -24,14 +24,14 @@ export default function TopBar() {
       </div>
       <div className="w-1/3 hidden md:flex justify-end">
         <div className="flex items-center space-x-4">
-          <Link href={"https://www.facebook.com/profile.php?id=61580180045432"}>
+          <Link href={"#"}>
             <Facebook size={20} className="text-white" />
           </Link>
 
-          <Link href={"https://www.instagram.com/restyle.renovationyyc/?hl=en"}>
+          <Link href={"#"}>
             <Instagram size={20} className="text-white" />
           </Link>
-          <Link href={"https://www.tiktok.com/@restylerenovationyyc"}>
+          <Link href={"#"}>
             <Image src={"/images/icons/tiktok.png"} width={20} height={20} />
           </Link>
         </div>

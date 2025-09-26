@@ -1,15 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-us" className="py-16 px-4 sm:px-8 md:px-12 lg:px-20 bg-white dark:text-black">
+    <section
+      id="why-us"
+      className="py-16 px-4 sm:px-8 md:px-12 lg:px-20 bg-white dark:text-black"
+    >
       <div className="bg-white">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className=" relative">
             <div className="relative backdrop-blur-sm rounded-3xl p-1">
               <Image
-                src="/images/why.png"
+                src="/images/why.webp"
                 width={800}
                 height={800}
                 alt="Waste Management Facility"
@@ -26,7 +30,10 @@ export default function WhyChooseUs() {
                 Reliable waste disposal and recycling in Calgary
               </h4>
               <p>
-                Clean City Waste offers dependable, eco-friendly waste solutions across Calgary and surrounding areas. We combine flexible bin rentals, scheduled pickups and recycling programs to keep properties clean, safe and compliant.
+                Clean City Waste offers dependable, eco-friendly waste solutions
+                across Calgary and surrounding areas. We combine flexible bin
+                rentals, scheduled pickups and recycling programs to keep
+                properties clean, safe and compliant.
               </p>
             </div>
 
@@ -35,7 +42,7 @@ export default function WhyChooseUs() {
                 {
                   title: "Residential & Organic Pickup",
                   description:
-                    "Weekly curbside pickup with 64-gal organic carts and flexible scheduling for single-family homes, townhouses and multi-unit properties.",
+                    "Weekly curbside pickup with 64-gal organic carts and flexible scheduling for townhouses and multi-unit properties.",
                   icon: "truck",
                 },
                 {
@@ -83,9 +90,11 @@ export default function WhyChooseUs() {
             </div>
 
             <div className="mt-12">
-              <button className="bg-primary text-white px-6 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition-transform">
-                Contact Us
-              </button>
+              <Link href={"/contact"} className="w-max">
+                <button className="bg-primary cursor-pointer text-white px-6 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition-transform">
+                  Contact Us
+                </button>
+              </Link>
             </div>
           </div>
         </div>

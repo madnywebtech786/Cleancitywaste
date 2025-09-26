@@ -1,5 +1,6 @@
 import { Home, Briefcase, Factory } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function Services() {
@@ -18,7 +19,7 @@ export default function Services() {
         <div className="bg-white shadow-2xl !rounded-t-xl !rounded-b-[20%] p-6 pb-10 flex flex-col gap-4">
           <div className="w-11/12 mx-auto">
             <Image
-              src={"/images/residential.png"}
+              src={"/images/residential.webp"}
               width={350}
               height={250}
               className="max-h-[250px] rounded-t-xl !rounded-b-[20%] mx-auto relative z-10"
@@ -35,10 +36,11 @@ export default function Services() {
                 services. Flexible bin rentals and scheduled pickups that fit
                 your daily routines.
               </p>
-
-              <button className="rounded-full p-3 px-6 bg-accent/70 w-max mx-auto text-sm font-bold">
-                Read More
-              </button>
+              <Link href={"/services/residential-services"} className="w-max mx-auto">
+                <button className="rounded-full p-3 px-6 bg-accent/70 w-max mx-auto  cursor-pointer text-sm font-bold">
+                  Read More
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -46,7 +48,7 @@ export default function Services() {
         <div className="bg-white shadow-2xl !rounded-t-xl !rounded-b-[20%] p-6 pb-10 flex flex-col gap-4">
           <div className="w-11/12 mx-auto">
             <Image
-              src={"/images/commercial.png"}
+              src={"/images/commercial.webp"}
               width={350}
               height={250}
               className="max-h-[250px] rounded-t-xl !rounded-b-[20%] mx-auto relative z-10"
@@ -63,10 +65,11 @@ export default function Services() {
                 businesses. Scheduled garbage collection and flexible bin
                 rentals for your business
               </p>
-
-              <button className="rounded-full p-3 px-6 bg-accent/70 w-max mx-auto text-sm font-bold">
-                Read More
-              </button>
+              <Link href={"/services/commercial-services"} className="w-max mx-auto">
+                <button className="rounded-full p-3 px-6 bg-accent/70 w-max mx-auto cursor-pointer text-sm font-bold">
+                  Read More
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -74,7 +77,7 @@ export default function Services() {
         <div className="bg-white shadow-2xl !rounded-t-xl !rounded-b-[20%] p-6 pb-10 flex flex-col gap-4">
           <div className="w-11/12 mx-auto">
             <Image
-              src={"/images/industrial.png"}
+              src={"/images/industrial.webp"}
               width={350}
               height={250}
               className="max-h-[250px] rounded-t-xl !rounded-b-[20%] mx-auto relative z-10"
@@ -91,10 +94,11 @@ export default function Services() {
                 pickups. Bin rentals for construction, manufacturing, and
                 large-scale cleanup
               </p>
-
-              <button className="rounded-full p-3 px-6 bg-accent/70 w-max mx-auto text-sm font-bold">
-                Read More
-              </button>
+              <Link href={"/services/industrial-services"} className="w-max mx-auto">
+                <button className="rounded-full p-3 px-6 bg-accent/70 w-max mx-auto cursor-pointer text-sm font-bold">
+                  Read More
+                </button>
+              </Link>
             </div>
           </div>
         </div>

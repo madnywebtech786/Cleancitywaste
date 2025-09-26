@@ -56,7 +56,7 @@ const Hero = () => {
             </div>
             <div className="w-full lg:w-1/2">
               <Image
-                src={"/images/hero1.png"}
+                src={"/images/hero1.webp"}
                 width={450}
                 height={450}
                 className="mx-auto relative z-20 w-4/5 md:w-2/3"
@@ -92,7 +92,7 @@ const Hero = () => {
             </div>
             <div className="w-full lg:w-1/2">
               <Image
-                src={"/images/hero2.png"}
+                src={"/images/hero2.webp"}
                 width={450}
                 height={450}
                 className="mx-auto relative z-20 w-4/5 md:w-2/3"
@@ -128,7 +128,7 @@ const Hero = () => {
             </div>
             <div className="w-full lg:w-1/2">
               <Image
-                src={"/images/hero3.png"}
+                src={"/images/hero3.webp"}
                 width={450}
                 height={450}
                 className="mx-auto relative z-20 w-4/5 md:w-2/3"

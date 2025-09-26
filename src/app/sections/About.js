@@ -1,5 +1,6 @@
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function About() {
@@ -38,14 +39,16 @@ export default function About() {
               <p>Eco-Friendly Disposal</p>
             </div>
           </div>
-          <button className="text-white bg-secondary p-3 px-6 rounded-xl w-max">
-            Contact Us
-          </button>
+          <Link href={"/contact"} className="w-max ">
+            <button className="text-white bg-secondary p-3 px-6 rounded-xl w-max cursor-pointer">
+              Contact Us
+            </button>
+          </Link>
         </div>
       </div>
       <div className="w-full lg:w-1/2 relative">
         <Image
-          src={"/images/waste-about.png"}
+          src={"/images/waste-about.webp"}
           width={600}
           height={600}
           className="relative z-20"
