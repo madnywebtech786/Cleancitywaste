@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
                 {
                   title: "Roll-off Dumpster Rentals",
                   description:
-                    "Durable roll-off dumpsters for construction, renovations and cleanups with timely pickups and responsible disposal and recycling.",
+                    "Coming Soon...",
                   icon: "dumpster",
                 },
               ].map((item, index) => (
