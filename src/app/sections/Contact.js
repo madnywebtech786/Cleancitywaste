@@ -1,5 +1,125 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+
+const MultiSelect = ({ 
+  options, 
+  value, 
+  onChange, 
+  placeholder, 
+  name,
+  error,
+  isMulti = true
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const toggleOption = (optionValue) => {
+    if (isMulti) {
+      const newValues = value.includes(optionValue)
+        ? value.filter(v => v !== optionValue)
+        : [...value, optionValue];
+      onChange({ target: { name, value: newValues } });
+    } else {
+      onChange({ target: { name, value: optionValue } });
+      setIsOpen(false);
+    }
+  };
+
+  const removeTag = (optionValue) => {
+    const newValues = value.filter(v => v !== optionValue);
+    onChange({ target: { name, value: newValues } });
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  return (
+    <div className="relative" ref={dropdownRef}>
+      <div 
+        className={`w-full bg-gray-100/50 border ${error ? 'border-red-500' : 'border-gray-600'} rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all cursor-pointer min-h-[48px] flex flex-wrap items-center gap-2`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isMulti ? (
+          value.length === 0 ? (
+            <span className="text-primary">{placeholder}</span>
+          ) : (
+            value.map((val, index) => (
+              <span 
+                key={index} 
+                className="bg-secondary/20 text-secondary px-2 py-1 rounded-full text-sm flex items-center gap-1"
+              >
+                {val}
+                <button 
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    removeTag(val);
+                  }}
+                  className="ml-1 hover:bg-secondary/30 rounded-full w-4 h-4 flex items-center justify-center"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </span>
+            ))
+          )
+        ) : (
+          value ? (
+            <span className="text-primary">{value}</span>
+          ) : (
+            <span className="text-primary">{placeholder}</span>
+          )
+        )}
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          className={`absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-primary transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+
+      {isOpen && (
+        <div className="absolute z-10 w-full bg-white border border-gray-600 rounded-xl mt-1 max-h-60 overflow-y-auto shadow-xl">
+          {options.map((option, index) => (
+            <div
+              key={index}
+              className="flex items-center px-4 py-3 hover:bg-gray-100/50 cursor-pointer"
+              onClick={() => toggleOption(option)}
+            >
+              {isMulti ? (
+                <>
+                  <div className={`w-5 h-5 rounded border mr-3 flex items-center justify-center ${value.includes(option) ? 'bg-secondary border-secondary' : 'border-gray-400'}`}>
+                    {value.includes(option) && (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
+                  </div>
+                  <span className="text-primary">{option}</span>
+                </>
+              ) : (
+                <span className="text-primary">{option}</span>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,8 +135,8 @@ const Contact = () => {
     businessLocation: "",
     binPlacementLocation: "",
     binPlacementOther: "",
-    materialType: "",
-    binSize: "",
+    materialType: [], // Changed to array
+    binSize: [], // Changed to array
     dumpFrequency: "",
     pickupsPerWeek: "",
 
@@ -66,9 +186,10 @@ const Contact = () => {
     ) {
       newErrors.binPlacementOther = "Please specify the bin placement location";
     }
-    if (!formData.materialType)
+    if (formData.materialType.length === 0)
       newErrors.materialType = "Material type is required";
-    if (!formData.binSize) newErrors.binSize = "Bin size is required";
+    if (formData.binSize.length === 0)
+      newErrors.binSize = "Bin size is required";
     if (!formData.dumpFrequency)
       newErrors.dumpFrequency = "Dump frequency is required";
     if (!formData.pickupsPerWeek)
@@ -158,6 +279,11 @@ const Contact = () => {
           });
         } else if (key === "noExistingContract") {
           formDataToSend.append(key, formData[key].toString());
+        } else if (key === "materialType" || key === "binSize") {
+          // Append each selected value individually for arrays
+          formData[key].forEach(value => {
+            formDataToSend.append(key, value);
+          });
         } else {
           formDataToSend.append(key, formData[key]);
         }
@@ -186,8 +312,8 @@ const Contact = () => {
           businessLocation: "",
           binPlacementLocation: "",
           binPlacementOther: "",
-          materialType: "",
-          binSize: "",
+          materialType: [],
+          binSize: [],
           dumpFrequency: "",
           pickupsPerWeek: "",
           contractEndDate: "",
@@ -235,7 +361,7 @@ const Contact = () => {
   ];
 
   const binPlacementOptions = [
-    "Inclosure",
+    "Enclosure",
     "Outside",
     "Parking Lot",
     "Underground Parking Lot",
@@ -389,21 +515,15 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-primary mb-2">
                     Business Type *
                   </label>
-                  <select
+                  <MultiSelect
                     name="businessType"
+                    options={businessTypes}
                     value={formData.businessType}
                     onChange={handleChange}
-                    className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent appearance-none transition-all"
-                  >
-                    <option value="" className="text-primary">
-                      Select business type
-                    </option>
-                    {businessTypes.map((type) => (
-                      <option key={type} value={type}>
-                        {type}
-                      </option>
-                    ))}
-                  </select>
+                    placeholder="Select business type"
+                    error={errors.businessType}
+                    isMulti={false}
+                  />
                   {errors.businessType && (
                     <p className="text-red-400 text-sm mt-1">
                       {errors.businessType}
@@ -451,21 +571,15 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-primary mb-2">
                     Bin Placement Location *
                   </label>
-                  <select
+                  <MultiSelect
                     name="binPlacementLocation"
+                    options={binPlacementOptions}
                     value={formData.binPlacementLocation}
                     onChange={handleChange}
-                    className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent appearance-none transition-all"
-                  >
-                    <option value="" className="text-primary">
-                      Choose placement location
-                    </option>
-                    {binPlacementOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
+                    placeholder="Choose placement location"
+                    error={errors.binPlacementLocation}
+                    isMulti={false}
+                  />
                   {errors.binPlacementLocation && (
                     <p className="text-red-400 text-sm mt-1">
                       {errors.binPlacementLocation}
@@ -498,21 +612,15 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-primary mb-2">
                     Type of Material to Dump *
                   </label>
-                  <select
+                  <MultiSelect
                     name="materialType"
+                    options={materialTypes}
                     value={formData.materialType}
                     onChange={handleChange}
-                    className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent appearance-none transition-all"
-                  >
-                    <option value="" className="text-primary">
-                      Select material type
-                    </option>
-                    {materialTypes.map((type) => (
-                      <option key={type} value={type}>
-                        {type}
-                      </option>
-                    ))}
-                  </select>
+                    placeholder="Select material types"
+                    error={errors.materialType}
+                    isMulti={true}
+                  />
                   {errors.materialType && (
                     <p className="text-red-400 text-sm mt-1">
                       {errors.materialType}
@@ -524,21 +632,15 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-primary mb-2">
                     Bin Size Required *
                   </label>
-                  <select
+                  <MultiSelect
                     name="binSize"
+                    options={binSizes}
                     value={formData.binSize}
                     onChange={handleChange}
-                    className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent appearance-none transition-all"
-                  >
-                    <option value="" className="text-primary">
-                      Select bin size
-                    </option>
-                    {binSizes.map((size) => (
-                      <option key={size} value={size}>
-                        {size}
-                      </option>
-                    ))}
-                  </select>
+                    placeholder="Select bin sizes"
+                    error={errors.binSize}
+                    isMulti={true}
+                  />
                   {errors.binSize && (
                     <p className="text-red-400 text-sm mt-1">
                       {errors.binSize}
@@ -550,21 +652,15 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-primary mb-2">
                     How Frequently to Dump? *
                   </label>
-                  <select
+                  <MultiSelect
                     name="dumpFrequency"
+                    options={dumpFrequencies}
                     value={formData.dumpFrequency}
                     onChange={handleChange}
-                    className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent appearance-none transition-all"
-                  >
-                    <option value="" className="text-primary">
-                      Select frequency
-                    </option>
-                    {dumpFrequencies.map((freq) => (
-                      <option key={freq} value={freq}>
-                        {freq}
-                      </option>
-                    ))}
-                  </select>
+                    placeholder="Select frequency"
+                    error={errors.dumpFrequency}
+                    isMulti={false}
+                  />
                   {errors.dumpFrequency && (
                     <p className="text-red-400 text-sm mt-1">
                       {errors.dumpFrequency}
@@ -576,21 +672,15 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-primary mb-2">
                     Number of Pickups Per Week *
                   </label>
-                  <select
+                  <MultiSelect
                     name="pickupsPerWeek"
+                    options={pickupOptions}
                     value={formData.pickupsPerWeek}
                     onChange={handleChange}
-                    className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent appearance-none transition-all"
-                  >
-                    <option value="" className="text-primary">
-                      Select number of pickups
-                    </option>
-                    {pickupOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
+                    placeholder="Select number of pickups"
+                    error={errors.pickupsPerWeek}
+                    isMulti={false}
+                  />
                   {errors.pickupsPerWeek && (
                     <p className="text-red-400 text-sm mt-1">
                       {errors.pickupsPerWeek}

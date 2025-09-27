@@ -117,6 +117,12 @@ export async function POST(request) {
       console.warn('Logo file not found or could not be read:', error);
     }
 
+    // Helper function to format array values as line breaks
+    const formatArrayValue = (formData, fieldName) => {
+      const values = formData.getAll(fieldName);
+      return values.length > 0 ? values.join('<br>') : '';
+    };
+
     // Create futuristic HTML email template
     const htmlTemplate = `
     <!DOCTYPE html>
@@ -315,11 +321,11 @@ export async function POST(request) {
             </div>
             <div class="field">
               <div class="field-label">Material Type</div>
-              <div class="field-value">${formData.get("materialType")}</div>
+              <div class="field-value">${formatArrayValue(formData, "materialType")}</div>
             </div>
             <div class="field">
               <div class="field-label">Bin Size</div>
-              <div class="field-value">${formData.get("binSize")}</div>
+              <div class="field-value">${formatArrayValue(formData, "binSize")}</div>
             </div>
             <div class="field">
               <div class="field-label">Dump Frequency</div>

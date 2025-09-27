@@ -12,7 +12,7 @@ export default function Testimonials() {
           <h4 className="text-4xl lg:text-6xl font-bold">Our happy clients</h4>
         </div>
 
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
+        <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
           {[
             {
               name: "Sarah Johnson",
@@ -22,14 +22,7 @@ export default function Testimonials() {
               avatar: "https://placehold.co/100/5b9d39/white?text=SJ",
               rating: 5,
             },
-            {
-              name: "Michael Chen",
-              company: "Urban Developments Inc.",
-              content:
-                "Partnering with Clean City Waste streamlined our site cleanups across Calgary projects and helped lower disposal costs. Their roll-off dumpsters arrive on schedule and their team handles large volumes reliably and safely.",
-              avatar: "https://placehold.co/100/007994/white?text=MC",
-              rating: 5,
-            },
+           
             {
               name: "Emma Rodriguez",
               company: "Northside Property Management",
