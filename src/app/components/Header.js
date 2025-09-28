@@ -81,7 +81,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <Link href="/" className="flex-shrink-0">
             <Image
-              src={"/images/logo.png"}
+              src={"/images/logo.PNG"}
               width={120}
               height={120}
               className="w-32 lg:w-40 h-20 lg:h-24"
@@ -347,7 +347,7 @@ const Header = () => {
 
             {/* CTA at bottom of menu */}
             <div className="mt-6 px-2 flex justify-center lg:justify-start gap-4">
-              <Link href="tel:+11234567890">
+              <Link href="tel:+14034971731">
                 <div
                   onClick={closeMenu}
                   className="rounded-2xl bg-primary text-white font-semibold text-sm py-[14px] px-8 w-full text-center"
