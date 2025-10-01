@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -95,9 +96,70 @@ export const metadata = {
   category: "Business and Industrial Services",
   metadataBase: new URL("https://cleancitywaste.ca"),
 };
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords.join(", ")} />
+        <meta name="author" content={metadata.authors?.[0]?.name ?? metadata.creator} />
+        <meta name="publisher" content={metadata.publisher} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Canonical */}
+        <link rel="canonical" href={metadata.alternates?.canonical || metadata.metadataBase?.href} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content={metadata.openGraph?.type} />
+        <meta property="og:locale" content={metadata.openGraph?.locale} />
+        <meta property="og:url" content={metadata.openGraph?.url} />
+        <meta property="og:site_name" content={metadata.openGraph?.siteName} />
+        <meta property="og:title" content={metadata.openGraph?.title || metadata.title} />
+        <meta property="og:description" content={metadata.openGraph?.description || metadata.description} />
+        {metadata.openGraph?.images?.[0] && (
+          <>
+            <meta property="og:image" content={metadata.openGraph.images[0].url} />
+            {metadata.openGraph.images[0].width && (
+              <meta property="og:image:width" content={String(metadata.openGraph.images[0].width)} />
+            )}
+            {metadata.openGraph.images[0].height && (
+              <meta property="og:image:height" content={String(metadata.openGraph.images[0].height)} />
+            )}
+            <meta property="og:image:alt" content={metadata.openGraph.images[0].alt || ""} />
+          </>
+        )}
+
+        {/* Twitter */}
+        <meta name="twitter:card" content={metadata.twitter?.card} />
+        <meta name="twitter:title" content={metadata.twitter?.title || metadata.title} />
+        <meta name="twitter:description" content={metadata.twitter?.description || metadata.description} />
+        {metadata.twitter?.images?.[0] && <meta name="twitter:image" content={metadata.twitter.images[0]} />}
+        <meta name="twitter:creator" content={metadata.twitter?.creator} />
+
+        {/* Robots / Googlebot */}
+        <meta name="robots" content={metadata.robots?.index ? "index, follow" : "noindex, nofollow"} />
+        <meta
+          name="googlebot"
+          content={
+            metadata.robots?.googleBot
+              ? [
+                  metadata.robots.googleBot.index ? "index" : "noindex",
+                  metadata.robots.googleBot.follow ? "follow" : "nofollow",
+                  "max-video-preview:-1",
+                  "max-image-preview:large",
+                  "max-snippet:-1",
+                ].join(", ")
+              : "index, follow"
+          }
+        />
+
+        {/* Verification */}
+        {metadata.verification?.google && <meta name="google-site-verification" content={metadata.verification.google} />}
+        {metadata.verification?.yandex && <meta name="yandex-verification" content={metadata.verification.yandex} />}
+      </Head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-white`}
       >
