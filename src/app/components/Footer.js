@@ -42,7 +42,7 @@ const Footer = () => {
                 src={"/images/logo.png"}
                 width={150}
                 height={150}
-                className="w-full h-28 bg-white rounded-2xl"
+                className="w-2/3 mx-auto h-28 bg-white rounded-2xl"
               />
             </Link>
             <p className="text-white text-base leading-relaxed">

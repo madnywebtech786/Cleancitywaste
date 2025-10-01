@@ -22,11 +22,11 @@ export default function About() {
             Experience in Calgary Waste Management Services
           </h4>
           <p>
-            Clean City Waste provides dependable residential, commercial, and
-            industrial waste management across Calgary and surrounding
-            communities. We offer bin rentals, scheduled pickups, recycling and
-            organic-cart services designed to reduce landfill impact and keep
-            homes and businesses clean.
+            Clean City Waste brings over 10 years of experience providing
+            dependable residential, commercial, and industrial waste management
+            across Calgary and surrounding communities. We offer bin rentals,
+            scheduled pickups, recycling, and organic-cart services designed to
+            reduce landfill impact and keep homes and businesses clean.
           </p>
 
           <div className="flex gap-5">

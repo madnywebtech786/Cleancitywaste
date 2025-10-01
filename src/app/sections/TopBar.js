@@ -20,7 +20,9 @@ export default function TopBar() {
         </div>
       </div>
       <div className="w-1/3 text-xs lg:text-sm hidden lg:flex justify-center font-bold">
-        <p>Locally Owned and Operated</p>
+        <marquee>
+          <p><span className="mr-20">Locally Owned and Operated </span> <span className="mr-20">Locally Owned and Operated </span> <span>Locally Owned and Operated </span> </p>
+        </marquee>
       </div>
       <div className="w-1/3 hidden md:flex justify-end">
         <div className="flex items-center space-x-4">

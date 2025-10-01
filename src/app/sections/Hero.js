@@ -34,7 +34,7 @@ const Hero = () => {
           >
             <div className="w-full lg:w-1/2 flex flex-col text-left justify-center gap-3 ">
               <p className="text-white text-sm lg:text-base font-semibold flex items-center gap-2">
-                PROFESSIONAL WASTE MANAGEMENT & RECYCLING SERVICES
+                LOCALLY OWNED AND OPERATED
               </p>
 
               <h2 className="text-white text-4xl lg:text-6xl font-bold text-left">
