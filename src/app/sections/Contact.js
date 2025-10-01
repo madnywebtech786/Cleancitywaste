@@ -1,14 +1,15 @@
 "use client";
+import { Trash } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
 
-const MultiSelect = ({ 
-  options, 
-  value, 
-  onChange, 
-  placeholder, 
+const MultiSelect = ({
+  options,
+  value,
+  onChange,
+  placeholder,
   name,
   error,
-  isMulti = true
+  isMulti = true,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -16,7 +17,7 @@ const MultiSelect = ({
   const toggleOption = (optionValue) => {
     if (isMulti) {
       const newValues = value.includes(optionValue)
-        ? value.filter(v => v !== optionValue)
+        ? value.filter((v) => v !== optionValue)
         : [...value, optionValue];
       onChange({ target: { name, value: newValues } });
     } else {
@@ -26,7 +27,7 @@ const MultiSelect = ({
   };
 
   const removeTag = (optionValue) => {
-    const newValues = value.filter(v => v !== optionValue);
+    const newValues = value.filter((v) => v !== optionValue);
     onChange({ target: { name, value: newValues } });
   };
 
@@ -38,14 +39,16 @@ const MultiSelect = ({
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
     <div className="relative" ref={dropdownRef}>
-      <div 
-        className={`w-full bg-gray-100/50 border ${error ? 'border-red-500' : 'border-gray-600'} rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all cursor-pointer min-h-[48px] flex flex-wrap items-center gap-2`}
+      <div
+        className={`w-full bg-gray-100/50 border ${
+          error ? "border-red-500" : "border-gray-600"
+        } rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all cursor-pointer min-h-[48px] flex flex-wrap items-center gap-2`}
         onClick={() => setIsOpen(!isOpen)}
       >
         {isMulti ? (
@@ -53,12 +56,12 @@ const MultiSelect = ({
             <span className="text-primary">{placeholder}</span>
           ) : (
             value.map((val, index) => (
-              <span 
-                key={index} 
+              <span
+                key={index}
                 className="bg-secondary/20 text-secondary px-2 py-1 rounded-full text-sm flex items-center gap-1"
               >
                 {val}
-                <button 
+                <button
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
@@ -66,28 +69,44 @@ const MultiSelect = ({
                   }}
                   className="ml-1 hover:bg-secondary/30 rounded-full w-4 h-4 flex items-center justify-center"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-3 w-3"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 </button>
               </span>
             ))
           )
+        ) : value ? (
+          <span className="text-primary">{value}</span>
         ) : (
-          value ? (
-            <span className="text-primary">{value}</span>
-          ) : (
-            <span className="text-primary">{placeholder}</span>
-          )
+          <span className="text-primary">{placeholder}</span>
         )}
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className={`absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-primary transition-transform ${isOpen ? 'rotate-180' : ''}`}
-          fill="none" 
-          viewBox="0 0 24 24" 
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={`absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-primary transition-transform ${
+            isOpen ? "rotate-180" : ""
+          }`}
+          fill="none"
+          viewBox="0 0 24 24"
           stroke="currentColor"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
         </svg>
       </div>
 
@@ -99,20 +118,56 @@ const MultiSelect = ({
               className="flex items-center px-4 py-3 hover:bg-gray-100/50 cursor-pointer"
               onClick={() => toggleOption(option)}
             >
-              {isMulti ? (
-                <>
-                  <div className={`w-5 h-5 rounded border mr-3 flex items-center justify-center ${value.includes(option) ? 'bg-secondary border-secondary' : 'border-gray-400'}`}>
-                    {value.includes(option) && (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    )}
-                  </div>
-                  <span className="text-primary">{option}</span>
-                </>
-              ) : (
-                <span className="text-primary">{option}</span>
+              {!isMulti && (
+                <div
+                  className={`w-5 h-5 rounded mr-3 flex items-center justify-center`}
+                >
+                  {/* marker for selected single option */}
+                  {value === option && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 text-secondary"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  )}
+                </div>
               )}
+              {isMulti && (
+                <div
+                  className={`w-5 h-5 rounded border mr-3 flex items-center justify-center ${
+                    value.includes(option)
+                      ? "bg-secondary border-secondary"
+                      : "border-gray-400"
+                  }`}
+                >
+                  {value.includes(option) && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  )}
+                </div>
+              )}
+              <span className="text-primary">{option}</span>
             </div>
           ))}
         </div>
@@ -133,12 +188,9 @@ const Contact = () => {
     businessType: "",
     businessName: "",
     businessLocation: "",
-    binPlacementLocation: "",
-    binPlacementOther: "",
-    materialType: [], // Changed to array
-    binSize: [], // Changed to array
-    dumpFrequency: "",
-    pickupsPerWeek: "",
+    // Removed legacy materialType/binSize/dumpFrequency/pickupsPerWeek from top-level
+    // Bin details will be added to `bins` array
+    bins: [],
 
     // Current Contract Information
     contractEndDate: "",
@@ -148,6 +200,17 @@ const Contact = () => {
     files: [],
   });
 
+  // Current bin input values (separate from the list)
+  const [currentBin, setCurrentBin] = useState({
+    materialType: "",
+    binSize: "",
+    numberOfBins: 1,
+    binPlacementLocation: "",
+    dumpFrequency: "",
+    pickupsPerWeek: "",
+  });
+
+  const [binErrors, setBinErrors] = useState({});
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState({ type: "", message: "" });
@@ -178,22 +241,12 @@ const Contact = () => {
       newErrors.businessName = "Business name is required";
     if (!formData.businessLocation.trim())
       newErrors.businessLocation = "Business location is required";
-    if (!formData.binPlacementLocation)
-      newErrors.binPlacementLocation = "Bin placement location is required";
-    if (
-      formData.binPlacementLocation === "Other" &&
-      !formData.binPlacementOther.trim()
-    ) {
-      newErrors.binPlacementOther = "Please specify the bin placement location";
-    }
-    if (formData.materialType.length === 0)
-      newErrors.materialType = "Material type is required";
-    if (formData.binSize.length === 0)
-      newErrors.binSize = "Bin size is required";
-    if (!formData.dumpFrequency)
-      newErrors.dumpFrequency = "Dump frequency is required";
-    if (!formData.pickupsPerWeek)
-      newErrors.pickupsPerWeek = "Number of pickups is required";
+
+    // IMPORTANT: do NOT validate the CURRENT BIN INPUTS here.
+    // Only require that at least one bin info entry exists in `formData.bins`.
+    // Per-bin field validation happens only when user clicks "Add More" (validateCurrentBin).
+    if (!formData.bins || formData.bins.length === 0)
+      newErrors.bins = "Please add at least one bin information";
 
     // Current Contract Information
     if (!formData.noExistingContract && !formData.contractEndDate) {
@@ -235,6 +288,73 @@ const Contact = () => {
         [name]: "",
       }));
     }
+  };
+
+  const handleCurrentBinChange = (e) => {
+    const { name, value, type } = e.target;
+    const v =
+      type === "number" ? (value === "" ? "" : parseInt(value, 10)) : value;
+    setCurrentBin((prev) => ({
+      ...prev,
+      [name]: v,
+    }));
+
+    if (binErrors[name]) {
+      setBinErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
+  };
+
+  const validateCurrentBin = () => {
+    const be = {};
+    if (!currentBin.materialType) be.materialType = "Material type is required";
+    if (!currentBin.binSize) be.binSize = "Bin size is required";
+    if (!currentBin.numberOfBins || currentBin.numberOfBins < 1)
+      be.numberOfBins = "Enter number of bins (min 1)";
+    if (!currentBin.binPlacementLocation)
+      be.binPlacementLocation = "Bin placement location is required";
+    if (!currentBin.dumpFrequency)
+      be.dumpFrequency = "Dump frequency is required";
+    if (!currentBin.pickupsPerWeek)
+      be.pickupsPerWeek = "Number of pickups is required";
+    setBinErrors(be);
+    return Object.keys(be).length === 0;
+  };
+
+  const addBin = () => {
+    if (!validateCurrentBin()) return;
+
+    setFormData((prev) => ({
+      ...prev,
+      bins: [...prev.bins, { ...currentBin }],
+    }));
+
+    // reset current bin to defaults
+    setCurrentBin({
+      materialType: "",
+      binSize: "",
+      numberOfBins: 1,
+      binPlacementLocation: "",
+      dumpFrequency: "",
+      pickupsPerWeek: "",
+    });
+
+    setBinErrors({});
+    // also clear general bins error if any
+    setErrors((prev) => {
+      const copy = { ...prev };
+      delete copy.bins;
+      return copy;
+    });
+  };
+
+  const removeBin = (indexToRemove) => {
+    setFormData((prev) => ({
+      ...prev,
+      bins: prev.bins.filter((_, i) => i !== indexToRemove),
+    }));
   };
 
   const handleFileChange = (e) => {
@@ -279,10 +399,10 @@ const Contact = () => {
           });
         } else if (key === "noExistingContract") {
           formDataToSend.append(key, formData[key].toString());
-        } else if (key === "materialType" || key === "binSize") {
-          // Append each selected value individually for arrays
-          formData[key].forEach(value => {
-            formDataToSend.append(key, value);
+        } else if (key === "bins") {
+          // append each bin as JSON string so backend can parse
+          formData.bins.forEach((bin) => {
+            formDataToSend.append("bins", JSON.stringify(bin));
           });
         } else {
           formDataToSend.append(key, formData[key]);
@@ -310,15 +430,18 @@ const Contact = () => {
           businessType: "",
           businessName: "",
           businessLocation: "",
-          binPlacementLocation: "",
-          binPlacementOther: "",
-          materialType: [],
-          binSize: [],
-          dumpFrequency: "",
-          pickupsPerWeek: "",
+          bins: [],
           contractEndDate: "",
           noExistingContract: false,
           files: [],
+        });
+        setCurrentBin({
+          materialType: "",
+          binSize: "",
+          numberOfBins: 1,
+          binPlacementLocation: "",
+          dumpFrequency: "",
+          pickupsPerWeek: "",
         });
         if (fileInputRef.current) {
           fileInputRef.current.value = "";
@@ -368,7 +491,7 @@ const Contact = () => {
     "Other",
   ];
 
-  const materialTypes = ["Trash", "Recycle", "Organic"];
+  const materialTypes = ["Waste", "Recycle", "Organic"];
   const binSizes = ["4 Yard", "6 Yard", "8 Yard"];
   const dumpFrequencies = ["Weekly", "Bi-Weekly"];
   const pickupOptions = [
@@ -396,7 +519,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="bg-gray-50 backdrop-blur-xl rounded-3xl border border-gray-700/50 p-8 md:p-12">
+        <div className="bg-gray-50 backdrop-blur-xl rounded-3xl border border-gray-700/50 p-6 md:p-12">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Personal Information */}
             <div className="bg-white rounded-2xl p-6 shadow-xl">
@@ -566,7 +689,100 @@ const Contact = () => {
                     </p>
                   )}
                 </div>
+              </div>
+            </div>
 
+            {/* Bin Information (NEW) */}
+            <div className="bg-white rounded-2xl p-6 shadow-xl">
+              <h3 className="text-2xl font-semibold mb-6 text-secondary flex items-center">
+                <Trash size={22} className="mr-2" />
+                Bin Information
+              </h3>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Material to Dump (single select) */}
+                <div>
+                  <label className="block text-sm font-medium text-primary mb-2">
+                    Material to Dump *
+                  </label>
+                  <MultiSelect
+                    name="materialType"
+                    options={materialTypes}
+                    value={currentBin.materialType}
+                    onChange={(e) => {
+                      // MultiSelect returns { target: { name, value } }
+                      const { name, value } = e.target;
+                      setCurrentBin((prev) => ({ ...prev, [name]: value }));
+                      if (binErrors.materialType)
+                        setBinErrors((b) => ({ ...b, materialType: "" }));
+                    }}
+                    placeholder="Select material type"
+                    error={binErrors.materialType}
+                    isMulti={false}
+                  />
+                  {binErrors.materialType && (
+                    <p className="text-red-400 text-sm mt-1">
+                      {binErrors.materialType}
+                    </p>
+                  )}
+                </div>
+
+                {/* Bin Size (single select) */}
+                <div>
+                  <label className="block text-sm font-medium text-primary mb-2">
+                    Bin Size *
+                  </label>
+                  <MultiSelect
+                    name="binSize"
+                    options={binSizes}
+                    value={currentBin.binSize}
+                    onChange={(e) => {
+                      const { name, value } = e.target;
+                      setCurrentBin((prev) => ({ ...prev, [name]: value }));
+                      if (binErrors.binSize)
+                        setBinErrors((b) => ({ ...b, binSize: "" }));
+                    }}
+                    placeholder="Select bin size"
+                    error={binErrors.binSize}
+                    isMulti={false}
+                  />
+                  {binErrors.binSize && (
+                    <p className="text-red-400 text-sm mt-1">
+                      {binErrors.binSize}
+                    </p>
+                  )}
+                </div>
+
+                {/* Number of Bins (number input) */}
+                <div>
+                  <label className="block text-sm font-medium text-primary mb-2">
+                    Number of Bins *
+                  </label>
+                  <input
+                    type="number"
+                    name="numberOfBins"
+                    value={currentBin.numberOfBins}
+                    min={1}
+                    max={20}
+                    onChange={(e) =>
+                      handleCurrentBinChange({
+                        target: {
+                          name: "numberOfBins",
+                          value: e.target.value,
+                          type: "number",
+                        },
+                      })
+                    }
+                    className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
+                  />
+                  {binErrors.numberOfBins && (
+                    <p className="text-red-400 text-sm mt-1">
+                      {binErrors.numberOfBins}
+                    </p>
+                  )}
+                </div>
+
+                {/* Bin Placement Location (single select) */}
                 <div>
                   <label className="block text-sm font-medium text-primary mb-2">
                     Bin Placement Location *
@@ -574,80 +790,28 @@ const Contact = () => {
                   <MultiSelect
                     name="binPlacementLocation"
                     options={binPlacementOptions}
-                    value={formData.binPlacementLocation}
-                    onChange={handleChange}
+                    value={currentBin.binPlacementLocation}
+                    onChange={(e) => {
+                      const { name, value } = e.target;
+                      setCurrentBin((prev) => ({ ...prev, [name]: value }));
+                      if (binErrors.binPlacementLocation)
+                        setBinErrors((b) => ({
+                          ...b,
+                          binPlacementLocation: "",
+                        }));
+                    }}
                     placeholder="Choose placement location"
-                    error={errors.binPlacementLocation}
+                    error={binErrors.binPlacementLocation}
                     isMulti={false}
                   />
-                  {errors.binPlacementLocation && (
+                  {binErrors.binPlacementLocation && (
                     <p className="text-red-400 text-sm mt-1">
-                      {errors.binPlacementLocation}
+                      {binErrors.binPlacementLocation}
                     </p>
                   )}
                 </div>
 
-                {formData.binPlacementLocation === "Other" && (
-                  <div>
-                    <label className="block text-sm font-medium text-primary mb-2">
-                      Specify Location
-                    </label>
-                    <input
-                      type="text"
-                      name="binPlacementOther"
-                      value={formData.binPlacementOther}
-                      onChange={handleChange}
-                      className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
-                      placeholder="Please specify the exact location"
-                    />
-                    {errors.binPlacementOther && (
-                      <p className="text-red-400 text-sm mt-1">
-                        {errors.binPlacementOther}
-                      </p>
-                    )}
-                  </div>
-                )}
-
-                <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
-                    Type of Material to Dump *
-                  </label>
-                  <MultiSelect
-                    name="materialType"
-                    options={materialTypes}
-                    value={formData.materialType}
-                    onChange={handleChange}
-                    placeholder="Select material types"
-                    error={errors.materialType}
-                    isMulti={true}
-                  />
-                  {errors.materialType && (
-                    <p className="text-red-400 text-sm mt-1">
-                      {errors.materialType}
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
-                    Bin Size Required *
-                  </label>
-                  <MultiSelect
-                    name="binSize"
-                    options={binSizes}
-                    value={formData.binSize}
-                    onChange={handleChange}
-                    placeholder="Select bin sizes"
-                    error={errors.binSize}
-                    isMulti={true}
-                  />
-                  {errors.binSize && (
-                    <p className="text-red-400 text-sm mt-1">
-                      {errors.binSize}
-                    </p>
-                  )}
-                </div>
-
+                {/* How Frequently to Dump? (single select) */}
                 <div>
                   <label className="block text-sm font-medium text-primary mb-2">
                     How Frequently to Dump? *
@@ -655,19 +819,25 @@ const Contact = () => {
                   <MultiSelect
                     name="dumpFrequency"
                     options={dumpFrequencies}
-                    value={formData.dumpFrequency}
-                    onChange={handleChange}
+                    value={currentBin.dumpFrequency}
+                    onChange={(e) => {
+                      const { name, value } = e.target;
+                      setCurrentBin((prev) => ({ ...prev, [name]: value }));
+                      if (binErrors.dumpFrequency)
+                        setBinErrors((b) => ({ ...b, dumpFrequency: "" }));
+                    }}
                     placeholder="Select frequency"
-                    error={errors.dumpFrequency}
+                    error={binErrors.dumpFrequency}
                     isMulti={false}
                   />
-                  {errors.dumpFrequency && (
+                  {binErrors.dumpFrequency && (
                     <p className="text-red-400 text-sm mt-1">
-                      {errors.dumpFrequency}
+                      {binErrors.dumpFrequency}
                     </p>
                   )}
                 </div>
 
+                {/* Number of Pickups Per Week (single select) */}
                 <div>
                   <label className="block text-sm font-medium text-primary mb-2">
                     Number of Pickups Per Week *
@@ -675,19 +845,95 @@ const Contact = () => {
                   <MultiSelect
                     name="pickupsPerWeek"
                     options={pickupOptions}
-                    value={formData.pickupsPerWeek}
-                    onChange={handleChange}
+                    value={currentBin.pickupsPerWeek}
+                    onChange={(e) => {
+                      const { name, value } = e.target;
+                      setCurrentBin((prev) => ({ ...prev, [name]: value }));
+                      if (binErrors.pickupsPerWeek)
+                        setBinErrors((b) => ({ ...b, pickupsPerWeek: "" }));
+                    }}
                     placeholder="Select number of pickups"
-                    error={errors.pickupsPerWeek}
+                    error={binErrors.pickupsPerWeek}
                     isMulti={false}
                   />
-                  {errors.pickupsPerWeek && (
+                  {binErrors.pickupsPerWeek && (
                     <p className="text-red-400 text-sm mt-1">
-                      {errors.pickupsPerWeek}
+                      {binErrors.pickupsPerWeek}
                     </p>
                   )}
                 </div>
               </div>
+
+              <div className="mt-6 flex gap-4 items-center">
+                <button
+                  type="button"
+                  onClick={addBin}
+                  className="bg-gradient-to-r from-[#5b9d39] to-secondary text-white px-6 py-2 rounded-full font-semibold"
+                >
+                  Add More
+                </button>
+                {errors.bins && (
+                  <p className="text-red-400 text-sm">{errors.bins}</p>
+                )}
+              </div>
+
+              {/* Added bins list */}
+              {formData.bins.length > 0 && (
+                <div className="mt-6 grid gap-4">
+                  {formData.bins.map((b, i) => (
+                    <div
+                      key={i}
+                      className="p-4 rounded-lg bg-gray-100/60 border border-gray-300 flex flex-col md:flex-row justify-between items-start gap-6"
+                    >
+                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 w-full md:w-10/12">
+                        <div className="flex flex-col gap-1">
+                          <div className="text-sm text-gray-600">Material</div>
+                          <div className="font-medium">{b.materialType}</div>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <div className="text-sm text-gray-600 ">Bin Size</div>
+                          <div className="font-medium">{b.binSize}</div>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <div className="text-sm text-gray-600 ">
+                            Number of Bins
+                          </div>
+                          <div className="font-medium">{b.numberOfBins}</div>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <div className="text-sm text-gray-600 ">
+                            Placement
+                          </div>
+                          <div className="font-medium">
+                            {b.binPlacementLocation}
+                          </div>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <div className="text-sm text-gray-600 ">
+                            Dump Frequency
+                          </div>
+                          <div className="font-medium">{b.dumpFrequency}</div>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <div className="text-sm text-gray-600 ">
+                            Pickups / Week
+                          </div>
+                          <div className="font-medium">{b.pickupsPerWeek}</div>
+                        </div>
+                      </div>
+                      <div className="flex md:justify-end w-full md:w-2/12">
+                        <button
+                          type="button"
+                          onClick={() => removeBin(i)}
+                          className="text-white bg-red-600 p-2 rounded-xl"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Current Contract Information */}
@@ -861,6 +1107,7 @@ const Contact = () => {
                 )}
               </div>
             </div>
+
             {submitMessage.message && (
               <div
                 className={`mb-6 p-4 rounded-xl text-center ${
@@ -872,6 +1119,7 @@ const Contact = () => {
                 {submitMessage.message}
               </div>
             )}
+
             {/* Submit Button */}
             <div className="text-center pt-6">
               <button

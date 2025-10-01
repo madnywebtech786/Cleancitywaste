@@ -34,11 +34,11 @@ const Hero = () => {
           >
             <div className="w-full lg:w-1/2 flex flex-col text-left justify-center gap-3 ">
               <p className="text-white text-sm lg:text-base font-semibold flex items-center gap-2">
-                LOCALLY OWNED AND OPERATED
+                PROFESSIONAL WASTE MANAGEMENT & RECYCLING SERVICES
               </p>
 
               <h2 className="text-white text-4xl lg:text-6xl font-bold text-left">
-                KEEP YOUR SITE CLEAN & COMPLIANT
+                LOCALLY OWNED AND OPERATED
               </h2>
               <p className="text-white mt-4 max-w-lg text-left">
                 We provide reliable commercial and residential waste collection,

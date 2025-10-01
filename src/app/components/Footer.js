@@ -39,7 +39,7 @@ const Footer = () => {
               className="inline-flex items-center justify-center w-full space-x-2 rounded-2xl mb-0"
             >
               <Image
-                src={"/images/logo.png"}
+                src={"/images/logo.PNG"}
                 width={150}
                 height={150}
                 className="w-2/3 mx-auto h-28 bg-white rounded-2xl"
