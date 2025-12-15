@@ -276,7 +276,7 @@ export async function POST(request) {
           transform: translateX(-50%);
           width: 100px;
           height: 3px;
-          background: linear-gradient(90deg, #5b9d39, #007994);
+          background: linear-gradient(90deg, #ffa500, #007994);
           border-radius: 2px;
           box-shadow: 0 6px 20px rgba(0,121,148,0.18);
         }
@@ -406,7 +406,7 @@ export async function POST(request) {
       <div class="container">
         <div class="header">
           <div class="header-logo">
-            ${logoAttachment ? `<img src="cid:${logoCid}" alt="Clean City Waste Logo">` : '<div class="logo">Clean City Waste</div>'}
+            ${logoAttachment ? `<img src="cid:${logoCid}" alt="Waste Plus Inc Logo">` : '<div class="logo">Waste Plus Inc</div>'}
           </div>
           <div class="subtitle">New Contact Form Submission</div>
         </div>
@@ -526,7 +526,7 @@ export async function POST(request) {
     const mailOptions = {
       from: process.env.GMAIL_USER,
       to: 'info@cleancitywaste.ca',
-      subject: "New Contact Form Submission - Clean City Waste",
+      subject: "New Contact Form Submission - Waste Plus Inc",
       html: htmlTemplate,
       attachments: attachments,
     };

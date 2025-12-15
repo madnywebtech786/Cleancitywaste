@@ -7,8 +7,8 @@ const servicesData = {
   "residential-services": {
     title: "Residential Waste Services",
     paragraphs: [
-      "At Clean City Waste, we provide reliable residential waste management in Calgary, helping homeowners keep their spaces clean, safe, and environmentally friendly. Our services include 64-gallon organic carts for yard and food waste along with 4-yard, 6-yard, and 8-yard bins for waste and recycling. Whether you live in a townhouse, or multi-unit complex, we offer flexible pickup schedules designed to make waste disposal simple and convenient. With our eco-friendly practices, you can rest assured your waste is being handled responsibly while reducing the impact on landfills.",
-      "As a locally owned Calgary waste company, we are committed to delivering dependable service with a personal touch. Our residential garbage pickup and recycling services are tailored to fit seamlessly into your daily routine, keeping your home and neighborhood cleaner and greener. From everyday household waste to large cleanup projects, Clean City Waste is your trusted partner for hassle-free waste management. Contact us today for affordable bin rentals and residential waste collection in Calgary.",
+      "At Waste Plus Inc, we provide reliable residential waste management in Calgary, helping homeowners keep their spaces clean, safe, and environmentally friendly. Our services include 64-gallon organic carts for yard and food waste along with 4-yard, 6-yard, and 8-yard bins for waste and recycling. Whether you live in a townhouse, or multi-unit complex, we offer flexible pickup schedules designed to make waste disposal simple and convenient. With our eco-friendly practices, you can rest assured your waste is being handled responsibly while reducing the impact on landfills.",
+      "As a locally owned Calgary waste company, we are committed to delivering dependable service with a personal touch. Our residential garbage pickup and recycling services are tailored to fit seamlessly into your daily routine, keeping your home and neighborhood cleaner and greener. From everyday household waste to large cleanup projects, Waste Plus Inc is your trusted partner for hassle-free waste management. Contact us today for affordable bin rentals and residential waste collection in Calgary.",
     ],
     areas: [
       "Townhouses & duplexes",
@@ -21,7 +21,7 @@ const servicesData = {
   "commercial-services": {
     title: "Commercial Waste Services",
     paragraphs: [
-      "Managing waste is critical for any business, and Clean City Waste provides trusted commercial waste management services in Calgary. We offer 4-yard, 6-yard, and 8-yard bins to handle everything from daily garbage and cardboard recycling to food and organic waste. Whether you’re running a restaurant, retail store, office, or healthcare clinic, our customized waste solutions ensure your operations stay clean, compliant, and efficient.",
+      "Managing waste is critical for any business, and Waste Plus Inc provides trusted commercial waste management services in Calgary. We offer 4-yard, 6-yard, and 8-yard bins to handle everything from daily garbage and cardboard recycling to food and organic waste. Whether you’re running a restaurant, retail store, office, or healthcare clinic, our customized waste solutions ensure your operations stay clean, compliant, and efficient.",
       "Our team understands that reliability matters to businesses. That’s why we provide scheduled garbage pickup, flexible bin rentals, and responsive customer support so you never have to worry about missed collections or overflowing bins. As a Calgary-owned and operated waste management company, we take pride in supporting local businesses with professional, affordable, and eco-conscious services. Get in touch today to book commercial garbage pickup and recycling services in Calgary.",
     ],
     areas: [
@@ -36,8 +36,8 @@ const servicesData = {
   "industrial-services": {
     title: "Industrial Waste Services",
     paragraphs: [
-      "For large-scale operations, you need heavy-duty waste solutions you can count on. Clean City Waste provides industrial waste management services in Calgary with 4-yard, 6-yard, and 8-yard bins designed for construction sites, manufacturing plants, and warehouses. From demolition debris to recycling and organic waste, our services keep your project site clean, safe, and compliant with local regulations.",
-      "We specialize in industrial garbage pickup and bin rentals tailored to your project’s needs, ensuring efficiency and reliability at every step. With timely pickups, large container options, and eco-friendly disposal methods, Clean City Waste is the partner Calgary industries trust. Our focus on safety, professionalism, and sustainability makes us the right choice for businesses managing high volumes of waste. Contact us today for dependable industrial waste management and bin rental services in Calgary.",
+      "For large-scale operations, you need heavy-duty waste solutions you can count on. Waste Plus Inc provides industrial waste management services in Calgary with 4-yard, 6-yard, and 8-yard bins designed for construction sites, manufacturing plants, and warehouses. From demolition debris to recycling and organic waste, our services keep your project site clean, safe, and compliant with local regulations.",
+      "We specialize in industrial garbage pickup and bin rentals tailored to your project’s needs, ensuring efficiency and reliability at every step. With timely pickups, large container options, and eco-friendly disposal methods, Waste Plus Inc is the partner Calgary industries trust. Our focus on safety, professionalism, and sustainability makes us the right choice for businesses managing high volumes of waste. Contact us today for dependable industrial waste management and bin rental services in Calgary.",
     ],
     areas: [
       "Construction & demolition sites",
@@ -74,11 +74,11 @@ export default function ServicePage({ params }) {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-secondary/70 bg-clip-text text-transparent">
                 {service.title}
               </span>
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary/70 mx-auto rounded-full"></div>
           </div>
 
           {/* Main Content */}
@@ -94,7 +94,7 @@ export default function ServicePage({ params }) {
 
               <div className="mt-12">
                 <Link href={'/contact'} >
-                <button className=" cursor-pointer bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform">
+                <button className=" cursor-pointer bg-gradient-to-r from-primary to-secondary/70 px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform">
                   Contact Now
                 </button>
                 </Link>
@@ -102,8 +102,8 @@ export default function ServicePage({ params }) {
             </div>
 
             <div className="order-1 lg:order-2 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-3xl blur-3xl -z-10"></div>
-              <div className="relative bg-gradient-to-r from-primary to-secondary backdrop-blur-sm rounded-3xl p-1 border border-gray-700">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary/70 rounded-3xl blur-3xl -z-10"></div>
+              <div className="relative bg-gradient-to-r from-primary to-secondary/70 backdrop-blur-sm rounded-3xl p-1 border border-gray-700">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -118,7 +118,7 @@ export default function ServicePage({ params }) {
           {/* Areas We Serve */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-secondary/70 bg-clip-text text-transparent">
                 Industries/Areas We Serve
               </span>
             </h2>

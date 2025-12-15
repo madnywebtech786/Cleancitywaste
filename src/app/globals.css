@@ -13,8 +13,8 @@
 }
 
 @theme{
-  --color-primary:#5b9d39;
-  --color-secondary:#007994;
+  --color-primary:#ffa500;
+  --color-secondary:#000000;
   --color-accent:#fdef04;
   --color-background:#33230c;
 
@@ -31,3 +31,4 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+

@@ -15,14 +15,14 @@ export default function About() {
 
       <div className="w-full lg:w-1/2 relative z-10 ">
         <div className="flex flex-col gap-4">
-          <h3 className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-2xl font-bold">
+          <h3 className="bg-gradient-to-r from-primary to-secondary/70 bg-clip-text text-transparent text-2xl font-bold">
             About Us
           </h3>
           <h4 className="text-4xl lg:text-5xl font-bold">
             10 Years Experience in Calgary Waste Management Services
           </h4>
           <p>
-            Clean City Waste provides dependable residential, commercial, and
+            Waste Plus Inc provides dependable residential, commercial, and
             industrial waste management across Calgary and surrounding
             communities. We offer bin rentals, scheduled pickups, recycling and
             organic-cart services designed to reduce landfill impact and keep

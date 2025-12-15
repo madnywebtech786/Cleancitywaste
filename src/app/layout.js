@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title:
-    "Clean City Waste | Calgary's #1 Waste Management & Bin Rental Service",
+    "Waste Plus Inc | Calgary's #1 Waste Management & Bin Rental Service",
   description:
     "Professional residential, commercial & industrial waste management in Calgary. Reliable bin rentals, scheduled pickups, recycling & organic services. Serving Calgary & surrounding areas since 2009.",
   keywords: [
@@ -42,9 +42,9 @@ export const metadata = {
     "eco-friendly waste disposal Calgary",
     "Calgary recycling company",
   ],
-  authors: [{ name: "Clean City Waste" }],
-  creator: "Clean City Waste",
-  publisher: "Clean City Waste",
+  authors: [{ name: "Waste Plus Inc" }],
+  creator: "Waste Plus Inc",
+  publisher: "Waste Plus Inc",
   formatDetection: {
     email: false,
     address: false,
@@ -53,26 +53,26 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://cleancitywaste.ca",
-    siteName: "Clean City Waste",
-    title: "Clean City Waste | Calgary's Premier Waste Management Service",
+    url: "https://wasteplus.ca",
+    siteName: "Waste Plus Inc",
+    title: "Waste Plus Inc | Calgary's Premier Waste Management Service",
     description:
       "Trusted residential, commercial & industrial waste management services in Calgary. Professional bin rentals, reliable pickups, and eco-friendly disposal solutions.",
     images: [
       {
-        url: "https://cleancitywaste.ca/images/og-image.jpg",
+        url: "https://wasteplus.ca/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Clean City Waste - Professional Waste Management Services in Calgary",
+        alt: "Waste Plus Inc - Professional Waste Management Services in Calgary",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Clean City Waste | Calgary's #1 Waste Management Service",
+    title: "Waste Plus Inc | Calgary's #1 Waste Management Service",
     description:
       "Reliable residential, commercial & industrial waste management in Calgary. Bin rentals, scheduled pickups & recycling services.",
-    images: ["https://cleancitywaste.ca/images/og-image.jpg"],
+    images: ["https://wasteplus.ca/images/og-image.jpg"],
     creator: "@CleanCityWaste",
   },
   robots: {
@@ -91,10 +91,10 @@ export const metadata = {
     yandex: "your-yandex-verification-code",
   },
   alternates: {
-    canonical: "https://cleancitywaste.ca",
+    canonical: "https://wasteplus.ca",
   },
   category: "Business and Industrial Services",
-  metadataBase: new URL("https://cleancitywaste.ca"),
+  metadataBase: new URL("https://wasteplus.ca"),
 };
 
 export default function RootLayout({ children }) {

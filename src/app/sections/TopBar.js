@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 export default function TopBar() {
   return (
-    <div className="w-full py-3 px-4 md:px-8 lg:px-12 2xl:px-20 flex bg-gradient-3 text-white  bg-gradient-to-r from-primary to-secondary">
+    <div className="w-full py-3 px-4 md:px-8 lg:px-12 2xl:px-20 flex bg-gradient-3 text-white  bg-gradient-to-r from-primary to-secondary/70">
       <div className="w-full lg:w-1/3 flex justify-between md:justify-start md:gap-5 items-center">
         <div className="flex gap-2 items-center">
           <Send size={20} className="text-white" />

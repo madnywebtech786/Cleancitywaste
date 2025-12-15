@@ -6,7 +6,7 @@ export default function Testimonials() {
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 -z-10"></div>
       <div className="max-w-7xl mx-auto">
         <div className="text-center w-full lg:w-1/2 mx-auto">
-          <h3 className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-2xl font-bold mb-2">
+          <h3 className="bg-gradient-to-r from-primary to-secondary/70 bg-clip-text text-transparent text-2xl font-bold mb-2">
             Testimonials
           </h3>
           <h4 className="text-4xl lg:text-6xl font-bold">Our happy clients</h4>
@@ -18,7 +18,7 @@ export default function Testimonials() {
               name: "Sarah Johnson",
               company: "GreenLeaf Café",
               content:
-                "Clean City Waste’s organic pickup made managing our cafe’s food waste effortless  within three months we increased composting and cut landfill waste by over 30%. Their drivers are punctual and the service is consistently professional.",
+                "Waste Plus Inc’s organic pickup made managing our cafe’s food waste effortless  within three months we increased composting and cut landfill waste by over 30%. Their drivers are punctual and the service is consistently professional.",
               avatar: "https://placehold.co/100/5b9d39/white?text=SJ",
               rating: 5,
             },
@@ -27,7 +27,7 @@ export default function Testimonials() {
               name: "Emma Rodriguez",
               company: "Northside Property Management",
               content:
-                "We switched to Clean City Waste for tenant waste and recycling services  the tailored bin program improved recycling rates and reduced hauling fees. Their responsive support and clear guidance made the transition effortless.",
+                "We switched to Waste Plus Inc for tenant waste and recycling services  the tailored bin program improved recycling rates and reduced hauling fees. Their responsive support and clear guidance made the transition effortless.",
               avatar: "https://placehold.co/100/5b9d39/white?text=ER",
               rating: 5,
             },

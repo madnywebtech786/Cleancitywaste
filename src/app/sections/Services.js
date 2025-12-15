@@ -7,7 +7,7 @@ export default function Services() {
   return (
     <div className="py-16 px-4 sm:px-8 md:px-12 lg:px-20 bg-primary/10 dark:!bg-primary/10 dark:text-black">
       <div className="text-center w-full lg:w-1/2 mx-auto">
-        <h3 className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-2xl font-bold mb-2">
+        <h3 className="bg-gradient-to-r from-primary to-secondary/70 bg-clip-text text-transparent text-2xl font-bold mb-2">
           Waste Management Services
         </h3>
         <h4 className="text-4xl lg:text-6xl font-bold">

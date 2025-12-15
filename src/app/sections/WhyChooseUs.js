@@ -23,14 +23,14 @@ export default function WhyChooseUs() {
           </div>
           <div>
             <div className="mb-8 flex flex-col gap-4">
-              <h3 className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-2xl font-bold">
-                Why Choose Clean City Waste
+              <h3 className="bg-gradient-to-r from-primary to-secondary/70 bg-clip-text text-transparent text-2xl font-bold">
+                Why Choose Waste Plus Inc
               </h3>
               <h4 className="text-4xl lg:text-6xl font-bold">
                 Reliable waste disposal and recycling in Calgary
               </h4>
               <p>
-                Clean City Waste offers dependable, eco-friendly waste solutions
+                Waste Plus Inc offers dependable, eco-friendly waste solutions
                 across Calgary and surrounding areas. We combine flexible bin
                 rentals, scheduled pickups and recycling programs to keep
                 properties clean, safe and compliant.

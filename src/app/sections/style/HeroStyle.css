@@ -32,9 +32,9 @@
   /* lighter versions of theme colors */
   background: linear-gradient(
     to right,
+    color-mix(in srgb, var(--color-primary) 80%, white),
     color-mix(in srgb, var(--color-primary) 50%, white),
-    color-mix(in srgb, var(--color-secondary) 40%, white),
-    color-mix(in srgb, var(--color-secondary) 10%, white)
+    color-mix(in srgb, var(--color-secondary) 15%, white)
   );
 }
 

@@ -29,7 +29,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-r from-primary to-secondary text-gray-300 ">
+    <footer className="bg-gradient-to-r from-primary to-secondary/70 text-gray-300 ">
       <div className="py-16 px-4 sm:px-8 md:px-12 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Column 1: About */}
@@ -46,7 +46,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-white text-base leading-relaxed">
-              Clean City Waste provides dependable residential, commercial, and
+              Waste Plus Inc provides dependable residential, commercial, and
               industrial waste management across Calgary and surrounding
               communities.
             </p>
@@ -132,7 +132,7 @@ const Footer = () => {
         <div className="container py-6 text-sm">
           <div className="flex justify-center items-center space-y-4 sm:space-y-0">
             <p className=" text-white">
-              © Copyright 2025, Clean City Waste . All Rights Reserved.
+              © Copyright 2025, Waste Plus Inc . All Rights Reserved.
             </p>
           </div>
         </div>

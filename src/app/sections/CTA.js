@@ -8,19 +8,19 @@ export default function CTA() {
         <h2 className="text-4xl md:text-6xl font-bold mb-6">
           Take the Next Step Toward
           <br />
-          <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary to-secondary/70 bg-clip-text text-transparent">
             Cleaner, Greener Waste Management
           </span>
         </h2>
         <p className="text-xl mb-10 max-w-2xl mx-auto">
-          Partner with <strong>Clean City Waste</strong> to simplify your
+          Partner with <strong>Waste Plus Inc</strong> to simplify your
           garbage, recycling and bulk disposal. Serving Calgary and surrounding
           areas with reliable pickups and eco-friendly solutions tailored to
           homes, businesses and construction sites.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href={"tel:+14034971731"}>
-            <button className="text-white cursor-pointer bg-gradient-to-r from-primary to-secondary px-12 py-4 rounded-full font-semibold text-xl hover:scale-105 transition-transform">
+            <button className="text-white cursor-pointer bg-gradient-to-r from-primary to-secondary/70 px-12 py-4 rounded-full font-semibold text-xl hover:scale-105 transition-transform">
               Call Now
             </button>
           </Link>

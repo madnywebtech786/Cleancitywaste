@@ -48,7 +48,7 @@ const Hero = () => {
               </p>
               <div className="flex items-center mt-6 gap-4">
                 <Link href={"/contact"}>
-                  <button className="cursor-pointer bg-primary text-white px-4 py-3 lg:px-6 lg:py-3 text-sm lg:text-base rounded-lg font-bold">
+                  <button className="cursor-pointer bg-secondary text-white px-4 py-3 lg:px-6 lg:py-3 text-sm lg:text-base rounded-lg font-bold">
                     Request Free Quote
                   </button>
                 </Link>
@@ -84,7 +84,7 @@ const Hero = () => {
               </p>
               <div className="flex items-center mt-6 gap-4">
                 <Link href={"/contact"}>
-                  <button className="cursor-pointer bg-primary text-white px-4 py-3 lg:px-6 lg:py-3 text-sm lg:text-base rounded-lg font-bold">
+                  <button className="cursor-pointer bg-secondary text-white px-4 py-3 lg:px-6 lg:py-3 text-sm lg:text-base rounded-lg font-bold">
                     Request Free Quote
                   </button>
                 </Link>
@@ -120,7 +120,7 @@ const Hero = () => {
               </p>
               <div className="flex items-center mt-6 gap-4">
                 <Link href={"/contact"}>
-                  <button className="cursor-pointer bg-primary text-white px-4 py-3 lg:px-6 lg:py-3 text-sm lg:text-base rounded-lg font-bold">
+                  <button className="cursor-pointer bg-secondary text-white px-4 py-3 lg:px-6 lg:py-3 text-sm lg:text-base rounded-lg font-bold">
                     Request Free Quote
                   </button>
                 </Link>
