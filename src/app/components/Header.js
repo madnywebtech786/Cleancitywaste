@@ -79,12 +79,12 @@ const Header = () => {
       <TopBar />
       <div className=" px-4 sm:px-8 md:px-12 lg:px-20">
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0 p-2">
             <Image
-              src={"/images/logo.PNG"}
+              src={"/images/logo.jpg"}
               width={120}
               height={120}
-              className="w-32 lg:w-40 h-20 lg:h-24"
+              className="w-32 lg:w-40 h-20 lg:h-24 rounded-xl"
             />
           </Link>
 
@@ -223,7 +223,7 @@ const Header = () => {
           <div className="flex items-center justify-between px-4 py-4 border-b">
             <div className="flex items-center gap-3">
               <Image
-                src={"/images/logo.png"}
+                src={"/images/logo.jpg"}
                 width={90}
                 height={60}
                 alt="logo"

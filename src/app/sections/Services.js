@@ -37,7 +37,7 @@ export default function Services() {
                 your daily routines.
               </p>
               <Link href={"/services/residential-services"} className="w-max mx-auto">
-                <button className="rounded-full p-3 px-6 bg-accent/70 w-max mx-auto  cursor-pointer text-sm font-bold">
+                <button className="rounded-full p-3 px-6 bg-primary text-white w-max mx-auto  cursor-pointer text-sm font-bold">
                   Read More
                 </button>
               </Link>
@@ -66,7 +66,7 @@ export default function Services() {
                 rentals for your business
               </p>
               <Link href={"/services/commercial-services"} className="w-max mx-auto">
-                <button className="rounded-full p-3 px-6 bg-accent/70 w-max mx-auto cursor-pointer text-sm font-bold">
+                <button className="rounded-full p-3 px-6 bg-primary text-white w-max mx-auto cursor-pointer text-sm font-bold">
                   Read More
                 </button>
               </Link>
@@ -95,7 +95,7 @@ export default function Services() {
                 large-scale cleanup
               </p>
               <Link href={"/services/industrial-services"} className="w-max mx-auto">
-                <button className="rounded-full p-3 px-6 bg-accent/70 w-max mx-auto cursor-pointer text-sm font-bold">
+                <button className="rounded-full p-3 px-6 bg-primary text-white w-max mx-auto cursor-pointer text-sm font-bold">
                   Read More
                 </button>
               </Link>

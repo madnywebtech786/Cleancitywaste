@@ -177,15 +177,15 @@ export async function POST(request) {
     }
 
     // Add logo as inline attachment
-    const logoPath = path.join(process.cwd(), "public", "images", "logo.png");
+    const logoPath = path.join(process.cwd(), "public", "images", "logo.jpg");
     let logoAttachment = null;
     try {
       if (fs.existsSync(logoPath)) {
         logoAttachment = {
-          filename: "logo.png",
+          filename: "logo.jpg",
           path: logoPath,
           cid: logoCid,
-          contentType: "image/png",
+          contentType: "image/jpg",
         };
         attachments.push(logoAttachment);
       }
@@ -276,7 +276,7 @@ export async function POST(request) {
           transform: translateX(-50%);
           width: 100px;
           height: 3px;
-          background: linear-gradient(90deg, #ffa500, #007994);
+          background: linear-gradient(90deg, #fe7e03, #007994);
           border-radius: 2px;
           box-shadow: 0 6px 20px rgba(0,121,148,0.18);
         }
@@ -505,7 +505,7 @@ export async function POST(request) {
           <div class="card-title">Attachments</div>
           <div class="attachment-list">
             ${attachments
-              .filter((att) => att.filename !== "logo.png")
+              .filter((att) => att.filename !== "logo.jpg")
               .map((att) => `<div class="attachment-item">${escapeHtml(att.filename)}</div>`)
               .join("")}
           </div>
