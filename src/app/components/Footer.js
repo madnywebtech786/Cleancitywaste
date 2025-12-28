@@ -93,10 +93,10 @@ const Footer = () => {
                   className="text-primary-red mt-1 flex-shrink-0"
                 />
                 <a
-                  href="mailto:info@cleancitywaste.ca"
+                  href="mailto:contact@wasteplus.ca"
                   className="hover:text-primary-red transition-colors"
                 >
-                  info@cleancitywaste.ca
+                  contact@wasteplus.ca
                 </a>
               </li>
               <li className="flex items-start space-x-3">

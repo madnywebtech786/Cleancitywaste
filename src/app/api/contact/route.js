@@ -525,7 +525,7 @@ export async function POST(request) {
     // Send email
     const mailOptions = {
       from: process.env.GMAIL_USER,
-      to: 'info@cleancitywaste.ca',
+      to: 'contact@wasteplus.ca',
       subject: "New Contact Form Submission - Waste Plus Inc",
       html: htmlTemplate,
       attachments: attachments,
