@@ -34,7 +34,7 @@ export default function Testimonials() {
           ].map((testimonial, index) => (
             <div
               key={index}
-              className="min-h-[350px] group relative bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-secondary/20"
+              className="min-h-[350px] group relative bg-paper rounded-3xl p-8 border border-ink/10 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10"
             >
               {/* Glowing effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-secondary/5 to-primary/0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
@@ -73,10 +73,10 @@ export default function Testimonials() {
                   />
                 </div>
                 <div className="ml-4">
-                  <h3 className="font-semibold text-lg text-white group-hover:text-primary transition-colors duration-300">
+                  <h3 className="font-semibold text-lg text-ink group-hover:text-primary transition-colors duration-300">
                     {testimonial.name}
                   </h3>
-                  <p className=" text-xs font-medium">{testimonial.company}</p>
+                  <p className="text-xs font-medium text-ink/60">{testimonial.company}</p>
                 </div>
               </div>
             </div>

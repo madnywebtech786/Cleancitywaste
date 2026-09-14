@@ -4,7 +4,7 @@ export default function Stats() {
   return (
     <section
       id="stats"
-      className="py-16 px-4 sm:px-8 md:px-12 lg:px-20 bg-primary/10"
+      className="py-16 px-4 sm:px-8 md:px-12 lg:px-20 bg-paper"
     >
       <div className="">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

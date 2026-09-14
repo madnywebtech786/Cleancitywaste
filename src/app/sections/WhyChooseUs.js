@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import React from "react";
 
 export default function WhyChooseUs() {
@@ -27,28 +28,29 @@ export default function WhyChooseUs() {
                 Why Choose Waste Plus Inc
               </h3>
               <h4 className="text-4xl lg:text-6xl font-bold">
-                Reliable waste disposal and recycling in Calgary
+                Waste management with a local, hands-on approach
               </h4>
               <p>
-                Waste Plus Inc offers dependable, eco-friendly waste solutions
-                across Calgary and surrounding areas. We combine flexible bin
-                rentals, scheduled pickups and recycling programs to keep
-                properties clean, safe and compliant.
+                We believe good waste service is about more than emptying a
+                bin. It&apos;s about taking care of the details. We&apos;re a
+                Calgary-based waste management company providing reliable,
+                flexible, and personalized service to property managers,
+                building owners, and condo boards.
               </p>
             </div>
 
             <div className="space-y-6  w-full md:w-4/5">
               {[
                 {
-                  title: "Residential & Organic Pickup",
+                  title: "We Pick Up Overflow",
                   description:
-                    "Weekly curbside pickup with 64-gal organic carts and flexible scheduling for townhouses and multi-unit properties.",
+                    "When our drivers find loose garbage around an overflowing bin, they pick it up by hand before emptying it. The bin gets emptied, and the surrounding waste gets attention too.",
                   icon: "truck",
                 },
                 {
-                  title: "Roll-off Dumpster Rentals",
+                  title: "We're Calgary Based",
                   description:
-                    "Coming Soon...",
+                    "When you choose a local company, more of what you spend circulates back through the local economy, supporting Calgary employees, suppliers, and businesses.",
                   icon: "dumpster",
                 },
               ].map((item, index) => (
@@ -91,8 +93,9 @@ export default function WhyChooseUs() {
 
             <div className="mt-12">
               <Link href={"/contact"} className="w-max">
-                <button className="bg-primary cursor-pointer text-white px-6 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition-transform">
-                  Contact Us
+                <button className="cursor-pointer inline-flex items-center gap-2 bg-primary text-white px-7 py-3.5 rounded-full font-semibold hover:bg-secondary transition-colors">
+                  Contact us
+                  <ArrowRight size={18} />
                 </button>
               </Link>
             </div>

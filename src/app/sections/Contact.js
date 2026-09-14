@@ -46,19 +46,19 @@ const MultiSelect = ({
   return (
     <div className="relative" ref={dropdownRef}>
       <div
-        className={`w-full bg-gray-100/50 border ${
-          error ? "border-red-500" : "border-gray-600"
-        } rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all cursor-pointer min-h-[48px] flex flex-wrap items-center gap-2`}
+        className={`w-full bg-white border ${
+          error ? "border-red-400" : "border-ink/15"
+        } rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all cursor-pointer min-h-[48px] flex flex-wrap items-center gap-2`}
         onClick={() => setIsOpen(!isOpen)}
       >
         {isMulti ? (
           value.length === 0 ? (
-            <span className="text-primary">{placeholder}</span>
+            <span className="text-ink/35">{placeholder}</span>
           ) : (
             value.map((val, index) => (
               <span
                 key={index}
-                className="bg-secondary/20 text-secondary px-2 py-1 rounded-full text-sm flex items-center gap-1"
+                className="bg-primary/10 text-secondary px-2.5 py-1 rounded-full text-sm font-medium flex items-center gap-1"
               >
                 {val}
                 <button
@@ -67,7 +67,7 @@ const MultiSelect = ({
                     e.stopPropagation();
                     removeTag(val);
                   }}
-                  className="ml-1 hover:bg-secondary/30 rounded-full w-4 h-4 flex items-center justify-center"
+                  className="ml-1 hover:bg-primary/20 rounded-full w-4 h-4 flex items-center justify-center"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -88,13 +88,13 @@ const MultiSelect = ({
             ))
           )
         ) : value ? (
-          <span className="text-primary">{value}</span>
+          <span className="text-ink">{value}</span>
         ) : (
-          <span className="text-primary">{placeholder}</span>
+          <span className="text-ink/35">{placeholder}</span>
         )}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className={`absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-primary transition-transform ${
+          className={`absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-ink/40 transition-transform ${
             isOpen ? "rotate-180" : ""
           }`}
           fill="none"
@@ -111,11 +111,11 @@ const MultiSelect = ({
       </div>
 
       {isOpen && (
-        <div className="absolute z-10 w-full bg-white border border-gray-600 rounded-xl mt-1 max-h-60 overflow-y-auto shadow-xl">
+        <div className="absolute z-10 w-full bg-white border border-ink/10 rounded-xl mt-1.5 max-h-60 overflow-y-auto shadow-lg shadow-ink/10">
           {options.map((option, index) => (
             <div
               key={index}
-              className="flex items-center px-4 py-3 hover:bg-gray-100/50 cursor-pointer"
+              className="flex items-center px-4 py-2.5 hover:bg-primary/5 cursor-pointer transition-colors"
               onClick={() => toggleOption(option)}
             >
               {!isMulti && (
@@ -126,7 +126,7 @@ const MultiSelect = ({
                   {value === option && (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 text-secondary"
+                      className="h-4 w-4 text-primary"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -145,8 +145,8 @@ const MultiSelect = ({
                 <div
                   className={`w-5 h-5 rounded border mr-3 flex items-center justify-center ${
                     value.includes(option)
-                      ? "bg-secondary border-secondary"
-                      : "border-gray-400"
+                      ? "bg-primary border-primary"
+                      : "border-ink/25"
                   }`}
                 >
                   {value.includes(option) && (
@@ -167,7 +167,7 @@ const MultiSelect = ({
                   )}
                 </div>
               )}
-              <span className="text-primary">{option}</span>
+              <span className="text-ink text-sm">{option}</span>
             </div>
           ))}
         </div>
@@ -505,44 +505,46 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-20 px-6 bg-paper">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-[#fe7e03] to-secondary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Get Your Custom Quote
             </span>
           </h2>
-          <p className="text-xl text-primary max-w-3xl mx-auto">
+          <p className="text-xl text-ink/60 max-w-3xl mx-auto">
             Fill out the form below and our waste management specialists will
             contact you with a personalized solution.
           </p>
         </div>
 
-        <div className="bg-gray-50 backdrop-blur-xl rounded-3xl border border-gray-700/50 p-6 md:p-12">
-          <form onSubmit={handleSubmit} className="space-y-8">
+        <div className="p-0 md:p-2">
+          <form onSubmit={handleSubmit} className="space-y-6">
             {/* Personal Information */}
-            <div className="bg-white rounded-2xl p-6 shadow-xl">
-              <h3 className="text-2xl font-semibold mb-6 text-secondary flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 mr-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-ink/8 shadow-sm">
+              <h3 className="text-xl font-bold mb-6 text-ink flex items-center gap-3">
+                <span className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
+                </span>
                 Personal Information
               </h3>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
                     First Name *
                   </label>
                   <input
@@ -550,17 +552,17 @@ const Contact = () => {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-[#fe7e03] focus:border-transparent transition-all"
+                    className="w-full bg-white placeholder:text-ink/35 border border-ink/15 rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
                     placeholder="Enter your first name"
                   />
                   {errors.firstName && (
-                    <p className="text-red-400 text-sm mt-1">
+                    <p className="text-red-500 text-sm mt-1">
                       {errors.firstName}
                     </p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
                     Last Name *
                   </label>
                   <input
@@ -568,17 +570,17 @@ const Contact = () => {
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-[#fe7e03] focus:border-transparent transition-all"
+                    className="w-full bg-white placeholder:text-ink/35 border border-ink/15 rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
                     placeholder="Enter your last name"
                   />
                   {errors.lastName && (
-                    <p className="text-red-400 text-sm mt-1">
+                    <p className="text-red-500 text-sm mt-1">
                       {errors.lastName}
                     </p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
                     Phone Number *
                   </label>
                   <input
@@ -586,17 +588,17 @@ const Contact = () => {
                     name="phoneNumber"
                     value={formData.phoneNumber}
                     onChange={handleChange}
-                    className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-[#fe7e03] focus:border-transparent transition-all"
+                    className="w-full bg-white placeholder:text-ink/35 border border-ink/15 rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
                     placeholder="+1 (555) 123-4567"
                   />
                   {errors.phoneNumber && (
-                    <p className="text-red-400 text-sm mt-1">
+                    <p className="text-red-500 text-sm mt-1">
                       {errors.phoneNumber}
                     </p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
                     Email *
                   </label>
                   <input
@@ -604,38 +606,40 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-[#fe7e03] focus:border-transparent transition-all"
+                    className="w-full bg-white placeholder:text-ink/35 border border-ink/15 rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
                     placeholder="your@email.com"
                   />
                   {errors.email && (
-                    <p className="text-red-400 text-sm mt-1">{errors.email}</p>
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
                   )}
                 </div>
               </div>
             </div>
 
             {/* Business Information */}
-            <div className="bg-white rounded-2xl p-6 shadow-xl">
-              <h3 className="text-2xl font-semibold mb-6 text-secondary flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 mr-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                  />
-                </svg>
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-ink/8 shadow-sm">
+              <h3 className="text-xl font-bold mb-6 text-ink flex items-center gap-3">
+                <span className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    />
+                  </svg>
+                </span>
                 Business Information
               </h3>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
                     Business Type *
                   </label>
                   <MultiSelect
@@ -648,13 +652,13 @@ const Contact = () => {
                     isMulti={false}
                   />
                   {errors.businessType && (
-                    <p className="text-red-400 text-sm mt-1">
+                    <p className="text-red-500 text-sm mt-1">
                       {errors.businessType}
                     </p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
                     Business Name *
                   </label>
                   <input
@@ -662,17 +666,17 @@ const Contact = () => {
                     name="businessName"
                     value={formData.businessName}
                     onChange={handleChange}
-                    className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
+                    className="w-full bg-white placeholder:text-ink/35 border border-ink/15 rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
                     placeholder="Enter your business name"
                   />
                   {errors.businessName && (
-                    <p className="text-red-400 text-sm mt-1">
+                    <p className="text-red-500 text-sm mt-1">
                       {errors.businessName}
                     </p>
                   )}
                 </div>
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-primary mb-2">
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
                     Business Location *
                   </label>
                   <input
@@ -680,11 +684,11 @@ const Contact = () => {
                     name="businessLocation"
                     value={formData.businessLocation}
                     onChange={handleChange}
-                    className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
+                    className="w-full bg-white placeholder:text-ink/35 border border-ink/15 rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
                     placeholder="Enter full business address"
                   />
                   {errors.businessLocation && (
-                    <p className="text-red-400 text-sm mt-1">
+                    <p className="text-red-500 text-sm mt-1">
                       {errors.businessLocation}
                     </p>
                   )}
@@ -693,16 +697,18 @@ const Contact = () => {
             </div>
 
             {/* Bin Information (NEW) */}
-            <div className="bg-white rounded-2xl p-6 shadow-xl">
-              <h3 className="text-2xl font-semibold mb-6 text-secondary flex items-center">
-                <Trash size={22} className="mr-2" />
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-ink/8 shadow-sm">
+              <h3 className="text-xl font-bold mb-6 text-ink flex items-center gap-3">
+                <span className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Trash size={18} className="text-primary" />
+                </span>
                 Bin Information
               </h3>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-5">
                 {/* Material to Dump (single select) */}
                 <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
                     Material to Dump *
                   </label>
                   <MultiSelect
@@ -721,7 +727,7 @@ const Contact = () => {
                     isMulti={false}
                   />
                   {binErrors.materialType && (
-                    <p className="text-red-400 text-sm mt-1">
+                    <p className="text-red-500 text-sm mt-1">
                       {binErrors.materialType}
                     </p>
                   )}
@@ -729,7 +735,7 @@ const Contact = () => {
 
                 {/* Bin Size (single select) */}
                 <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
                     Bin Size *
                   </label>
                   <MultiSelect
@@ -747,7 +753,7 @@ const Contact = () => {
                     isMulti={false}
                   />
                   {binErrors.binSize && (
-                    <p className="text-red-400 text-sm mt-1">
+                    <p className="text-red-500 text-sm mt-1">
                       {binErrors.binSize}
                     </p>
                   )}
@@ -755,7 +761,7 @@ const Contact = () => {
 
                 {/* Number of Bins (number input) */}
                 <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
                     Number of Bins *
                   </label>
                   <input
@@ -773,10 +779,10 @@ const Contact = () => {
                         },
                       })
                     }
-                    className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
+                    className="w-full bg-white placeholder:text-ink/35 border border-ink/15 rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
                   />
                   {binErrors.numberOfBins && (
-                    <p className="text-red-400 text-sm mt-1">
+                    <p className="text-red-500 text-sm mt-1">
                       {binErrors.numberOfBins}
                     </p>
                   )}
@@ -784,7 +790,7 @@ const Contact = () => {
 
                 {/* Bin Placement Location (single select) */}
                 <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
                     Bin Placement Location *
                   </label>
                   <MultiSelect
@@ -805,7 +811,7 @@ const Contact = () => {
                     isMulti={false}
                   />
                   {binErrors.binPlacementLocation && (
-                    <p className="text-red-400 text-sm mt-1">
+                    <p className="text-red-500 text-sm mt-1">
                       {binErrors.binPlacementLocation}
                     </p>
                   )}
@@ -813,7 +819,7 @@ const Contact = () => {
 
                 {/* How Frequently to Dump? (single select) */}
                 <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
                     How Frequently to Dump? *
                   </label>
                   <MultiSelect
@@ -831,7 +837,7 @@ const Contact = () => {
                     isMulti={false}
                   />
                   {binErrors.dumpFrequency && (
-                    <p className="text-red-400 text-sm mt-1">
+                    <p className="text-red-500 text-sm mt-1">
                       {binErrors.dumpFrequency}
                     </p>
                   )}
@@ -839,7 +845,7 @@ const Contact = () => {
 
                 {/* Number of Pickups Per Week (single select) */}
                 <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
                     Number of Pickups Per Week *
                   </label>
                   <MultiSelect
@@ -857,75 +863,75 @@ const Contact = () => {
                     isMulti={false}
                   />
                   {binErrors.pickupsPerWeek && (
-                    <p className="text-red-400 text-sm mt-1">
+                    <p className="text-red-500 text-sm mt-1">
                       {binErrors.pickupsPerWeek}
                     </p>
                   )}
                 </div>
               </div>
 
-              <div className="mt-6 flex gap-4 items-center">
+              <div className="mt-6 flex gap-4 items-center flex-wrap">
                 <button
                   type="button"
                   onClick={addBin}
-                  className="bg-gradient-to-r from-[#fe7e03] to-secondary text-white px-6 py-2 rounded-full font-semibold"
+                  className="cursor-pointer bg-gradient-to-r from-primary to-secondary text-white px-6 py-2.5 rounded-full font-semibold text-sm shadow-md shadow-secondary/20 hover:shadow-lg hover:shadow-secondary/30 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   Add More
                 </button>
                 {errors.bins && (
-                  <p className="text-red-400 text-sm">{errors.bins}</p>
+                  <p className="text-red-500 text-sm">{errors.bins}</p>
                 )}
               </div>
 
               {/* Added bins list */}
               {formData.bins.length > 0 && (
-                <div className="mt-6 grid gap-4">
+                <div className="mt-6 grid gap-3">
                   {formData.bins.map((b, i) => (
                     <div
                       key={i}
-                      className="p-4 rounded-lg bg-gray-100/60 border border-gray-300 flex flex-col md:flex-row justify-between items-start gap-6"
+                      className="p-4 rounded-xl bg-paper border border-ink/8 flex flex-col md:flex-row justify-between items-start gap-6"
                     >
                       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 w-full md:w-10/12">
                         <div className="flex flex-col gap-1">
-                          <div className="text-sm text-gray-600">Material</div>
-                          <div className="font-medium">{b.materialType}</div>
+                          <div className="text-xs text-ink/45">Material</div>
+                          <div className="font-medium text-ink text-sm">{b.materialType}</div>
                         </div>
                         <div className="flex flex-col gap-1">
-                          <div className="text-sm text-gray-600 ">Bin Size</div>
-                          <div className="font-medium">{b.binSize}</div>
+                          <div className="text-xs text-ink/45">Bin Size</div>
+                          <div className="font-medium text-ink text-sm">{b.binSize}</div>
                         </div>
                         <div className="flex flex-col gap-1">
-                          <div className="text-sm text-gray-600 ">
+                          <div className="text-xs text-ink/45">
                             Number of Bins
                           </div>
-                          <div className="font-medium">{b.numberOfBins}</div>
+                          <div className="font-medium text-ink text-sm">{b.numberOfBins}</div>
                         </div>
                         <div className="flex flex-col gap-1">
-                          <div className="text-sm text-gray-600 ">
+                          <div className="text-xs text-ink/45">
                             Placement
                           </div>
-                          <div className="font-medium">
+                          <div className="font-medium text-ink text-sm">
                             {b.binPlacementLocation}
                           </div>
                         </div>
                         <div className="flex flex-col gap-1">
-                          <div className="text-sm text-gray-600 ">
+                          <div className="text-xs text-ink/45">
                             Dump Frequency
                           </div>
-                          <div className="font-medium">{b.dumpFrequency}</div>
+                          <div className="font-medium text-ink text-sm">{b.dumpFrequency}</div>
                         </div>
                         <div className="flex flex-col gap-1">
-                          <div className="text-sm text-gray-600 ">
+                          <div className="text-xs text-ink/45">
                             Pickups / Week
                           </div>
-                          <div className="font-medium">{b.pickupsPerWeek}</div>
+                          <div className="font-medium text-ink text-sm">{b.pickupsPerWeek}</div>
                         </div>
                       </div>
                       <div className="flex md:justify-end w-full md:w-2/12">
                         <button
                           type="button"
                           onClick={() => removeBin(i)}
-                          className="text-white bg-red-600 p-2 rounded-xl"
+                          className="cursor-pointer text-red-600 bg-red-50 hover:bg-red-100 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                         >
                           Remove
                         </button>
@@ -937,41 +943,43 @@ const Contact = () => {
             </div>
 
             {/* Current Contract Information */}
-            <div className="bg-white rounded-2xl p-6 shadow-xl">
-              <h3 className="text-2xl font-semibold mb-6 text-secondary flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 mr-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-ink/8 shadow-sm">
+              <h3 className="text-xl font-bold mb-6 text-ink flex items-center gap-3">
+                <span className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                </span>
                 Current Contract Information
               </h3>
               <div className="space-y-4">
-                <div className="flex items-center">
+                <label className="flex items-center gap-3 cursor-pointer w-max">
                   <input
                     type="checkbox"
                     name="noExistingContract"
                     checked={formData.noExistingContract}
                     onChange={handleChange}
-                    className="w-5 h-5 text-[#fe7e03] bg-gray-800 border-gray-600 rounded focus:ring-[#fe7e03] focus:ring-2"
+                    className="w-5 h-5 accent-primary rounded cursor-pointer"
                   />
-                  <label className="ml-3 text-sm font-medium text-primary">
+                  <span className="text-sm font-medium text-ink/70">
                     I do not have an existing contract
-                  </label>
-                </div>
+                  </span>
+                </label>
 
                 {!formData.noExistingContract && (
                   <div>
-                    <label className="block text-sm font-medium text-primary mb-2">
+                    <label className="block text-sm font-medium text-ink/70 mb-2">
                       When does your current contract end? *
                     </label>
                     <input
@@ -980,10 +988,10 @@ const Contact = () => {
                       value={formData.contractEndDate}
                       onChange={handleChange}
                       min={new Date().toISOString().split("T")[0]}
-                      className="w-full bg-gray-100/50 placeholder:text-primary border border-gray-600 rounded-xl px-4 py-3 text-primary focus:outline-none focus:ring-2 focus:ring-[#fe7e03] focus:border-transparent transition-all"
+                      className="w-full bg-white placeholder:text-ink/35 border border-ink/15 rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
                     />
                     {errors.contractEndDate && (
-                      <p className="text-red-400 text-sm mt-1">
+                      <p className="text-red-500 text-sm mt-1">
                         {errors.contractEndDate}
                       </p>
                     )}
@@ -993,32 +1001,12 @@ const Contact = () => {
             </div>
 
             {/* File Attachments */}
-            <div className="bg-white rounded-2xl p-6 shadow-xl">
-              <h3 className="text-2xl font-semibold mb-6 text-secondary flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 mr-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                  />
-                </svg>
-                File Attachments
-              </h3>
-              <div className="space-y-4">
-                <div
-                  className="border-2 border-dashed border-gray-600 rounded-xl p-6 text-center hover:border-secondary hover:bg-primary/20 transition-all cursor-pointer"
-                  onClick={() => fileInputRef.current?.click()}
-                >
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-ink/8 shadow-sm">
+              <h3 className="text-xl font-bold mb-6 text-ink flex items-center gap-3">
+                <span className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-12 w-12 mx-auto text-gray-400 mb-3"
+                    className="h-5 w-5 text-primary"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -1030,8 +1018,30 @@ const Contact = () => {
                       d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                     />
                   </svg>
-                  <p className="text-primary mb-2">Click to upload files</p>
-                  <p className="text-sm text-gray-400">
+                </span>
+                File Attachments
+              </h3>
+              <div className="space-y-4">
+                <div
+                  className="border-2 border-dashed border-ink/15 rounded-xl p-8 text-center hover:border-primary hover:bg-primary/5 transition-all cursor-pointer"
+                  onClick={() => fileInputRef.current?.click()}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-10 w-10 mx-auto text-ink/25 mb-3"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                    />
+                  </svg>
+                  <p className="text-ink font-medium mb-1">Click to upload files</p>
+                  <p className="text-sm text-ink/45">
                     Supports multiple files (PDF, DOC, JPG, PNG)
                   </p>
                   <input
@@ -1046,19 +1056,19 @@ const Contact = () => {
 
                 {formData.files.length > 0 && (
                   <div className="space-y-3">
-                    <h4 className="text-sm font-medium text-primary">
+                    <h4 className="text-sm font-medium text-ink/70">
                       Selected Files:
                     </h4>
                     {formData.files.map((file, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between bg-gray-100/50 placeholder:text-primary rounded-lg p-3"
+                        className="flex items-center justify-between bg-paper rounded-xl p-3 border border-ink/8"
                       >
                         <div className="flex items-center">
-                          <div className="w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center mr-3">
+                          <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              className="h-5 w-5 text-secondary"
+                              className="h-5 w-5 text-primary"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -1072,10 +1082,10 @@ const Contact = () => {
                             </svg>
                           </div>
                           <div>
-                            <p className="text-primary font-medium text-sm">
+                            <p className="text-ink font-medium text-sm">
                               {file.name}
                             </p>
-                            <p className="text-gray-400 text-xs">
+                            <p className="text-ink/40 text-xs">
                               {formatFileSize(file.size)} •{" "}
                               {file.type.split("/")[1] || "file"}
                             </p>
@@ -1084,7 +1094,7 @@ const Contact = () => {
                         <button
                           type="button"
                           onClick={() => removeFile(index)}
-                          className="text-red-400 hover:text-red-300 transition-colors"
+                          className="cursor-pointer text-red-500 hover:text-red-600 transition-colors"
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -1110,10 +1120,10 @@ const Contact = () => {
 
             {submitMessage.message && (
               <div
-                className={`mb-6 p-4 rounded-xl text-center ${
+                className={`p-4 rounded-xl text-center font-medium ${
                   submitMessage.type === "success"
-                    ? "bg-gradient-to-r from-primary to-secondary/70  text-white"
-                    : "bg-red-900/30 border border-red-500/30 text-red-300"
+                    ? "bg-primary/10 text-secondary border border-primary/20"
+                    : "bg-red-50 border border-red-200 text-red-600"
                 }`}
               >
                 {submitMessage.message}
@@ -1125,12 +1135,12 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-gradient-to-r from-[#fe7e03] to-secondary text-white px-12 py-4 rounded-xl font-semibold text-lg hover:scale-105 transition-transform disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed"
+                className="cursor-pointer bg-gradient-to-r from-primary to-secondary text-white px-12 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-secondary/25 hover:shadow-xl hover:shadow-secondary/35 hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:translate-y-0 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <div className="flex items-center justify-center">
                     <svg
-                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-primary"
+                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"

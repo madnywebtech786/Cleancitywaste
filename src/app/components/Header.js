@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Search,
   ShoppingCart,
@@ -13,23 +14,50 @@ import {
 import TopBar from "../sections/TopBar";
 
 const navItems = [
-  { name: "HOME", href: "/", active: true },
+  { name: "HOME", href: "/" },
   { name: "ABOUT", href: "/about-us" },
+  { name: "Why Us", href: "/why-choose-us" },
   {
-    name: "Services",
+    name: "Waste Solutions",
     href: "#",
     dropdown: [
-      { name: "Residential Waste", href: "/services/residential-services" },
-      { name: "Commercial Waste", href: "/services/commercial-services" },
-      { name: "Industrial Waste", href: "/services/industrial-services" },
+      { name: "General Waste Collection", blurb: "Scheduled front-load & Molok pickup", href: "/waste-services/general-waste-collection" },
+      { name: "Mixed Recycling Collection", blurb: "Cardboard, paper, plastics & metals", href: "/waste-services/mixed-recycling-collection" },
+      { name: "Organic Waste Collection", blurb: "Food & organic materials, diverted", href: "/waste-services/organic-waste-collection" },
+      { name: "On-Call Junk Hauling", blurb: "Trucks & trailers, ready when you call", href: "/waste-services/on-call-junk-hauling" },
+      { name: "Bin & Enclosure Cleaning", blurb: "Debris removal & pressure washing", href: "/waste-services/bin-enclosure-cleaning" },
+      { name: "Front Load & Molok Bins", blurb: "The right container for your site", href: "/waste-services/front-load-molok-bins" },
+    ],
+  },
+  {
+    name: "Our Customers",
+    href: "#",
+    dropdown: [
+      { name: "Residential", blurb: "Homes, townhouses & multi-unit", href: "/customers/residential-services" },
+      { name: "Commercial", blurb: "Restaurants, retail & offices", href: "/customers/commercial-services" },
+      { name: "Industrial", blurb: "Construction & manufacturing sites", href: "/customers/industrial-services" },
+      { name: "Property Managers", blurb: "One partner for every property", href: "/customers/property-managers" },
+      { name: "Plaza & Building Owners", blurb: "Waste areas that reflect well on you", href: "/customers/plaza-building-owners" },
+      { name: "Condo Boards", blurb: "Common areas residents can count on", href: "/customers/condo-boards" },
     ],
   },
   { name: "Contact Us", href: "/contact" },
 ];
 
 const Header = () => {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+
+  // an item is active if the current path matches its href exactly (for "/"),
+  // or starts with its href (for section roots), or one of its dropdown links matches
+  const isItemActive = (item) => {
+    if (item.dropdown) {
+      return item.dropdown.some((sub) => pathname.startsWith(sub.href));
+    }
+    if (item.href === "/") return pathname === "/";
+    return pathname.startsWith(item.href);
+  };
 
   // mobile accordion state: store expanded top-level items and expanded nested items
   const [expanded, setExpanded] = useState(new Set()); // holds top-level item names
@@ -88,83 +116,53 @@ const Header = () => {
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center dark:text-black">
-            <ul className="flex items-center gap-10">
+          <nav className="hidden xl:flex items-center dark:text-black">
+            <ul className="flex items-center gap-6 2xl:gap-8">
               {navItems.map((item) => (
                 <li key={item.name} className="relative group">
                   <Link
                     href={item.href}
-                    className={`flex items-center gap-1 text-base font-medium uppercase transition-colors hover:text-primary-red ${
-                      item.active ? "text-primary-red" : "text-dark-text"
+                    className={`relative flex items-center gap-1 text-base font-medium uppercase transition-colors hover:text-primary ${
+                      isItemActive(item) ? "text-primary" : "text-ink"
                     }`}
                   >
                     {item.name}
                     {item.dropdown && (
-                      <ChevronDown className="h-5 w-5 transition-transform duration-300 group-hover:rotate-180" />
+                      <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
                     )}
+                    <span className="pointer-events-none absolute -bottom-1.5 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full" />
                   </Link>
 
                   {item.dropdown && (
-                    /* FIRST-LEVEL DROPDOWN */
-                    <ul
-                      className="absolute left-0 top-full mt-4 w-52 bg-white shadow-lg rounded-md py-3
-                       opacity-0 invisible group-hover:opacity-100 group-hover:visible
-                       transition-all duration-300 transform group-hover:translate-y-0 translate-y-2
-                       first-level-dropdown"
+                    <div
+                      className="absolute left-1/2 -translate-x-1/2 top-full pt-4
+                       opacity-0 invisible translate-y-2 scale-[0.98]
+                       group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:scale-100
+                       transition-all duration-200 ease-out origin-top"
                     >
-                      {item.dropdown.map((subItem) => (
-                        /* sub-item is NOT a Tailwind `group` for controlling its submenu */
-                        <li key={subItem.name} className="relative sub-item ">
-                          <Link
-                            href={subItem.href}
-                            className="flex items-center justify-between px-5 py-2 text-base text-gray-text hover:bg-light-background hover:text-primary-red"
-                            aria-haspopup={!!subItem.dropdown}
-                            aria-expanded={
-                              subItem.dropdown ? "false" : undefined
-                            }
-                          >
-                            <span>{subItem.name}</span>
-
-                            {subItem.dropdown && (
-                              <svg
-                                className="ml-2 h-3 w-3 flex-shrink-0"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden
-                              >
-                                <path
-                                  d="M9 6l6 6-6 6"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                              </svg>
-                            )}
-                          </Link>
-
-                          {/* SECOND-LEVEL DROPDOWN — controlled by CSS :hover on .sub-item */}
-                          {subItem.dropdown && (
-                            <ul
-                              className="absolute left-full top-0 ml-2 w-max bg-white shadow-lg rounded-md py-3
-                               submenu"
+                      <ul className="w-[420px] bg-white shadow-xl rounded-2xl p-3 border border-ink/5 grid grid-cols-1 gap-1">
+                        {item.dropdown.map((subItem) => (
+                          <li key={subItem.name}>
+                            <Link
+                              href={subItem.href}
+                              className="group/item flex items-center justify-between gap-3 rounded-xl px-4 py-3 hover:bg-primary/8 transition-colors"
                             >
-                              {subItem.dropdown.map((subSub) => (
-                                <li key={subSub.name}>
-                                  <Link
-                                    href={subSub.href}
-                                    className="block px-5 py-2 text-sm text-gray-text hover:bg-light-background hover:text-primary-red"
-                                  >
-                                    {subSub.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
+                              <span>
+                                <span className="block text-sm font-semibold text-ink group-hover/item:text-primary transition-colors">
+                                  {subItem.name}
+                                </span>
+                                {subItem.blurb && (
+                                  <span className="block text-xs text-ink/50 mt-0.5">
+                                    {subItem.blurb}
+                                  </span>
+                                )}
+                              </span>
+                              <ChevronDown className="h-4 w-4 -rotate-90 text-ink/20 group-hover/item:text-primary group-hover/item:translate-x-0.5 transition-all flex-shrink-0" />
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   )}
                 </li>
               ))}
@@ -172,18 +170,18 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link href="tel:+14034971731" className="hidden lg:block ml-4">
-              <div className="rounded-2xl bg-primary text-white font-semibold text-base py-[14px] px-8 transition-all duration-300 hover:bg-dark-text">
+            <Link href="tel:+14034971731" className="hidden xl:block ml-4">
+              <div className="rounded-2xl bg-primary text-white font-semibold text-base py-[14px] px-8 transition-all duration-300 hover:bg-secondary">
                 Call Now
               </div>
             </Link>
-            <Link href="/contact" className="hidden lg:block">
-              <div className="rounded-2xl border border-primary text-primary font-semibold text-base py-[14px] px-8 transition-all duration-300 hover:bg-dark-text">
-                Get Qoute
+            <Link href="/contact" className="hidden xl:block">
+              <div className="rounded-2xl border border-primary text-primary font-semibold text-base py-[14px] px-8 transition-all duration-300 hover:bg-primary hover:text-white">
+                Get Quote
               </div>
             </Link>
             <button
-              className="lg:hidden p-2 dark:text-black"
+              className="xl:hidden p-2 dark:text-black"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -201,7 +199,7 @@ const Header = () => {
           MOBILE SLIDING PANEL (right -> left)
          --------------------------- */}
       {/* rendered always so close animation stays smooth */}
-      <div className="lg:hidden">
+      <div className="xl:hidden">
         {/* backdrop overlay */}
         <div
           className={`fixed inset-0 z-40 transition-opacity duration-300 ${
@@ -247,7 +245,9 @@ const Header = () => {
                     <>
                       <button
                         onClick={() => toggleExpand(item.name)}
-                        className="w-full flex items-center justify-between py-3 text-sm font-semibold uppercase"
+                        className={`w-full flex items-center justify-between py-3 text-sm font-semibold uppercase ${
+                          isItemActive(item) ? "text-primary" : ""
+                        }`}
                         aria-expanded={expanded.has(item.name)}
                       >
                         <span>{item.name}</span>
@@ -336,7 +336,9 @@ const Header = () => {
                     <Link
                       href={item.href}
                       onClick={closeMenu}
-                      className="block py-3 text-sm font-semibold uppercase"
+                      className={`block py-3 text-sm font-semibold uppercase ${
+                        isItemActive(item) ? "text-primary" : ""
+                      }`}
                     >
                       {item.name}
                     </Link>
@@ -360,7 +362,7 @@ const Header = () => {
                   onClick={closeMenu}
                   className="rounded-2xl border border-primary text-primary font-semibold text-sm py-[14px] px-8 w-full text-center"
                 >
-                  Get Qoute
+                  Get Quote
                 </div>
               </Link>
             </div>

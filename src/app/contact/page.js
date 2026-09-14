@@ -5,7 +5,7 @@ import Contact from '../sections/Contact'
 export default function page() {
   return (
     <div>
-        <Breadcrumb name={'Contact Us'}/>
+        <Breadcrumb name={'Contact Us'} eyebrow={'Get a quote'} />
         <Contact />
     </div>
   )

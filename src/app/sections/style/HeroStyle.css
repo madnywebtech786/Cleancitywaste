@@ -1,57 +1,3 @@
-.slide-1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
-    url("/images/slide1.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.slide-2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
-    url("/images/slide2.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.slide-3 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
-    url("/images/slide3.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.slide-4 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
-    url("/images/slide4.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.heroBg {
-  /* lighter versions of theme colors */
-  background: linear-gradient(
-    to right,
-    color-mix(in srgb, var(--color-primary) 80%, white),
-    color-mix(in srgb, var(--color-primary) 50%, white),
-    color-mix(in srgb, var(--color-secondary) 15%, white)
-  );
-}
-
-.recycle {
-  display: inline-block; /* so transform works nicely */
-  animation: spin 10s linear infinite; /* adjust speed */
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .bin {
   display: inline-block;
   animation: zoomPulse 4s ease-in-out infinite;
@@ -66,23 +12,23 @@
   }
 }
 
-.custom-shape-divider-bottom-1758630055 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
+.animate-float {
+  animation: heroFloat 4s ease-in-out infinite;
 }
 
-.custom-shape-divider-bottom-1758630055 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 100px;
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
 }
 
-.custom-shape-divider-bottom-1758630055 .shape-fill {
-    fill: #FFFFFF;
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .bin {
+    animation: none;
+  }
 }
