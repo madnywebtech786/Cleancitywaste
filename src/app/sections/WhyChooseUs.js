@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, HandHelping, MapPin } from "lucide-react";
 import React from "react";
 
 export default function WhyChooseUs() {
@@ -45,50 +45,28 @@ export default function WhyChooseUs() {
                   title: "We Pick Up Overflow",
                   description:
                     "When our drivers find loose garbage around an overflowing bin, they pick it up by hand before emptying it. The bin gets emptied, and the surrounding waste gets attention too.",
-                  icon: "truck",
+                  icon: HandHelping,
                 },
                 {
                   title: "We're Calgary Based",
                   description:
                     "When you choose a local company, more of what you spend circulates back through the local economy, supporting Calgary employees, suppliers, and businesses.",
-                  icon: "dumpster",
+                  icon: MapPin,
                 },
-              ].map((item, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    {item.icon === "truck" && (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-primary"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path d="M4 18h16v2H4v-2zm0-4h16v2H4v-2zm0-4h16v2H4v-2zm0-4h16v2H4V8z" />
-                        <path d="M12 4v2M12 10v2M12 16v2" />
-                      </svg>
-                    )}
-                    {item.icon === "dumpster" && (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-primary"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <rect x="4" y="6" width="16" height="12" rx="2" />
-                        <path d="M8 10h8M8 14h8" />
-                      </svg>
-                    )}
+              ].map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-primary/15 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <Icon size={24} className="text-primary" strokeWidth={2} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                      <p>{item.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p>{item.description}</p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             <div className="mt-12">

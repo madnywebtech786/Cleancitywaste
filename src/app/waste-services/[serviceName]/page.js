@@ -322,11 +322,7 @@ export default function WasteServicePage({ params }) {
 
   return (
     <div className="min-h-screen bg-white">
-      <Breadcrumb
-        name={service.title}
-        section="Waste Solutions"
-        eyebrow={service.tagline}
-      />
+      <Breadcrumb name={service.title} />
 
       {/* Hero */}
       <div className="px-4 sm:px-8 md:px-12 lg:px-20 pt-14 pb-10">

@@ -35,10 +35,7 @@ const detailServices = [
 export default function WhyChooseUsPage() {
   return (
     <div className="min-h-screen bg-white overflow-x-clip">
-      <Breadcrumb
-        name={"Why Choose Waste Plus Inc."}
-        eyebrow={"Waste management with a local, hands-on approach"}
-      />
+      <Breadcrumb name={"Why Choose Waste Plus Inc."} />
 
       {/* Poster statement */}
       <div className="px-4 sm:px-8 md:px-12 lg:px-20 pt-20 pb-16 lg:pt-28 lg:pb-24">

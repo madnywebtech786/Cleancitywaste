@@ -9,10 +9,7 @@ import CTA from "../sections/CTA";
 export default function page() {
   return (
     <div>
-      <Breadcrumb
-        name={"About Us"}
-        eyebrow={"10 years serving Calgary"}
-      />
+      <Breadcrumb name={"About Us"} />
       <About />
 
       <div className="py-16 px-4 sm:px-8 md:px-12 lg:px-20 bg-paper dark:text-black">

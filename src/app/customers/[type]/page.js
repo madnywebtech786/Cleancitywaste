@@ -22,7 +22,7 @@ const whoWeServeData = {
       },
       {
         title: "A Locally Owned Calgary Waste Company",
-        body: "We are committed to delivering dependable service with a personal touch. Our residential garbage pickup and recycling services are tailored to fit seamlessly into your daily routine, keeping your home and neighborhood cleaner and greener. From everyday household waste to large cleanup projects, Waste Plus Inc is your trusted partner for hassle-free waste management.",
+        body: "We are committed to delivering dependable service with a personal touch. Our residential garbage pickup and recycling services are tailored to fit seamlessly into your daily routine, keeping your complex and neighborhood cleaner and greener. From everyday household waste to large cleanup projects, Waste Plus Inc is your trusted partner for hassle-free waste management.",
       },
     ],
     servicesTitle: "Where we work",
@@ -110,7 +110,7 @@ const whoWeServeData = {
     title: "Property Managers",
     tagline: "More than waste collection. We take care of the details.",
     intro:
-      "Managing properties means dealing with hundreds of details every day. Waste management shouldn't create more problems for you. Waste Plus Inc. provides hands-on, reliable waste management services for property managers across Calgary and surrounding communities.",
+      "Managing properties means dealing with hundreds of service calls every day. Waste management shouldn't create more problems for you. Waste Plus Inc. provides hands-on, reliable waste management services for property managers across Calgary and surrounding communities.",
     quickFacts: [
       { label: "Signature detail", value: "Overflow picked up by hand" },
       { label: "Coverage", value: "Waste, recycling, organics & more" },
@@ -151,7 +151,7 @@ const whoWeServeData = {
       { title: "Approachable", body: "You can speak with people who understand your property and your requirements." },
       { title: "Flexible", body: "We can adapt services when your property's needs change." },
       { title: "Hands-On", body: "Our drivers pay attention to the waste area, including picking up overflow that has fallen outside the bins." },
-      { title: "Responsive", body: "When something unexpected happens, you need a waste company that is willing to work with you." },
+      { title: "Responsive", body: "When something unexpected happens, you need a waste collection company that is willing to work with you." },
     ],
     servicesTitle: "Complete waste services for property managers",
     services: [
@@ -256,7 +256,7 @@ const whoWeServeData = {
       },
       {
         title: "Local Means Personal",
-        body: "Working with a local company also means you can have a more direct relationship with your waste provider.",
+        body: "Working with a local company also means you can have a more direct relationship with your waste collection vendor.",
       },
       {
         title: "On-Call Junk Removal for Residents & Properties",
@@ -329,11 +329,7 @@ export default function CustomerTypePage({ params }) {
 
   return (
     <div className="min-h-screen bg-white">
-      <Breadcrumb
-        name={entry.title}
-        section="Our Customers"
-        eyebrow={entry.tagline}
-      />
+      <Breadcrumb name={entry.title} />
 
       {/* Hero */}
       <div className="px-4 sm:px-8 md:px-12 lg:px-20 pt-14 pb-10">
