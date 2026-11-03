@@ -15,20 +15,20 @@ export default function Testimonials() {
         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
           {[
             {
-              name: "Sarah Johnson",
-              company: "GreenLeaf Café",
+              name: "Mike Thompson",
+              company: "Local Café Owner",
               content:
-                "Waste Plus Inc’s organic pickup made managing our cafe’s food waste effortless  within three months we increased composting and cut landfill waste by over 30%. Their drivers are punctual and the service is consistently professional.",
-              avatar: "https://placehold.co/100/5b9d39/white?text=SJ",
+                "Waste Plus Inc has made dealing with our cafe food waste a lot easier. We started using their organic pickup and within a few months we were composting more and sending over 30% less to landfill. Drivers are always on time and super friendly. Overall happy with the service.",
+              avatar: "https://placehold.co/100/5b9d39/white?text=MT",
               rating: 5,
             },
-           
+
             {
-              name: "Emma Rodriguez",
-              company: "Northside Property Management",
+              name: "Jennifer Smith",
+              company: "Property Manager",
               content:
-                "We switched to Waste Plus Inc for tenant waste and recycling services  the tailored bin program improved recycling rates and reduced hauling fees. Their responsive support and clear guidance made the transition effortless.",
-              avatar: "https://placehold.co/100/5b9d39/white?text=ER",
+                "We manage a few buildings around Calgary and needed a waste company that actually shows up when they say they will. Waste Plus Inc has been great about that. Their team is easy to reach if we ever need to adjust pickup days, and tenants haven't complained about overflowing bins since we switched.",
+              avatar: "https://placehold.co/100/5b9d39/white?text=JS",
               rating: 5,
             },
           ].map((testimonial, index) => (

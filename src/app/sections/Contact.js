@@ -188,6 +188,7 @@ const Contact = () => {
     businessType: "",
     businessName: "",
     businessLocation: "",
+    comments: "",
     // Removed legacy materialType/binSize/dumpFrequency/pickupsPerWeek from top-level
     // Bin details will be added to `bins` array
     bins: [],
@@ -203,6 +204,7 @@ const Contact = () => {
   // Current bin input values (separate from the list)
   const [currentBin, setCurrentBin] = useState({
     materialType: "",
+    binType: "",
     binSize: "",
     numberOfBins: 1,
     binPlacementLocation: "",
@@ -234,13 +236,7 @@ const Contact = () => {
       newErrors.email = "Please enter a valid email address";
     }
 
-    // Business Information
-    if (!formData.businessType)
-      newErrors.businessType = "Business type is required";
-    if (!formData.businessName.trim())
-      newErrors.businessName = "Business name is required";
-    if (!formData.businessLocation.trim())
-      newErrors.businessLocation = "Business location is required";
+    // Business Information is optional - no required checks.
 
     // IMPORTANT: do NOT validate the CURRENT BIN INPUTS here.
     // Only require that at least one bin info entry exists in `formData.bins`.
@@ -310,15 +306,13 @@ const Contact = () => {
   const validateCurrentBin = () => {
     const be = {};
     if (!currentBin.materialType) be.materialType = "Material type is required";
+    if (!currentBin.binType) be.binType = "Bin type is required";
     if (!currentBin.binSize) be.binSize = "Bin size is required";
     if (!currentBin.numberOfBins || currentBin.numberOfBins < 1)
       be.numberOfBins = "Enter number of bins (min 1)";
-    if (!currentBin.binPlacementLocation)
-      be.binPlacementLocation = "Bin placement location is required";
+    // Bin placement location is optional - not validated.
     if (!currentBin.dumpFrequency)
       be.dumpFrequency = "Dump frequency is required";
-    if (!currentBin.pickupsPerWeek)
-      be.pickupsPerWeek = "Number of pickups is required";
     setBinErrors(be);
     return Object.keys(be).length === 0;
   };
@@ -334,6 +328,7 @@ const Contact = () => {
     // reset current bin to defaults
     setCurrentBin({
       materialType: "",
+      binType: "",
       binSize: "",
       numberOfBins: 1,
       binPlacementLocation: "",
@@ -492,8 +487,9 @@ const Contact = () => {
   ];
 
   const materialTypes = ["Waste", "Recycle", "Organic"];
+  const binTypes = ["Front Load", "Molok"];
   const binSizes = ["4 Yard", "6 Yard", "8 Yard"];
-  const dumpFrequencies = ["Weekly", "Bi-Weekly"];
+  const dumpFrequencies = ["Weekly", "Bi-Weekly", "Monthly"];
   const pickupOptions = [
     "1 time",
     "2 times",
@@ -640,7 +636,7 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-sm font-medium text-ink/70 mb-2">
-                    Business Type *
+                    Business Type
                   </label>
                   <MultiSelect
                     name="businessType"
@@ -659,7 +655,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-ink/70 mb-2">
-                    Business Name *
+                    Business Name
                   </label>
                   <input
                     type="text"
@@ -677,7 +673,7 @@ const Contact = () => {
                 </div>
                 <div className="md:col-span-2">
                   <label className="block text-sm font-medium text-ink/70 mb-2">
-                    Business Location *
+                    Business Location
                   </label>
                   <input
                     type="text"
@@ -693,17 +689,33 @@ const Contact = () => {
                     </p>
                   )}
                 </div>
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
+                    Comments
+                  </label>
+                  <textarea
+                    name="comments"
+                    value={formData.comments}
+                    onChange={handleChange}
+                    rows={4}
+                    className="w-full bg-white placeholder:text-ink/35 border border-ink/15 rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all resize-none"
+                    placeholder="Anything else we should know?"
+                  />
+                </div>
               </div>
             </div>
 
             {/* Bin Information (NEW) */}
             <div className="bg-white rounded-2xl p-6 md:p-8 border border-ink/8 shadow-sm">
-              <h3 className="text-xl font-bold mb-6 text-ink flex items-center gap-3">
+              <h3 className="text-xl font-bold mb-2 text-ink flex items-center gap-3">
                 <span className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <Trash size={18} className="text-primary" />
                 </span>
                 Bin Information
               </h3>
+              <p className="text-sm text-ink/50 mb-6">
+                You can add more materials using the button at the bottom
+              </p>
 
               <div className="grid md:grid-cols-2 gap-5">
                 {/* Material to Dump (single select) */}
@@ -729,6 +741,32 @@ const Contact = () => {
                   {binErrors.materialType && (
                     <p className="text-red-500 text-sm mt-1">
                       {binErrors.materialType}
+                    </p>
+                  )}
+                </div>
+
+                {/* Type of Bin (single select) */}
+                <div>
+                  <label className="block text-sm font-medium text-ink/70 mb-2">
+                    Type of Bin *
+                  </label>
+                  <MultiSelect
+                    name="binType"
+                    options={binTypes}
+                    value={currentBin.binType}
+                    onChange={(e) => {
+                      const { name, value } = e.target;
+                      setCurrentBin((prev) => ({ ...prev, [name]: value }));
+                      if (binErrors.binType)
+                        setBinErrors((b) => ({ ...b, binType: "" }));
+                    }}
+                    placeholder="Select bin type"
+                    error={binErrors.binType}
+                    isMulti={false}
+                  />
+                  {binErrors.binType && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {binErrors.binType}
                     </p>
                   )}
                 </div>
@@ -791,7 +829,7 @@ const Contact = () => {
                 {/* Bin Placement Location (single select) */}
                 <div>
                   <label className="block text-sm font-medium text-ink/70 mb-2">
-                    Bin Placement Location *
+                    Bin Placement Location
                   </label>
                   <MultiSelect
                     name="binPlacementLocation"
@@ -846,7 +884,7 @@ const Contact = () => {
                 {/* Number of Pickups Per Week (single select) */}
                 <div>
                   <label className="block text-sm font-medium text-ink/70 mb-2">
-                    Number of Pickups Per Week *
+                    Number of Pickups Per Week
                   </label>
                   <MultiSelect
                     name="pickupsPerWeek"
@@ -895,6 +933,10 @@ const Contact = () => {
                         <div className="flex flex-col gap-1">
                           <div className="text-xs text-ink/45">Material</div>
                           <div className="font-medium text-ink text-sm">{b.materialType}</div>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <div className="text-xs text-ink/45">Bin Type</div>
+                          <div className="font-medium text-ink text-sm">{b.binType}</div>
                         </div>
                         <div className="flex flex-col gap-1">
                           <div className="text-xs text-ink/45">Bin Size</div>

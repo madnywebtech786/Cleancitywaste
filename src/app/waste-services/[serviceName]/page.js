@@ -10,11 +10,6 @@ const wasteServicesData = {
     tagline: "Reliable general waste removal for Calgary properties",
     intro:
       "Waste Plus Inc. provides dependable general waste collection services for commercial, residential, and multi-property sites across Calgary and surrounding communities. We collect general waste from front-load and Molok bins, helping property owners, businesses, and managers keep their waste areas clean, organized, and serviced on schedule.",
-    quickFacts: [
-      { label: "Container types", value: "Front-load & Molok bins" },
-      { label: "Serving", value: "Calgary & surrounding areas" },
-      { label: "Scheduling", value: "Built around your waste volume" },
-    ],
     modules: [
       {
         title: "Front-Load & Molok Bin Waste Collection",
@@ -38,7 +33,7 @@ const wasteServicesData = {
         body: "Consistent waste collection helps properties maintain cleaner waste areas and provides residents, tenants, employees, and customers with a more convenient waste disposal experience. We work with property owners and managers to establish a collection schedule that fits their waste needs.",
       },
     ],
-    areasTitle: "Reliable service for different properties",
+    areasTitle: "Reliable Waste Services for All Types of Properties",
     areas: [
       "Apartment and condominium buildings",
       "Commercial properties",
@@ -52,18 +47,13 @@ const wasteServicesData = {
       title: "Need general waste collection?",
       body: "Contact Waste Plus Inc. to discuss your front-load or Molok bin requirements and find a waste collection schedule that works for your property.",
     },
-    image: "/images/garbage.webp",
+    image: "/images/General-Waste-Collection.webp",
   },
   "mixed-recycling-collection": {
     title: "Mixed Recycling Collection",
     tagline: "Convenient mixed recycling collection for Calgary properties",
     intro:
       "Waste Plus Inc. provides scheduled mixed recycling collection for commercial, residential, and multi-family properties across Calgary and surrounding communities. We collect recyclable materials from front-load and Molok bins, helping properties improve recycling practices while keeping recycling areas organized and manageable.",
-    quickFacts: [
-      { label: "Container types", value: "Front-load & Molok bins" },
-      { label: "Serving", value: "Calgary & surrounding areas" },
-      { label: "Best for", value: "Properties with regular recyclables" },
-    ],
     modules: [
       {
         title: "Front-Load & Molok Recycling Collection",
@@ -102,18 +92,13 @@ const wasteServicesData = {
       title: "Looking for mixed recycling collection?",
       body: "Contact Waste Plus Inc. to discuss your recycling bins, collection frequency, and property requirements.",
     },
-    image: "/images/why.webp",
+    image: "/images/Mixed-Recycling-Collection.webp",
   },
   "organic-waste-collection": {
     title: "Organic Waste Collection",
     tagline: "Reliable organic waste collection for Calgary properties",
     intro:
       "Waste Plus Inc. provides convenient organic waste collection services for commercial, residential, and multi-family properties across Calgary and surrounding communities. We collect organic waste from front-load and Molok bins, helping properties manage food and organic materials while reducing the amount of waste sent to landfill.",
-    quickFacts: [
-      { label: "Container types", value: "Front-load & Molok bins" },
-      { label: "Serving", value: "Calgary & surrounding areas" },
-      { label: "Helps", value: "Reduce landfill diversion" },
-    ],
     modules: [
       {
         title: "Front-Load & Molok Organic Waste Collection",
@@ -151,22 +136,17 @@ const wasteServicesData = {
       title: "Need organic waste collection?",
       body: "Contact Waste Plus Inc. to discuss your organic waste requirements and set up a collection schedule for your front-load or Molok bins.",
     },
-    image: "/images/waste.webp",
+    image: "/images/Organic-Waste-Collection.webp",
   },
   "on-call-junk-hauling": {
     title: "On-Call Junk Hauling",
     tagline: "Trucks and trailers, ready when you call",
     intro:
       "Not everything fits into a regular collection schedule. For tenant move-outs, abandoned furniture, property cleanups, maintenance projects, and accumulated junk, our on-call junk removal service provides trucks and trailers to remove acceptable non-hazardous materials.",
-    quickFacts: [
-      { label: "Equipment", value: "Trucks & trailers" },
-      { label: "Serving", value: "Calgary & surrounding areas" },
-      { label: "Response", value: "You call, we adapt to the job" },
-    ],
     modules: [
       {
         title: "On-Call Junk Removal When You Need It",
-        body: "Not everything fits into a regular collection schedule. For tenant move-outs, abandoned furniture, property cleanups, maintenance projects, and accumulated junk, our on-call junk removal service provides trucks and trailers to remove acceptable non-hazardous materials. You call when you need us, and we adapt to the job.",
+        body: "Not everything can wait for a regular collection schedule. Our on-call junk removal service helps with tenant move-outs, abandoned furniture, property cleanups, maintenance projects, accumulated junk, wooden pallets and larger items left around garbage enclosures. We bring our trailer, load the junk and dispose of it at the landfill site. We remove acceptable non-hazardous materials to help keep your property clean and organized.",
       },
       {
         title: "Common Junk Removal Situations",
@@ -193,18 +173,13 @@ const wasteServicesData = {
       title: "Have unexpected junk to remove?",
       body: "Contact Waste Plus Inc. to arrange on-call junk hauling for your property. No need to wait for your regular collection.",
     },
-    image: "/images/dumpster.webp",
+    image: "/images/On-Call-Junk-Hauling.webp",
   },
   "bin-enclosure-cleaning": {
     title: "Bin & Enclosure Cleaning",
     tagline: "Keep your garbage enclosure clean, safe & presentable",
     intro:
       "Waste Plus Inc. provides garbage enclosure cleaning and maintenance services for commercial, residential, and multi-family properties in Calgary and surrounding communities. Garbage enclosures can quickly become dirty from loose garbage, spills, debris, dirt, and buildup around waste containers.",
-    quickFacts: [
-      { label: "Service style", value: "One-time or ongoing" },
-      { label: "Serving", value: "Calgary & surrounding areas" },
-      { label: "Includes", value: "Debris removal & pressure washing" },
-    ],
     modules: [
       {
         title: "Complete Garbage Enclosure Cleaning",
@@ -250,23 +225,14 @@ const wasteServicesData = {
       title: "Need your garbage enclosure cleaned?",
       body: "Contact Waste Plus Inc. to arrange a garbage enclosure cleanup in Calgary and surrounding communities. Tell us about your property and the condition of the enclosure, and we'll help determine the right cleaning service.",
     },
-    image: "/images/Bin-Enclosure.webp",
+    image: "/images/Bin-Enclosure-Cleaning.webp",
   },
   "front-load-molok-bins": {
     title: "Front Load & Molok Bins",
     tagline: "The right container setup for your property",
     intro:
       "Waste Plus Inc. services properties using front-load bins and Molok (in-ground) bin systems throughout Calgary and surrounding communities. Whichever container type your property uses, we provide scheduled collection to help prevent overflowing bins and messy waste areas.",
-    quickFacts: [
-      { label: "Container types", value: "Front-load & Molok in-ground" },
-      { label: "Serving", value: "Calgary & surrounding areas" },
-      { label: "Covers", value: "Waste, recycling & organics" },
-    ],
     modules: [
-      {
-        title: "Choosing the Right Container",
-        body: "Front-load bins are a practical option for properties with regular, higher-volume waste needs, while Molok in-ground bins offer a space-saving, lower-odour solution suited to tighter sites and higher-density communities. We can help you determine the right container setup for general waste, recycling, and organics, and build a collection schedule around your property's actual volume and traffic patterns.",
-      },
       {
         title: "Bin Options We Service",
         body: "We service the full range of front-load and Molok bin types across a single property, so waste, recycling, and organics can run on one coordinated schedule.",
@@ -292,7 +258,7 @@ const wasteServicesData = {
       title: "Not sure which bin setup fits your property?",
       body: "Contact Waste Plus Inc. and we'll help you determine the right front-load or Molok bin setup for your waste, recycling, and organics.",
     },
-    image: "/images/Front-Load-molok-bins.webp",
+    image: "/images/Front-Load-Molok-Bins.webp",
   },
 };
 
@@ -357,72 +323,54 @@ export default function WasteServicePage({ params }) {
         </div>
       </div>
 
-      {/* Body: sticky meta rail + numbered modules */}
-      <div className="px-4 sm:px-8 md:px-12 lg:px-20 py-10">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[280px_1fr] gap-12">
-          {/* Meta rail */}
-          <aside className="lg:sticky lg:top-40 lg:self-start lg:z-10">
-            <div className="rounded-2xl border border-ink/10 p-6 bg-paper">
-              <p className="text-sm font-semibold text-ink mb-4">
-                At a glance
-              </p>
-              <dl className="space-y-4">
-                {service.quickFacts.map((fact, index) => (
-                  <div key={index}>
-                    <dt className="text-xs text-ink/50">{fact.label}</dt>
-                    <dd className="text-sm font-medium text-ink mt-0.5">
-                      {fact.value}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-              <div className="mt-6 pt-6 border-t border-ink/10">
-                <Link href={"/contact"}>
-                  <button className="cursor-pointer w-full bg-primary text-white py-3 rounded-full font-semibold text-sm hover:bg-secondary transition-colors">
-                    Request this service
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </aside>
-
-          {/* Modules */}
-          <div className="flex flex-col gap-3">
-            {service.modules.map((module, index) => (
+      {/* Body: service breakdown — label rail + content, plain blocks for context, tinted panels for checklists */}
+      <div className="px-4 sm:px-8 md:px-12 lg:px-20 py-14 lg:py-20">
+        <div className="max-w-7xl mx-auto flex flex-col gap-10 lg:gap-14">
+          {service.modules.map((module, index) =>
+            module.list ? (
               <div
                 key={index}
-                className="grid grid-cols-[auto_1fr] gap-5 py-7 border-b border-ink/10 last:border-b-0"
+                className="grid lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 rounded-2xl bg-paper border border-ink/8 p-7 sm:p-9 lg:p-10"
               >
-                <span className="text-sm font-semibold text-primary tabular-nums pt-0.5">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                <h2 className="text-xl sm:text-2xl font-bold text-ink lg:pr-6">
+                  {module.title}
+                </h2>
                 <div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-ink mb-3">
-                    {module.title}
-                  </h2>
                   <p className="text-ink/70 leading-relaxed max-w-2xl">
                     {module.body}
                   </p>
-                  {module.list && (
-                    <ul className="mt-5 grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
-                      {module.list.map((item, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2 text-sm text-ink/80"
-                        >
-                          <CheckCircle2
-                            size={16}
-                            className="text-primary flex-shrink-0 mt-0.5"
-                          />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  <ul className="mt-7 grid sm:grid-cols-2 gap-x-8 gap-y-3 pt-6 border-t border-ink/10">
+                    {module.list.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2.5 text-sm text-ink/80"
+                      >
+                        <CheckCircle2
+                          size={17}
+                          className="text-primary flex-shrink-0 mt-0.5"
+                        />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            ))}
-          </div>
+            ) : (
+              <div
+                key={index}
+                className={`grid lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 ${
+                  index === 0 ? "lg:pt-0" : "pt-10 lg:pt-14 border-t border-ink/10"
+                }`}
+              >
+                <h2 className="text-xl sm:text-2xl font-bold text-ink lg:pr-6">
+                  {module.title}
+                </h2>
+                <p className="text-ink/70 leading-relaxed max-w-2xl">
+                  {module.body}
+                </p>
+              </div>
+            )
+          )}
         </div>
       </div>
 

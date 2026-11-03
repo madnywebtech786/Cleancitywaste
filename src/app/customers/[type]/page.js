@@ -9,12 +9,7 @@ const whoWeServeData = {
     title: "Residential Waste Services",
     tagline: "Dependable waste service for Calgary homes",
     intro:
-      "At Waste Plus Inc, we provide reliable residential waste management in Calgary, helping homeowners keep their spaces clean, safe, and environmentally friendly. Our services include 64-gallon organic carts for yard and food waste along with 4-yard, 6-yard, and 8-yard bins for waste and recycling.",
-    quickFacts: [
-      { label: "Container sizes", value: "4, 6 & 8 yard bins" },
-      { label: "Organics", value: "64-gallon carts" },
-      { label: "Serving", value: "Calgary & surrounding areas" },
-    ],
+      "At Waste Plus Inc, we provide reliable residential apartment buildings, townhouse complexes' waste management in Calgary, helping property managers, residents, and owners keep their spaces clean, safe, and environmentally friendly. Our services include 64-gallon organic carts for yard and food waste along with 4-yard, 6-yard, and 8-yard bins for waste and recycling.",
     modules: [
       {
         title: "Flexible Pickup, Built Around Your Routine",
@@ -34,28 +29,23 @@ const whoWeServeData = {
     ],
     closing: {
       title: "Looking for reliable residential waste service?",
-      body: "Contact Waste Plus Inc. today for affordable bin rentals and residential waste collection in Calgary.",
+      body: "Contact Waste Plus Inc. today for affordable, dependable residential waste collection in Calgary.",
     },
-    image: "/images/residential.webp",
+    image: "/images/Residential.webp",
   },
   "commercial-services": {
     title: "Commercial Waste Services",
     tagline: "Trusted commercial waste management in Calgary",
     intro:
       "Managing waste is critical for any business, and Waste Plus Inc provides trusted commercial waste management services in Calgary. We offer 4-yard, 6-yard, and 8-yard bins to handle everything from daily garbage and cardboard recycling to food and organic waste.",
-    quickFacts: [
-      { label: "Container sizes", value: "4, 6 & 8 yard bins" },
-      { label: "Coverage", value: "Garbage, recycling & organics" },
-      { label: "Serving", value: "Calgary & surrounding areas" },
-    ],
     modules: [
       {
-        title: "Customized for Your Operation",
-        body: "Whether you're running a restaurant, retail store, office, or healthcare clinic, our customized waste solutions ensure your operations stay clean, compliant, and efficient.",
+        title: "Customized for Your Property",
+        body: "Whether you're a property manager, condo board, business owner, or plaza owner, our customized waste solutions are designed around your specific needs, helping keep your property clean, compliant, and efficient.",
       },
       {
         title: "Reliability Businesses Can Count On",
-        body: "We provide scheduled garbage pickup, flexible bin rentals, and responsive customer support so you never have to worry about missed collections or overflowing bins. As a Calgary-owned and operated waste management company, we take pride in supporting local businesses with professional, affordable, and eco-conscious services.",
+        body: "We provide scheduled garbage pickup and responsive customer support so you never have to worry about missed collections or overflowing bins. As a Calgary-owned and operated waste management company, we take pride in supporting local businesses with professional, affordable, and eco-conscious services.",
       },
     ],
     servicesTitle: "Where we work",
@@ -70,22 +60,17 @@ const whoWeServeData = {
       title: "Looking for reliable commercial waste service?",
       body: "Get in touch today to book commercial garbage pickup and recycling services in Calgary.",
     },
-    image: "/images/commercial.webp",
+    image: "/images/Commercial.webp",
   },
   "industrial-services": {
     title: "Industrial Waste Services",
     tagline: "Heavy-duty waste solutions for large-scale sites",
     intro:
       "For large-scale operations, you need heavy-duty waste solutions you can count on. Waste Plus Inc provides industrial waste management services in Calgary with 4-yard, 6-yard, and 8-yard bins designed for construction sites, manufacturing plants, and warehouses.",
-    quickFacts: [
-      { label: "Container sizes", value: "4, 6 & 8 yard bins" },
-      { label: "Handles", value: "Demolition, recycling & organics" },
-      { label: "Serving", value: "Calgary & surrounding areas" },
-    ],
     modules: [
       {
         title: "Built for Project Sites",
-        body: "From demolition debris to recycling and organic waste, our services keep your project site clean, safe, and compliant with local regulations. We specialize in industrial garbage pickup and bin rentals tailored to your project's needs.",
+        body: "From demolition debris to recycling and organic waste, our services keep your project site clean, safe, and compliant with local regulations. We specialize in industrial garbage pickup tailored to your project's needs.",
       },
       {
         title: "Safety, Professionalism, Sustainability",
@@ -102,20 +87,15 @@ const whoWeServeData = {
     ],
     closing: {
       title: "Looking for dependable industrial waste service?",
-      body: "Contact us today for dependable industrial waste management and bin rental services in Calgary.",
+      body: "Contact us today for dependable industrial waste management services in Calgary.",
     },
-    image: "/images/industrial.webp",
+    image: "/images/Industrial.webp",
   },
   "property-managers": {
     title: "Property Managers",
-    tagline: "More than waste collection. We take care of the details.",
+    tagline: "More than waste collection. We take care of hundreds of service calls every day.",
     intro:
       "Managing properties means dealing with hundreds of service calls every day. Waste management shouldn't create more problems for you. Waste Plus Inc. provides hands-on, reliable waste management services for property managers across Calgary and surrounding communities.",
-    quickFacts: [
-      { label: "Signature detail", value: "Overflow picked up by hand" },
-      { label: "Coverage", value: "Waste, recycling, organics & more" },
-      { label: "Based", value: "Calgary, locally operated" },
-    ],
     differentiator: {
       title: "We Don't Just Empty the Bin. We Clean Up Around It.",
       body: "When garbage bags or loose waste have overflowed from the bin, our drivers don't simply leave it behind. They get out of the truck and pick up the overflow by hand, helping clean up the immediate area around the container. Many waste companies focus on emptying the container and moving on, but we believe the job isn't truly done if garbage is still sitting beside the bin.",
@@ -147,7 +127,7 @@ const whoWeServeData = {
       },
     ],
     pillars: [
-      { title: "Local", body: "Calgary based and committed to serving our local community." },
+      { title: "Local", body: "A Calgary-based waste collection company committed to serving our local community." },
       { title: "Approachable", body: "You can speak with people who understand your property and your requirements." },
       { title: "Flexible", body: "We can adapt services when your property's needs change." },
       { title: "Hands-On", body: "Our drivers pay attention to the waste area, including picking up overflow that has fallen outside the bins." },
@@ -169,18 +149,13 @@ const whoWeServeData = {
       title: "Looking for a waste partner that pays attention?",
       body: "Talk to Waste Plus Inc. about your properties, bin requirements, collection schedule, and additional cleanup needs. We'd be happy to work around your requirements, not the other way around.",
     },
-    image: "/images/Property-Managers.webp",
+    image: "/images/Property Managers.webp",
   },
   "plaza-building-owners": {
     title: "Plaza & Building Owners",
     tagline: "Waste collection that goes beyond emptying the bin",
     intro:
       "Your building's waste area is part of your property. When garbage is overflowing, bags are left beside bins, or debris is scattered around the enclosure, it affects the appearance of the entire property. We don't believe our job ends when the bin is emptied.",
-    quickFacts: [
-      { label: "Signature detail", value: "Overflow picked up by hand" },
-      { label: "Coverage", value: "Waste, recycling, organics & more" },
-      { label: "Based", value: "Calgary, locally operated" },
-    ],
     differentiator: {
       title: "Our Drivers Pick Up Overflow by Hand",
       body: "When our drivers arrive and find garbage bags or loose items that have fallen or overflowed outside the bin, they don't simply leave them behind. They get out and pick up the overflow by hand. The bin gets emptied. The surrounding overflow gets attention too. It's one of the reasons our customers appreciate working with us.",
@@ -240,31 +215,26 @@ const whoWeServeData = {
     tagline: "We take care of more than what's inside the bin",
     intro:
       "For condo boards, keeping common areas clean and well maintained is important to residents and property values. We collect the waste, recycling, and organics, and we pay attention to what is happening around the bins too.",
-    quickFacts: [
-      { label: "Signature detail", value: "Overflow picked up by hand" },
-      { label: "Coverage", value: "Waste, recycling, organics & more" },
-      { label: "Based", value: "Calgary, locally operated" },
-    ],
     differentiator: {
-      title: "Our Drivers Pick Up Overflow by Hand",
-      body: "If garbage bags or loose items have overflowed from a bin and are sitting beside it, our drivers don't simply drive away after emptying the container. They get out and pick up the overflow by hand. We believe that if garbage is left on the ground after collection, the job isn't finished. This hands-on approach is especially appreciated by property managers and condominium communities.",
+      title: "We Know Your Building Reflects on You",
+      body: "As a condo board member, you volunteer your time to help protect your community, maintain your building, and look after the interests of your residents. You need a waste collection company that takes that responsibility seriously. At Waste Plus Inc., we do more than collect garbage, recycling, and organics. Our drivers pay attention to what is happening around your bins—picking up loose garbage, keeping collection areas orderly, and letting you know when something needs attention. Because when your waste areas are clean, organized, and properly managed, it makes a difference to residents, property managers, and the overall appearance of your building. You take care of your community. We take care of the waste.",
     },
     modules: [
       {
         title: "We Are Calgary Based",
-        body: "We know the properties, neighbourhoods, and waste management challenges in our local market. When your condo community chooses a local company, your waste service dollars also help support the local economy and local businesses. We're not just servicing Calgary. We're part of it.",
+        body: "We understand the properties, neighbourhoods, weather, and waste collection challenges that are specific to our local market. When your condo community chooses a local company, the dollars you spend on waste collection also help support the local economy and local businesses. We're not just servicing Calgary. We're part of it.",
       },
       {
         title: "Local Means Personal",
-        body: "Working with a local company also means you can have a more direct relationship with your waste collection vendor.",
+        body: "Choosing a local company also gives you a more direct, personal relationship with your waste collection vendor.",
       },
       {
         title: "On-Call Junk Removal for Residents & Properties",
-        body: "Condominium communities regularly deal with bulky items and unexpected waste. From move-outs and abandoned furniture to property cleanups and maintenance projects, our on-call junk removal service uses trucks and trailers to handle acceptable non-hazardous materials.",
+        body: "Condominium communities regularly deal with bulky items and unexpected waste. From move-outs, unauthorized dumping, and abandoned furniture to property cleanups and maintenance projects, our on-call junk removal service uses trucks and trailers to haul away acceptable non-hazardous materials.",
       },
       {
         title: "Clean Garbage Enclosures",
-        body: "We also provide garbage enclosure cleanup to help condominium communities maintain cleaner and more presentable waste areas.",
+        body: "We also offer a garbage enclosure cleanup service to help condominium communities keep their waste areas cleaner and more presentable.",
         list: [
           "Loose garbage removal",
           "Debris removal",
@@ -277,7 +247,7 @@ const whoWeServeData = {
       },
       {
         title: "The Little Things Matter",
-        body: "We understand that a garbage bin is only one part of the waste area. The bags beside it matter. The loose debris matters. The condition of the enclosure matters. The experience of residents matters. That's why we take a more hands-on approach to waste collection: we don't just empty bins, we pay attention to what is left behind.",
+        body: "A garbage bin is only one part of the waste area. The bags left beside it, the loose debris, and the condition of the enclosure are all a matter of concern to condo boards—and the experience of residents matters just as much. That's why we take a more hands-on approach to waste collection: we don't just empty bins, we pay attention to what's left behind.",
       },
     ],
     pillars: [
@@ -303,7 +273,7 @@ const whoWeServeData = {
       title: "Looking for a waste company that cares about the details?",
       body: "Contact Waste Plus Inc. to discuss your condominium's waste collection, recycling, organics, junk removal, and garbage enclosure cleaning needs. Local service. Hands-on drivers. Flexible solutions.",
     },
-    image: "/images/Condo-Boards.webp",
+    image: "/images/condo-board.webp",
   },
 };
 
@@ -383,70 +353,54 @@ export default function CustomerTypePage({ params }) {
         </div>
       )}
 
-      {/* Body: sticky meta rail + numbered modules */}
-      <div className="px-4 sm:px-8 md:px-12 lg:px-20 py-10">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[280px_1fr] gap-12">
-          <aside className="lg:sticky lg:top-40 lg:self-start lg:z-10">
-            <div className="rounded-2xl border border-ink/10 p-6 bg-paper">
-              <p className="text-sm font-semibold text-ink mb-4">
-                At a glance
-              </p>
-              <dl className="space-y-4">
-                {entry.quickFacts.map((fact, index) => (
-                  <div key={index}>
-                    <dt className="text-xs text-ink/50">{fact.label}</dt>
-                    <dd className="text-sm font-medium text-ink mt-0.5">
-                      {fact.value}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-              <div className="mt-6 pt-6 border-t border-ink/10">
-                <Link href={"/contact"}>
-                  <button className="cursor-pointer w-full bg-primary text-white py-3 rounded-full font-semibold text-sm hover:bg-secondary transition-colors">
-                    Talk to us
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </aside>
-
-          <div className="flex flex-col gap-3">
-            {entry.modules.map((module, index) => (
+      {/* Body: service breakdown — label rail + content, plain blocks for context, tinted panels for checklists */}
+      <div className="px-4 sm:px-8 md:px-12 lg:px-20 py-14 lg:py-20">
+        <div className="max-w-7xl mx-auto flex flex-col gap-10 lg:gap-14">
+          {entry.modules.map((module, index) =>
+            module.list ? (
               <div
                 key={index}
-                className="grid grid-cols-[auto_1fr] gap-5 py-7 border-b border-ink/10 last:border-b-0"
+                className="grid lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 rounded-2xl bg-paper border border-ink/8 p-7 sm:p-9 lg:p-10"
               >
-                <span className="text-sm font-semibold text-primary tabular-nums pt-0.5">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                <h2 className="text-xl sm:text-2xl font-bold text-ink lg:pr-6">
+                  {module.title}
+                </h2>
                 <div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-ink mb-3">
-                    {module.title}
-                  </h2>
                   <p className="text-ink/70 leading-relaxed max-w-2xl">
                     {module.body}
                   </p>
-                  {module.list && (
-                    <ul className="mt-5 grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
-                      {module.list.map((item, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2 text-sm text-ink/80"
-                        >
-                          <CheckCircle2
-                            size={16}
-                            className="text-primary flex-shrink-0 mt-0.5"
-                          />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  <ul className="mt-7 grid sm:grid-cols-2 gap-x-8 gap-y-3 pt-6 border-t border-ink/10">
+                    {module.list.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2.5 text-sm text-ink/80"
+                      >
+                        <CheckCircle2
+                          size={17}
+                          className="text-primary flex-shrink-0 mt-0.5"
+                        />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            ))}
-          </div>
+            ) : (
+              <div
+                key={index}
+                className={`grid lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 ${
+                  index === 0 ? "lg:pt-0" : "pt-10 lg:pt-14 border-t border-ink/10"
+                }`}
+              >
+                <h2 className="text-xl sm:text-2xl font-bold text-ink lg:pr-6">
+                  {module.title}
+                </h2>
+                <p className="text-ink/70 leading-relaxed max-w-2xl">
+                  {module.body}
+                </p>
+              </div>
+            )
+          )}
         </div>
       </div>
 

@@ -9,7 +9,7 @@ const services = [
     description:
       "Dependable general waste collection from front-load and Molok bins, kept clean, organized, and on schedule.",
     href: "/waste-services/general-waste-collection",
-    image: "/images/garbage.webp",
+    image: "/images/General-Waste-Collection.webp",
     rotate: "-rotate-2",
   },
   {
@@ -18,7 +18,7 @@ const services = [
     description:
       "Scheduled mixed recycling collection that helps properties improve recycling practices and stay organized.",
     href: "/waste-services/mixed-recycling-collection",
-    image: "/images/why.webp",
+    image: "/images/Mixed-Recycling-Collection.webp",
     rotate: "rotate-1",
   },
   {
@@ -27,7 +27,7 @@ const services = [
     description:
       "Convenient organic waste collection that manages food and organic materials and reduces landfill waste.",
     href: "/waste-services/organic-waste-collection",
-    image: "/images/waste.webp",
+    image: "/images/Organic-Waste-Collection.webp",
     rotate: "-rotate-1",
   },
   {
@@ -36,7 +36,7 @@ const services = [
     description:
       "Trucks and trailers on call for tenant move-outs, abandoned furniture, cleanups, and accumulated junk.",
     href: "/waste-services/on-call-junk-hauling",
-    image: "/images/dumpster.webp",
+    image: "/images/On-Call-Junk-Hauling.webp",
     rotate: "rotate-2",
   },
   {
@@ -45,7 +45,7 @@ const services = [
     description:
       "Garbage enclosure cleaning and maintenance for waste areas dirtied by loose garbage, spills, and debris.",
     href: "/waste-services/bin-enclosure-cleaning",
-    image: "/images/Bin-Enclosure.webp",
+    image: "/images/Bin-Enclosure-Cleaning.webp",
     rotate: "-rotate-2",
   },
   {
@@ -54,7 +54,7 @@ const services = [
     description:
       "Scheduled collection for front-load and Molok bin systems, preventing overflow and messy waste areas.",
     href: "/waste-services/front-load-molok-bins",
-    image: "/images/Front-Load-molok-bins.webp",
+    image: "/images/Front-Load-Molok-Bins.webp",
     rotate: "rotate-1",
   },
 ];

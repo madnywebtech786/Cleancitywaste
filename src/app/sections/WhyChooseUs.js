@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
           <div className=" relative">
             <div className="relative backdrop-blur-sm rounded-3xl p-1">
               <Image
-                src="/images/why.webp"
+                src="/images/why-choose.webp"
                 width={800}
                 height={800}
                 alt="Waste Management Facility"
@@ -44,13 +44,13 @@ export default function WhyChooseUs() {
                 {
                   title: "We Pick Up Overflow",
                   description:
-                    "When our drivers find loose garbage around an overflowing bin, they pick it up by hand before emptying it. The bin gets emptied, and the surrounding waste gets attention too.",
+                    "When our drivers arrive and find loose garbage around an overflowing bin, they don't simply empty the bin and leave. They pick up the surrounding waste by hand, helping keep your property cleaner and more presentable.",
                   icon: HandHelping,
                 },
                 {
                   title: "We're Calgary Based",
                   description:
-                    "When you choose a local company, more of what you spend circulates back through the local economy, supporting Calgary employees, suppliers, and businesses.",
+                    "Choosing a local waste management company means supporting the community you call home. Your business helps support Calgary employees, suppliers, other local businesses, and residents — keeping more of your investment within the local economy.",
                   icon: MapPin,
                 },
               ].map((item, index) => {

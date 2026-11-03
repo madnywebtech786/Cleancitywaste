@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import {
   Search,
   ShoppingCart,
-  ChevronDown,
   Menu as MenuIcon,
   X,
 } from "lucide-react";
@@ -15,7 +14,7 @@ import TopBar from "../sections/TopBar";
 
 const navItems = [
   { name: "HOME", href: "/" },
-  { name: "ABOUT", href: "/about-us" },
+  { name: "About Us", href: "/about-us" },
   { name: "Why Us", href: "/why-choose-us" },
   {
     name: "Waste Solutions",
@@ -127,9 +126,6 @@ const Header = () => {
                     }`}
                   >
                     {item.name}
-                    {item.dropdown && (
-                      <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
-                    )}
                     <span className="pointer-events-none absolute -bottom-1.5 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full" />
                   </Link>
 
@@ -157,7 +153,6 @@ const Header = () => {
                                   </span>
                                 )}
                               </span>
-                              <ChevronDown className="h-4 w-4 -rotate-90 text-ink/20 group-hover/item:text-primary group-hover/item:translate-x-0.5 transition-all flex-shrink-0" />
                             </Link>
                           </li>
                         ))}
@@ -251,11 +246,6 @@ const Header = () => {
                         aria-expanded={expanded.has(item.name)}
                       >
                         <span>{item.name}</span>
-                        <ChevronDown
-                          className={`h-4 w-4 transition-transform ${
-                            expanded.has(item.name) ? "rotate-180" : ""
-                          }`}
-                        />
                       </button>
 
                       {/* animated accordion panel for first-level */}
@@ -283,15 +273,6 @@ const Header = () => {
                                     )}
                                   >
                                     <span>{subItem.name}</span>
-                                    <ChevronDown
-                                      className={`h-3 w-3 transition-transform ${
-                                        subExpanded.has(
-                                          `${item.name}|${subItem.name}`
-                                        )
-                                          ? "rotate-180"
-                                          : ""
-                                      }`}
-                                    />
                                   </button>
 
                                   <div

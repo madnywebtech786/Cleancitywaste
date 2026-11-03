@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Hero from "./sections/Hero";
-import About from "./sections/About";
 import Services from "./sections/Services";
 import OurCustomers from "./sections/OurCustomers";
 import WhyChooseUs from "./sections/WhyChooseUs";
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <div className="bg-white dark:bg-white">
     <Hero />
-    <About/>
     <Services />
     <OurCustomers />
     <WhyChooseUs />

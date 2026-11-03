@@ -22,22 +22,52 @@ export default function About() {
             Built to Provide Better Waste Management
           </h4>
           <p>
-            Waste Plus Inc. is a home grown, Calgary based company founded by
-            waste industry professionals who saw an opportunity to do things
-            better. For the past 10 years, we&apos;ve been proudly serving
-            Calgary and surrounding communities, built around one simple
-            principle: provide the level of waste service we would expect for
-            our own property.
+            Waste Plus Inc. is a homegrown, Calgary-based waste management
+            company founded by industry professionals who saw an opportunity
+            to do things differently&mdash;and better.
+          </p>
+          <p>
+            For over 10 years, we&apos;ve proudly served Calgary and
+            surrounding communities with reliable, responsive waste
+            management services. From day one, we&apos;ve been guided by one
+            simple principle: provide the level of service we&apos;d expect
+            for our own property.
+          </p>
+          <p>
+            We believe good waste management is about more than simply
+            emptying bins. It&apos;s about showing up when we say we will,
+            paying attention to the details, and taking pride in keeping
+            properties clean and well maintained.
           </p>
 
-          <div className="flex gap-5 flex-wrap">
-            <div className="flex gap-2 items-center ">
-              <CheckCircle size={16} className="text-primary" />
-              <p>We Pick Up Overflow by Hand</p>
+          <div className="flex flex-col gap-5">
+            <div>
+              <div className="flex gap-2 items-center">
+                <CheckCircle size={16} className="text-primary flex-shrink-0" />
+                <p className="font-bold text-ink">
+                  We Pick Up Overflow by Hand
+                </p>
+              </div>
+              <p className="mt-2 pl-6">
+                When garbage spills over or ends up around a bin, our drivers
+                don&apos;t just drive away after emptying it. We pick up the
+                loose waste by hand, helping leave your property cleaner and
+                more presentable.
+              </p>
             </div>
-            <div className="flex gap-2 items-center ">
-              <CheckCircle size={16} className="text-primary" />
-              <p>Calgary Based & Locally Operated</p>
+            <div>
+              <div className="flex gap-2 items-center">
+                <CheckCircle size={16} className="text-primary flex-shrink-0" />
+                <p className="font-bold text-ink">
+                  Calgary Based. Locally Operated.
+                </p>
+              </div>
+              <p className="mt-2 pl-6">
+                We&apos;re proud to be a local Calgary company. Our team lives
+                and works in the communities we serve, giving us a better
+                understanding of what local properties, businesses, and
+                property managers need from their waste service.
+              </p>
             </div>
           </div>
           <Link href={"/contact"} className="w-max ">
@@ -49,7 +79,7 @@ export default function About() {
       </div>
       <div className="w-full lg:w-1/2 relative">
         <Image
-          src={"/images/about-img.png"}
+          src={"/images/about-side.webp"}
           width={600}
           height={600}
           className="relative z-20 rounded-md"

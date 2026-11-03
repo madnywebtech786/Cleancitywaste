@@ -1,35 +1,63 @@
 import Breadcrumb from "../components/Breadcrumb";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import {
+  ArrowRight,
+  AlertTriangle,
+  Clock,
+  PhoneOff,
+  FileWarning,
+  MapPin,
+  SlidersHorizontal,
+  MessageCircle,
+  ListChecks,
+} from "lucide-react";
 import React from "react";
 
-const runningReasons = [
+const painPoints = [
   {
-    num: "02",
-    title: "We're Calgary based",
-    body: "More of what you spend on service circulates back through the local economy, supporting Calgary employees, suppliers, and businesses. We're not just serving Calgary, we're part of it.",
+    icon: AlertTriangle,
+    title: "Overflowing enclosures",
+    body: "Bags pile up beside the bin and nobody deals with it until a resident complains.",
   },
   {
-    num: "03",
-    title: "We're flexible & customizable",
-    body: "Waste volumes, schedules, and tenants change. As a local company, we listen, adapt, and customize service around what your property actually needs, not a one-size-fits-all contract.",
+    icon: Clock,
+    title: "Missed pickups",
+    body: "A collection gets skipped and your property sits with a mess until the next scheduled day.",
   },
   {
-    num: "04",
-    title: "We're easy to reach",
-    body: "We're a small, local company, which means communication is direct and personal, easy to approach whenever something needs to change.",
+    icon: PhoneOff,
+    title: "Vendors who disappear",
+    body: "Something needs to change and you are stuck waiting on hold or re-explaining the issue to someone new.",
+  },
+  {
+    icon: FileWarning,
+    title: "Rigid, one-size-fits-all contracts",
+    body: "Your waste volume changes with the season or the tenant mix, but the service plan never does.",
   },
 ];
 
-const detailServices = [
-  { num: "01", name: "General waste collection", href: "/waste-services/general-waste-collection" },
-  { num: "02", name: "Mixed recycling collection", href: "/waste-services/mixed-recycling-collection" },
-  { num: "03", name: "Organic waste collection", href: "/waste-services/organic-waste-collection" },
-  { num: "04", name: "Front-load & Molok bin servicing", href: "/waste-services/front-load-molok-bins" },
-  { num: "05", name: "On-call junk removal", href: "/waste-services/on-call-junk-hauling" },
-  { num: "06", name: "Garbage enclosure cleaning", href: "/waste-services/bin-enclosure-cleaning" },
-  { num: "07", name: "Debris removal, sweeping & pressure washing", href: "/waste-services/bin-enclosure-cleaning" },
+const engagementPillars = [
+  {
+    icon: MapPin,
+    title: "Calgary based, not a call centre",
+    body: "Every dollar you spend stays closer to home, supporting local drivers, local suppliers, and local jobs. We are not a distant head office. We are part of the same community we service.",
+  },
+  {
+    icon: SlidersHorizontal,
+    title: "Built around your property, not a template",
+    body: "Tenant turnover, seasonal volume, a new move-out pile, a schedule that needs to shift: we adjust the plan instead of asking you to fit one. No call centre script, no three-week wait for a change.",
+  },
+  {
+    icon: MessageCircle,
+    title: "A real person, every time you call",
+    body: "When something needs to change, you talk to someone who already knows your property and can actually make the decision, not a ticket number in a queue.",
+  },
+  {
+    icon: ListChecks,
+    title: "One company for everything the bin does not cover",
+    body: "General waste, recycling, organics, front-load and Molok bins, on-call junk hauling, and enclosure cleaning. One point of contact instead of a different vendor for every problem.",
+  },
 ];
 
 export default function WhyChooseUsPage() {
@@ -37,113 +65,146 @@ export default function WhyChooseUsPage() {
     <div className="min-h-screen bg-white overflow-x-clip">
       <Breadcrumb name={"Why Choose Waste Plus Inc."} />
 
-      {/* Poster statement */}
-      <div className="px-4 sm:px-8 md:px-12 lg:px-20 pt-20 pb-16 lg:pt-28 lg:pb-24">
-        <div className="max-w-6xl">
-          <p className="text-sm font-semibold text-primary mb-6">
-            Reason 01
+      {/* Pain points — name the problem before the solution */}
+      <div className="px-4 sm:px-8 md:px-12 lg:px-20 pt-20 pb-14 lg:pt-28">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold text-primary mb-5">
+            The problem with most waste companies
           </p>
-          <h2 className="font-bold text-ink leading-[0.95] tracking-tight text-[clamp(2.75rem,8vw,6.5rem)]">
-            We pick up
-            <br />
-            what the bin
-            <br />
-            <span className="text-primary">missed.</span>
+          <h2 className="font-bold text-ink leading-[1.05] tracking-tight text-[clamp(2rem,5vw,3.5rem)]">
+            You have dealt with this before.
           </h2>
+          <p className="mt-6 text-lg text-ink/60 leading-relaxed max-w-xl">
+            A truck shows up, empties the bin, and leaves the mess behind. The
+            same four problems, over and over, on properties across Calgary.
+          </p>
+        </div>
+
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-ink/10 rounded-2xl overflow-hidden">
+          {painPoints.map((point, index) => {
+            const Icon = point.icon;
+            return (
+              <div key={index} className="bg-white p-7 lg:p-8">
+                <Icon size={22} className="text-primary/70" strokeWidth={1.75} />
+                <h3 className="mt-5 font-bold text-ink text-lg leading-snug">
+                  {point.title}
+                </h3>
+                <p className="mt-3 text-sm text-ink/55 leading-relaxed">
+                  {point.body}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* Full-bleed case study: overflow story */}
-      <div className="relative bg-primary/10">
+      {/* What we do instead — image + poster statement + proof, one combined section */}
+      <div className="relative">
         <div className="grid lg:grid-cols-2">
-          <div className="relative min-h-[380px] lg:min-h-[560px]">
+          <div className="px-4 sm:px-8 md:px-12 lg:px-20 pt-6 pb-10 lg:pt-16 lg:pb-16 flex flex-col justify-center order-2 lg:order-1">
+            <p className="text-sm font-semibold text-primary mb-6">
+              Here is what we do instead
+            </p>
+            <h2 className="font-bold text-ink leading-[0.95] tracking-tight text-[clamp(2.5rem,5.5vw,4.25rem)]">
+              We take care
+              <br />
+              of the property,
+              <br />
+              <span className="text-primary">not just the bin.</span>
+            </h2>
+
+            <div className="mt-10 pl-6 border-l-2 border-primary/30">
+              <p className="text-lg sm:text-xl font-bold text-ink leading-snug max-w-lg">
+                When our drivers arrive to find garbage bags or loose debris
+                overflowing from a bin, they do not simply empty it and
+                drive away.
+              </p>
+              <p className="mt-5 text-primary font-semibold">
+                They get out, pick up the overflow by hand, and make sure
+                the area is taken care of before they leave.
+              </p>
+              <p className="mt-4 text-ink/60 leading-relaxed max-w-md">
+                Because if garbage is left on the ground after collection,
+                the job is not finished. That simple standard is the
+                foundation Waste Plus Inc. was built on: show up, do the
+                job right, and leave every property better than we found
+                it.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-[640px] order-1 lg:order-2">
             <Image
-              src={"/images/why.webp"}
+              src={"/images/why-choose.webp"}
               alt="Waste Plus Inc. driver attending to a waste enclosure"
               fill
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-primary/20 via-transparent to-transparent" />
-          </div>
-
-          <div className="px-4 sm:px-8 md:px-12 lg:px-16 py-14 lg:py-20 flex flex-col justify-center">
-            <p className="text-ink/50 text-sm mb-6 max-w-md">
-              Most waste companies stop at the container. Here's what happens
-              when our drivers pull up to a bin that's already overflowing.
-            </p>
-            <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink leading-snug max-w-xl">
-              When garbage bags or loose items have overflowed from a bin,
-              our drivers don&apos;t simply empty the container and drive
-              away.
-            </p>
-            <p className="mt-8 text-lg text-primary font-semibold">
-              They get out. They pick it up by hand. Then they empty the
-              bin.
-            </p>
-            <p className="mt-4 text-ink/60 max-w-lg leading-relaxed">
-              If garbage is left on the ground after collection, the job
-              isn&apos;t finished. That's the whole premise this company was
-              built on.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Running ledger — reasons 02-04, thin rules, no cards */}
-      <div className="px-4 sm:px-8 md:px-12 lg:px-20">
-        <div className="max-w-6xl">
-          {runningReasons.map((reason, index) => (
-            <div
-              key={index}
-              className="grid sm:grid-cols-[100px_1fr] lg:grid-cols-[140px_1fr_1fr] gap-x-8 gap-y-3 py-10 border-t border-ink/10 last:border-b"
-            >
-              <span className="text-sm font-semibold text-primary/70 tabular-nums">
-                {reason.num}
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-bold text-ink lg:pr-8">
-                {reason.title}
-              </h3>
-              <p className="text-ink/60 leading-relaxed lg:pt-1.5">
-                {reason.body}
+            <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-black/35 via-transparent to-transparent" />
+            <div className="absolute left-6 right-6 bottom-6 lg:hidden">
+              <p className="inline-block bg-black/55 backdrop-blur-sm text-white font-semibold px-4 py-2.5 rounded-md">
+                Most waste companies stop at the container. We do not.
               </p>
             </div>
-          ))}
+            <div className="hidden lg:block absolute left-8 bottom-8 right-8">
+              <p className="inline-block bg-black/45 backdrop-blur-sm text-white font-medium px-4 py-2.5 rounded-md max-w-sm">
+                Most waste companies stop at the container. We do not.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Attention to detail — services as a numbered index */}
+      {/* Why clients stay — single engaging section replacing the old reasons ledger + service index */}
       <div className="px-4 sm:px-8 md:px-12 lg:px-20 py-20 lg:py-28 bg-paper">
-        <div className="max-w-6xl">
+        <div className="max-w-7xl mx-auto">
           <p className="text-sm font-semibold text-primary mb-5">
-            Reason 05
+            Why Calgary properties stay with us
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink leading-tight max-w-3xl">
-            We pay attention to the details. Our service goes well beyond
-            regular bin collection.
+            A waste company that actually picks up the phone, and shows up
+            to match.
           </h2>
+          <p className="mt-6 text-lg text-ink/60 leading-relaxed max-w-2xl">
+            We built Waste Plus Inc. around the things most waste companies
+            get wrong: who you reach, how fast things change, and whether
+            anyone notices the mess beside the bin. Here is what that looks
+            like in practice.
+          </p>
 
-          <div className="mt-14 grid sm:grid-cols-2 sm:gap-x-10 border-b border-ink/10">
-            {detailServices.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className="group flex items-center justify-between gap-4 py-5 border-t border-ink/10"
-              >
-                <span className="flex items-baseline gap-4">
-                  <span className="text-sm font-semibold text-primary/60 tabular-nums">
-                    {item.num}
+          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {engagementPillars.map((pillar, index) => {
+              const Icon = pillar.icon;
+              return (
+                <div
+                  key={index}
+                  className="group relative rounded-2xl bg-white border border-ink/8 p-7 lg:p-8 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+                >
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary/15 transition-colors">
+                    <Icon size={22} className="text-primary" strokeWidth={1.75} />
                   </span>
-                  <span className="text-lg text-ink font-medium group-hover:text-primary transition-colors">
-                    {item.name}
-                  </span>
-                </span>
-                <ArrowUpRight
-                  size={20}
-                  className="text-ink/20 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0"
-                />
-              </Link>
-            ))}
+                  <h3 className="mt-6 text-xl font-bold text-ink leading-snug">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-3 text-ink/60 leading-relaxed">
+                    {pillar.body}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-14 flex flex-wrap items-center gap-4">
+            <Link href={"/contact"}>
+              <button className="cursor-pointer inline-flex items-center gap-2 bg-primary text-white px-7 py-3.5 rounded-full font-semibold hover:bg-secondary transition-colors">
+                Talk to us about your property
+                <ArrowRight size={18} />
+              </button>
+            </Link>
+            <Link href={"/#services"} className="text-sm font-semibold text-ink/60 hover:text-primary transition-colors">
+              See everything we handle &rarr;
+            </Link>
           </div>
         </div>
       </div>
@@ -152,19 +213,20 @@ export default function WhyChooseUsPage() {
       <div className="px-4 sm:px-8 md:px-12 lg:px-20 py-24 lg:py-32">
         <div className="max-w-5xl">
           <p className="text-sm font-semibold text-primary mb-6">
-            The Waste Plus difference
+            The Waste Plus Difference
           </p>
           <p className="font-bold text-ink leading-[1.05] tracking-tight text-[clamp(2rem,5.5vw,4.25rem)]">
-            Hands-on drivers.
+            Hands-on service.
             <br />
-            Local service.
+            Local expertise.
             <br />
             <span className="text-primary">Flexible solutions.</span>
           </p>
           <p className="mt-10 text-lg text-ink/60 max-w-xl leading-relaxed">
-            We&apos;re not trying to be the biggest waste company. We&apos;re
-            focused on providing the kind of service that makes our
-            customers&apos; jobs easier.
+            We are not focused on being the biggest waste company. We are
+            focused on being the kind of company our customers can count
+            on, making waste management simpler, more responsive, and
+            easier to manage.
           </p>
         </div>
       </div>
@@ -174,11 +236,12 @@ export default function WhyChooseUsPage() {
         <div className="max-w-7xl mx-auto rounded-3xl bg-gradient-to-br from-primary to-secondary p-10 md:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-              Choose a local waste company that goes the extra step
+              Choose a Local Waste Company That Goes the Extra Mile
             </h2>
             <p className="text-white/85 max-w-xl">
-              Contact Waste Plus Inc. to discuss your property&apos;s waste
-              management needs.
+              Looking for reliable, personalized waste management? Contact
+              Waste Plus Inc. to discuss your property&apos;s needs and find
+              a solution that works for you.
             </p>
           </div>
           <Link href={"/contact"} className="flex-shrink-0">

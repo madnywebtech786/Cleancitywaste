@@ -8,25 +8,25 @@ const audiences = [
     icon: Home,
     title: "Residential",
     description:
-      "Dependable, eco-friendly waste pickup in Calgary. Flexible bin rentals and scheduled pickups that fit your daily routines.",
+      "Dependable, eco-friendly waste pickup in Calgary. Flexible, scheduled pickups that fit your daily routines.",
     href: "/customers/residential-services",
-    image: "/images/residential.webp",
+    image: "/images/Residential.webp",
   },
   {
     icon: Briefcase,
     title: "Commercial",
     description:
-      "Reliable pickups for businesses. Scheduled garbage collection and flexible bin rentals for your business.",
+      "Reliable pickups for businesses. Scheduled garbage collection built around your business.",
     href: "/customers/commercial-services",
-    image: "/images/commercial.webp",
+    image: "/images/Commercial.webp",
   },
   {
     icon: Factory,
     title: "Industrial",
     description:
-      "Heavy-duty bins and reliable site pickups. Bin rentals for construction, manufacturing, and large-scale cleanup.",
+      "Heavy-duty bins and reliable site pickups for construction, manufacturing, and large-scale cleanup.",
     href: "/customers/industrial-services",
-    image: "/images/industrial.webp",
+    image: "/images/Industrial.webp",
   },
   {
     icon: ClipboardList,
@@ -34,7 +34,7 @@ const audiences = [
     description:
       "More than waste collection. We take care of the details, with hands-on, reliable service for every property.",
     href: "/customers/property-managers",
-    image: "/images/Property-Managers.webp",
+    image: "/images/Property Managers.webp",
   },
   {
     icon: Building2,
@@ -50,7 +50,7 @@ const audiences = [
     description:
       "We take care of more than what's inside the bin, keeping common areas clean and well maintained for residents.",
     href: "/customers/condo-boards",
-    image: "/images/Condo-Boards.webp",
+    image: "/images/condo-board.webp",
   },
 ];
 

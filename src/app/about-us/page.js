@@ -1,8 +1,6 @@
 import React from "react";
 import Breadcrumb from "../components/Breadcrumb";
 import About from "../sections/About";
-import WhyChooseUs from "../sections/WhyChooseUs";
-import Stats from "../sections/Stats";
 import Testimonials from "../sections/Testimonials";
 import CTA from "../sections/CTA";
 
@@ -24,64 +22,49 @@ export default function page() {
           </div>
 
           <p className="text-lg leading-relaxed">
-            After years of experience in the waste management industry, our
-            founders recognized a gap in the market: property managers, condo
-            boards, businesses, and communities needed waste services that
-            were not only dependable, but also focused on service quality,
-            communication, cleanliness, and consistency. That vision became
-            Waste Plus Inc.
+            Waste Plus Inc. was built on years of experience in the waste
+            management industry and a simple belief: waste service should be
+            reliable, responsive, and done right.
           </p>
 
           <p className="text-lg leading-relaxed">
-            We understand that waste management is an important part of
-            keeping a property running smoothly. For property managers and
-            condo boards, a missed pickup or overflowing collection area can
-            quickly become a resident complaint and an unnecessary management
-            issue. That&apos;s why we&apos;ve built Waste Plus Inc. around
-            reliable service and long-term relationships, providing
-            commercial, residential, and industrial waste management,
-            including scheduled collection, recycling, and organic waste
-            services tailored to the needs of every property.
+            Our founders saw a gap in the market. Property managers, condo
+            boards, businesses, and communities needed more than a company
+            that simply showed up to empty bins. They needed a waste
+            management partner that cared about communication, cleanliness,
+            consistency, and the overall service experience. That vision
+            became Waste Plus Inc.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8 mt-4">
-            <div className="bg-white rounded-2xl p-6 border border-ink/10">
-              <h5 className="text-xl font-bold mb-3 text-primary">
-                Why We Started
-              </h5>
-              <p className="leading-relaxed">
-                We didn&apos;t start Waste Plus Inc. simply to collect waste.
-                We started because we believed waste services could be
-                better: better cleanliness, better communication, better
-                reliability, and better care for the properties and
-                communities we serve. Today, that same mindset continues to
-                guide everything we do.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-6 border border-ink/10">
-              <h5 className="text-xl font-bold mb-3 text-primary">
-                Who We Are Today
-              </h5>
-              <p className="leading-relaxed">
-                Waste Plus Inc. is a team of experienced waste management
-                professionals committed to delivering dependable service to
-                Calgary and surrounding communities. We aim to be a trusted
-                service partner for property managers, condo boards,
-                businesses, and communities that depend on us to keep their
-                waste management running smoothly.
-              </p>
-            </div>
-          </div>
+          <p className="text-lg leading-relaxed">
+            We understand that waste management plays an important role in
+            keeping a property running smoothly. For property managers, condo
+            boards, and business owners, something as simple as a missed
+            pickup or an overflowing collection area can quickly turn into
+            resident complaints and an unnecessary headache.
+          </p>
+
+          <p className="text-lg leading-relaxed">
+            That&apos;s why we focus on getting the details right. From
+            dependable scheduled collection to recycling and organic waste
+            services, we provide commercial, residential, and industrial
+            waste management solutions tailored to the needs of each
+            property.
+          </p>
+
+          <p className="text-lg leading-relaxed">
+            Most importantly, we&apos;re focused on building long-term
+            relationships with the people we serve. We want you to know that
+            when you choose Waste Plus Inc., your waste service is one less
+            thing you have to worry about.
+          </p>
 
           <p className="text-center text-lg font-semibold mt-4">
-            Do the job right. Provide dependable service. Treat every
-            property like it matters, because it does.
+            Done right. Done reliably. Every property. Every time.
           </p>
         </div>
       </div>
 
-      <WhyChooseUs />
-      <Stats />
       <Testimonials />
       <CTA />
     </div>

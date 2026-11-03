@@ -36,7 +36,7 @@ const Hero = () => {
         </div>
         <div className="w-full lg:w-1/2">
           <Image
-            src={"/images/hero-img.png"}
+            src={"/images/hero-img.webp"}
             width={450}
             height={450}
             className="mx-auto relative z-20 w-4/5 md:w-2/3 rounded-md animate-float"

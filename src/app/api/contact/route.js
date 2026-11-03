@@ -17,14 +17,12 @@ export async function POST(request) {
     const formData = await request.formData();
 
     // Validate required scalar fields (DO NOT require per-bin inputs here)
+    // Business Information fields are optional and intentionally excluded.
     const requiredFields = [
       "firstName",
       "lastName",
       "phoneNumber",
       "email",
-      "businessType",
-      "businessName",
-      "businessLocation",
       // removed direct bin fields from required list - bins handled below
     ];
 
@@ -57,6 +55,7 @@ export async function POST(request) {
           // Normalize the parsed bin object fields to expected keys
           bins.push({
             materialType: parsed.materialType ?? parsed.material ?? "",
+            binType: parsed.binType ?? parsed.type ?? "",
             binSize: parsed.binSize ?? parsed.size ?? "",
             numberOfBins: parsed.numberOfBins ?? parsed.count ?? parsed.number ?? "",
             binPlacementLocation: parsed.binPlacementLocation ?? parsed.placement ?? "",
@@ -74,6 +73,10 @@ export async function POST(request) {
         formData.getAll("materialType[]").length > 0
           ? formData.getAll("materialType[]")
           : formData.getAll("materialType");
+      const typeArr =
+        formData.getAll("binType[]").length > 0
+          ? formData.getAll("binType[]")
+          : formData.getAll("binType");
       const sizeArr =
         formData.getAll("binSize[]").length > 0
           ? formData.getAll("binSize[]")
@@ -97,6 +100,7 @@ export async function POST(request) {
 
       const maxLen = Math.max(
         matArr.length,
+        typeArr.length,
         sizeArr.length,
         numArr.length,
         placeArr.length,
@@ -109,6 +113,7 @@ export async function POST(request) {
         const numberVal = numArr[i] ? Number(numArr[i]) : "";
         bins.push({
           materialType: matArr[i] ?? "",
+          binType: typeArr[i] ?? "",
           binSize: sizeArr[i] ?? "",
           numberOfBins: numberVal || numberVal === 0 ? numberVal : (numArr[i] ?? ""),
           binPlacementLocation: placeArr[i] ?? "",
@@ -203,6 +208,7 @@ export async function POST(request) {
     const binsTableRows = bins
       .map((b, idx) => {
         const material = b.materialType || "";
+        const binType = b.binType || "";
         const size = b.binSize || "";
         const count = b.numberOfBins ?? "";
         const placement = b.binPlacementLocation || "";
@@ -212,6 +218,7 @@ export async function POST(request) {
           <tr>
             <td class="table-cell-index">${idx + 1}</td>
             <td class="table-cell">${escapeHtml(material)}</td>
+            <td class="table-cell">${escapeHtml(binType)}</td>
             <td class="table-cell">${escapeHtml(size)}</td>
             <td class="table-cell">${escapeHtml(String(count))}</td>
             <td class="table-cell">${escapeHtml(placement)}</td>
@@ -450,9 +457,9 @@ export async function POST(request) {
               <div class="field-label">Business Location</div>
               <div class="field-value">${escapeHtml(formData.get("businessLocation") || "")}</div>
             </div>
-            <div class="field">
-              <div class="field-label">Bin Placement Location (Primary)</div>
-              <div class="field-value">${escapeHtml(formData.get("binPlacementLocation") || "")}</div>
+            <div class="field" style="grid-column: 1 / -1;">
+              <div class="field-label">Comments</div>
+              <div class="field-value">${escapeHtml(formData.get("comments") || "")}</div>
             </div>
           </div>
 
@@ -464,6 +471,7 @@ export async function POST(request) {
                 <tr>
                   <th>#</th>
                   <th>Material</th>
+                  <th>Type</th>
                   <th>Size</th>
                   <th>Quantity</th>
                   <th>Placement</th>

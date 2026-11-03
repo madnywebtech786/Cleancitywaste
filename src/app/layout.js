@@ -17,24 +17,19 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title:
-    "Waste Plus Inc | Calgary's #1 Waste Management & Bin Rental Service",
+    "Waste Plus Inc | Calgary's #1 Waste Management Service",
   description:
-    "Professional residential, commercial & industrial waste management in Calgary. Reliable bin rentals, scheduled pickups, recycling & organic services. Serving Calgary & surrounding areas since 2009.",
+    "Professional residential, commercial & industrial waste management in Calgary. Reliable scheduled pickups, recycling & organic services. Serving Calgary & surrounding areas since 2009.",
   keywords: [
     "waste management Calgary",
-    "bin rental Calgary",
     "garbage pickup Calgary",
     "commercial waste disposal Calgary",
     "residential garbage collection Calgary",
     "industrial waste management Calgary",
     "recycling services Calgary",
     "organic waste collection Calgary",
-    "4 yard bin rental Calgary",
-    "6 yard bin rental Calgary",
-    "8 yard bin rental Calgary",
     "Calgary waste company",
     "waste disposal Calgary",
-    "garbage bin rental Calgary",
     "commercial garbage pickup Calgary",
     "construction waste removal Calgary",
     "restaurant waste management Calgary",
@@ -57,7 +52,7 @@ export const metadata = {
     siteName: "Waste Plus Inc",
     title: "Waste Plus Inc | Calgary's Premier Waste Management Service",
     description:
-      "Trusted residential, commercial & industrial waste management services in Calgary. Professional bin rentals, reliable pickups, and eco-friendly disposal solutions.",
+      "Trusted residential, commercial & industrial waste management services in Calgary. Reliable pickups and eco-friendly disposal solutions.",
     images: [
       {
         url: "https://wasteplus.ca/images/og-image.jpg",
@@ -71,7 +66,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Waste Plus Inc | Calgary's #1 Waste Management Service",
     description:
-      "Reliable residential, commercial & industrial waste management in Calgary. Bin rentals, scheduled pickups & recycling services.",
+      "Reliable residential, commercial & industrial waste management in Calgary. Scheduled pickups & recycling services.",
     images: ["https://wasteplus.ca/images/og-image.jpg"],
     creator: "@CleanCityWaste",
   },
