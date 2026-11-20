@@ -10,7 +10,7 @@ const audiences = [
     description:
       "Dependable, eco-friendly waste pickup in Calgary. Flexible, scheduled pickups that fit your daily routines.",
     href: "/customers/residential-services",
-    image: "/images/Residential.webp",
+    image: "/images/residential.webp",
   },
   {
     icon: Briefcase,
@@ -18,7 +18,7 @@ const audiences = [
     description:
       "Reliable pickups for businesses. Scheduled garbage collection built around your business.",
     href: "/customers/commercial-services",
-    image: "/images/Commercial.webp",
+    image: "/images/commercial.webp",
   },
   {
     icon: Factory,
@@ -26,7 +26,7 @@ const audiences = [
     description:
       "Heavy-duty bins and reliable site pickups for construction, manufacturing, and large-scale cleanup.",
     href: "/customers/industrial-services",
-    image: "/images/Industrial.webp",
+    image: "/images/industrial.webp",
   },
   {
     icon: ClipboardList,

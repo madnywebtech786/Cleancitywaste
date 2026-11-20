@@ -31,7 +31,7 @@ const whoWeServeData = {
       title: "Looking for reliable residential waste service?",
       body: "Contact Waste Plus Inc. today for affordable, dependable residential waste collection in Calgary.",
     },
-    image: "/images/Residential.webp",
+    image: "/images/residential.webp",
   },
   "commercial-services": {
     title: "Commercial Waste Services",
@@ -60,7 +60,7 @@ const whoWeServeData = {
       title: "Looking for reliable commercial waste service?",
       body: "Get in touch today to book commercial garbage pickup and recycling services in Calgary.",
     },
-    image: "/images/Commercial.webp",
+    image: "/images/commercial.webp",
   },
   "industrial-services": {
     title: "Industrial Waste Services",
@@ -89,7 +89,7 @@ const whoWeServeData = {
       title: "Looking for dependable industrial waste service?",
       body: "Contact us today for dependable industrial waste management services in Calgary.",
     },
-    image: "/images/Industrial.webp",
+    image: "/images/industrial.webp",
   },
   "property-managers": {
     title: "Property Managers",
