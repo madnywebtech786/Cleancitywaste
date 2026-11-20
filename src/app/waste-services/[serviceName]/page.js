@@ -142,12 +142,8 @@ const wasteServicesData = {
     title: "On-Call Junk Hauling",
     tagline: "Trucks and trailers, ready when you call",
     intro:
-      "Not everything fits into a regular collection schedule. For tenant move-outs, abandoned furniture, property cleanups, maintenance projects, and accumulated junk, our on-call junk removal service provides trucks and trailers to remove acceptable non-hazardous materials.",
+      "Not everything can wait for a regular collection schedule. Our on-call junk removal service helps with tenant move-outs, abandoned furniture, property cleanups, maintenance projects, accumulated junk, wooden pallets and larger items left around garbage enclosures. We bring our trailer, load the junk and dispose of it at the landfill site. We remove acceptable non-hazardous materials to help keep your property clean and organized.",
     modules: [
-      {
-        title: "On-Call Junk Removal When You Need It",
-        body: "Not everything can wait for a regular collection schedule. Our on-call junk removal service helps with tenant move-outs, abandoned furniture, property cleanups, maintenance projects, accumulated junk, wooden pallets and larger items left around garbage enclosures. We bring our trailer, load the junk and dispose of it at the landfill site. We remove acceptable non-hazardous materials to help keep your property clean and organized.",
-      },
       {
         title: "Common Junk Removal Situations",
         body: "Whether it's a business closing, a resident move-out, or a property that requires a one-time cleanup, we help you deal with unexpected waste without waiting for your regular collection.",
@@ -254,10 +250,6 @@ const wasteServicesData = {
       "Industrial properties",
       "Property management portfolios",
     ],
-    closing: {
-      title: "Not sure which bin setup fits your property?",
-      body: "Contact Waste Plus Inc. and we'll help you determine the right front-load or Molok bin setup for your waste, recycling, and organics.",
-    },
     image: "/images/Front-Load-Molok-Bins.webp",
   },
 };
@@ -394,22 +386,24 @@ export default function WasteServicePage({ params }) {
       </div>
 
       {/* Closing CTA */}
-      <div className="px-4 sm:px-8 md:px-12 lg:px-20 py-16">
-        <div className="max-w-7xl mx-auto rounded-3xl bg-gradient-to-br from-primary to-secondary p-10 md:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-              {service.closing.title}
-            </h2>
-            <p className="text-white/85 max-w-xl">{service.closing.body}</p>
+      {service.closing && (
+        <div className="px-4 sm:px-8 md:px-12 lg:px-20 py-16">
+          <div className="max-w-7xl mx-auto rounded-3xl bg-gradient-to-br from-primary to-secondary p-10 md:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                {service.closing.title}
+              </h2>
+              <p className="text-white/85 max-w-xl">{service.closing.body}</p>
+            </div>
+            <Link href={"/contact"} className="flex-shrink-0">
+              <button className="cursor-pointer inline-flex items-center gap-2 bg-white text-ink px-7 py-3.5 rounded-full font-semibold hover:scale-105 transition-transform">
+                Contact us
+                <ArrowRight size={18} />
+              </button>
+            </Link>
           </div>
-          <Link href={"/contact"} className="flex-shrink-0">
-            <button className="cursor-pointer inline-flex items-center gap-2 bg-white text-ink px-7 py-3.5 rounded-full font-semibold hover:scale-105 transition-transform">
-              Contact us
-              <ArrowRight size={18} />
-            </button>
-          </Link>
         </div>
-      </div>
+      )}
 
       {/* Other services */}
       <div className="px-4 sm:px-8 md:px-12 lg:px-20 pb-20">

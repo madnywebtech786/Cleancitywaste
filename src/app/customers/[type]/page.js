@@ -208,7 +208,7 @@ const whoWeServeData = {
       title: "Your property deserves more than a bin pickup.",
       body: "Choose a local Calgary waste company that pays attention to the details. Contact Waste Plus Inc. to discuss your property's waste collection and cleanup needs.",
     },
-    image: "/images/Plaza-Building-Owners.webp",
+    image: "/images/Plaza-Building-Owners-Detail.webp",
   },
   "condo-boards": {
     title: "Condo Boards",

@@ -12,14 +12,22 @@ const Hero = () => {
           </p>
 
           <h2 className="text-ink text-4xl lg:text-6xl font-bold text-left">
-            WE DON&apos;T HAVE TO BRAG ABOUT US
+            CLEANER SITES. RELIABLE SERVICE. ZERO HASSLE.
           </h2>
           <p className="text-ink/60 mt-4 max-w-lg text-left">
-            Sites serviced by us speak for us. We provide reliable
-            commercial and residential waste collection, recycling
-            services, and certified disposal for construction and
-            industrial waste, with drivers who pick up overflow by hand
-            so your property always looks its best.
+            We don&apos;t just collect waste—we keep your property looking
+            its best. From commercial and residential waste collection to
+            recycling and certified disposal for construction and
+            industrial waste, we provide dependable service you can count
+            on. And we go beyond the basics. When overflow happens, our
+            drivers step in and pick it up by hand—because your property
+            shouldn&apos;t have to look messy while you wait for the next
+            pickup.
+          </p>
+          <p className="text-ink font-bold mt-4 max-w-lg text-left">
+            Reliable pickups. Cleaner properties. Better service.
+            <br />
+            Let us handle the waste. You handle business.
           </p>
           <div className="flex items-center flex-wrap mt-6 gap-4">
             <Link href={"/contact"}>
