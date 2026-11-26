@@ -338,6 +338,12 @@ export async function POST(request) {
           word-break: break-word;
         }
 
+        .business-card .card-title,
+        .business-card .field-label,
+        .business-card .field-value {
+          color: #4ea8ff;
+        }
+
         /* Futuristic bins table */
         .bins-table {
           width: 100%;
@@ -361,6 +367,7 @@ export async function POST(request) {
           font-weight: 700;
           letter-spacing: 0.6px;
           text-transform: uppercase;
+          color: #ff6b6b;
         }
         .table-cell-index {
           color: #94a3b8;
@@ -418,31 +425,8 @@ export async function POST(request) {
           <div class="subtitle">New Contact Form Submission</div>
         </div>
         
-        <!-- Personal Information -->
-        <div class="card">
-          <div class="card-title">Personal Information</div>
-          <div class="grid">
-            <div class="field">
-              <div class="field-label">First Name</div>
-              <div class="field-value">${escapeHtml(formData.get("firstName") || "")}</div>
-            </div>
-            <div class="field">
-              <div class="field-label">Last Name</div>
-              <div class="field-value">${escapeHtml(formData.get("lastName") || "")}</div>
-            </div>
-            <div class="field">
-              <div class="field-label">Phone Number</div>
-              <div class="field-value">${escapeHtml(formData.get("phoneNumber") || "")}</div>
-            </div>
-            <div class="field">
-              <div class="field-label">Email</div>
-              <div class="field-value">${escapeHtml(formData.get("email") || "")}</div>
-            </div>
-          </div>
-        </div>
-        
         <!-- Business Information -->
-        <div class="card">
+        <div class="card business-card">
           <div class="card-title">Business Information</div>
           <div class="grid">
             <div class="field">
@@ -485,7 +469,30 @@ export async function POST(request) {
             </table>
           </div>
         </div>
-        
+
+        <!-- Personal Information -->
+        <div class="card">
+          <div class="card-title">Personal Information</div>
+          <div class="grid">
+            <div class="field">
+              <div class="field-label">First Name</div>
+              <div class="field-value">${escapeHtml(formData.get("firstName") || "")}</div>
+            </div>
+            <div class="field">
+              <div class="field-label">Last Name</div>
+              <div class="field-value">${escapeHtml(formData.get("lastName") || "")}</div>
+            </div>
+            <div class="field">
+              <div class="field-label">Phone Number</div>
+              <div class="field-value">${escapeHtml(formData.get("phoneNumber") || "")}</div>
+            </div>
+            <div class="field">
+              <div class="field-label">Email</div>
+              <div class="field-value">${escapeHtml(formData.get("email") || "")}</div>
+            </div>
+          </div>
+        </div>
+
         <!-- Contract Information -->
         <div class="card">
           <div class="card-title">Contract Information</div>
